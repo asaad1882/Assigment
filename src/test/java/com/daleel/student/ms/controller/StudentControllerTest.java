@@ -3,6 +3,7 @@ import com.daleel.student.ms.model.Student;
 import com.daleel.student.ms.service.StudentService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.junit.Before;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,6 +21,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +35,16 @@ public class StudentControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
+    @Before
+    void setup() throws IOException{
+    	try {
+    		System.out.println("WAIT!!!!!!!!!!!!!!!!!!!!!!!");
+			Thread.sleep(60000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
 
     @Test
     @DisplayName("GET /students/{id} Asmaa - Success")
@@ -70,9 +82,11 @@ public class StudentControllerTest {
 
 
     }
+    
     @Test
     @DisplayName("GET /students  paged Asmaa - Success")
     public void getAllStudentPagedSuccess() throws Exception {
+    	
         //given
 
     	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
@@ -251,6 +265,7 @@ public class StudentControllerTest {
     @Test
     @DisplayName("GET /students by lastname Saad - Success")
     public void getStudentByLastNameSuccess() throws Exception {
+    	Thread.sleep(60000);
         //given
 
     	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");

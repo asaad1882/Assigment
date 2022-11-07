@@ -38,27 +38,31 @@ public class StudentController {
 
 	@Autowired
 	private StudentService studentService;
-	private final Bucket bucket;
+	private final Bucket listBucket;
+	private final Bucket createBucket;
+	private final Bucket listPagedBucket;
 
-<span class="fc" id="L43">	public StudentController() {</span>
-<span class="fc" id="L44">		Bandwidth limit = Bandwidth.classic(50, Refill.greedy(50, Duration.ofMinutes(1)));</span>
-<span class="fc" id="L45">		this.bucket = Bucket4j.builder().addLimit(limit).build();</span>
-<span class="fc" id="L46">	}</span>
+<span class="fc" id="L45">	public StudentController() {</span>
+<span class="fc" id="L46">		Bandwidth limit = Bandwidth.classic(50, Refill.greedy(50, Duration.ofMinutes(1)));</span>
+<span class="fc" id="L47">		this.listBucket = Bucket4j.builder().addLimit(limit).build();</span>
+<span class="fc" id="L48">		this.createBucket=Bucket4j.builder().addLimit(limit).build();</span>
+<span class="fc" id="L49">		this.listPagedBucket=Bucket4j.builder().addLimit(limit).build();</span>
+<span class="fc" id="L50">	}</span>
 
 	@GetMapping(&quot;/students&quot;)
 	public ResponseEntity&lt;List&lt;Student&gt;&gt; getAllStudents(@RequestParam(required = false) String firstname,
 			@RequestParam(required = false) String lastname, @RequestParam(required = false) String departmentName) {
 		try {
-<span class="pc bpc" id="L52" title="1 of 2 branches missed.">			if (bucket.tryConsume(1)) {</span>
-<span class="fc" id="L53">				List&lt;Student&gt; students = studentService.getAllStudents(firstname, lastname, departmentName);</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">			if (listBucket.tryConsume(1)) {</span>
+<span class="fc" id="L57">				List&lt;Student&gt; students = studentService.getAllStudents(firstname, lastname, departmentName);</span>
 
-<span class="fc" id="L55">				return new ResponseEntity&lt;&gt;(students, HttpStatus.OK);</span>
+<span class="fc" id="L59">				return new ResponseEntity&lt;&gt;(students, HttpStatus.OK);</span>
 			}
-<span class="nc" id="L57">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
-<span class="nc" id="L58">		} catch (Exception e) {</span>
-<span class="nc" id="L59">			logger.error(&quot;Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}&quot;, firstname,</span>
-					lastname, departmentName, e);
-<span class="nc" id="L61">			return new ResponseEntity&lt;&gt;(null, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+<span class="fc" id="L61">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
+<span class="nc" id="L62">		} catch (Exception e) {</span>
+<span class="nc" id="L63">			logger.error(&quot;Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}&quot;, firstname,</span>
+<span class="nc" id="L64">					lastname, departmentName, e);</span>
+<span class="nc" id="L65">			return new ResponseEntity&lt;&gt;(null, HttpStatus.INTERNAL_SERVER_ERROR);</span>
 		}
 	}
 
@@ -67,42 +71,40 @@ public class StudentController {
 			@RequestParam(required = false) String lastname, @RequestParam(required = false) String departmentName,
 			@PathVariable(&quot;page&quot;) int page, @PathVariable(&quot;size&quot;) int size) {
 		try {
-<span class="pc bpc" id="L70" title="1 of 2 branches missed.">			if (bucket.tryConsume(1)) {</span>
-<span class="fc" id="L71">				List&lt;Student&gt; students = studentService.getAllStudents(firstname, lastname, departmentName, page, size);</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">			if (listPagedBucket.tryConsume(1)) {</span>
+<span class="fc" id="L75">				List&lt;Student&gt; students = studentService.getAllStudents(firstname, lastname, departmentName, page, size);</span>
 
-<span class="fc" id="L73">				return new ResponseEntity&lt;&gt;(students, HttpStatus.OK);</span>
+<span class="fc" id="L77">				return new ResponseEntity&lt;&gt;(students, HttpStatus.OK);</span>
 			}
-<span class="nc" id="L75">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
-<span class="nc" id="L76">		} catch (Exception e) {</span>
-<span class="nc" id="L77">			logger.error(&quot;Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}&quot;, firstname,</span>
-					lastname, departmentName, e);
-<span class="nc" id="L79">			return new ResponseEntity&lt;&gt;(null, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+<span class="fc" id="L79">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
+<span class="nc" id="L80">		} catch (Exception e) {</span>
+<span class="nc" id="L81">			logger.error(&quot;Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}&quot;, firstname,</span>
+<span class="nc" id="L82">					lastname, departmentName, e);</span>
+<span class="nc" id="L83">			return new ResponseEntity&lt;&gt;(null, HttpStatus.INTERNAL_SERVER_ERROR);</span>
 		}
 	}
 
 	@GetMapping(&quot;/students/{id}&quot;)
 	public ResponseEntity&lt;Student&gt; getStudentById(@PathVariable(&quot;id&quot;) String id) {
-<span class="pc bpc" id="L85" title="1 of 2 branches missed.">		if (bucket.tryConsume(1)) {</span>
-<span class="fc" id="L86">			return new ResponseEntity&lt;&gt;(studentService.getStudentById(id), HttpStatus.OK);</span>
-		}
-<span class="nc" id="L88">		return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
-
+		
+<span class="fc" id="L90">		return new ResponseEntity&lt;&gt;(studentService.getStudentById(id), HttpStatus.OK);</span>
+		
 	}
 
 	@PostMapping(&quot;/students&quot;)
 
 	public ResponseEntity&lt;Student&gt; createStudent(@RequestBody StudentDTO student) {
 		try {
-<span class="pc bpc" id="L96" title="1 of 2 branches missed.">			if (bucket.tryConsume(1)) {</span>
-<span class="fc" id="L97">				return new ResponseEntity&lt;&gt;(studentService.createStudent(</span>
-<span class="fc" id="L98">						new Student(student.getFirstname(), student.getLastname(), student.getDepartmentName())),</span>
-						HttpStatus.CREATED);
+<span class="fc bfc" id="L98" title="All 2 branches covered.">			if (createBucket.tryConsume(1)) {</span>
+<span class="fc" id="L99">				return new ResponseEntity&lt;&gt;(studentService.createStudent(</span>
+<span class="fc" id="L100">						new Student(student.getFirstname(), student.getLastname(), student.getDepartmentName())),</span>
+<span class="fc" id="L101">						HttpStatus.CREATED);</span>
 			}
-<span class="nc" id="L101">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
-<span class="nc" id="L102">		} catch (Exception e) {</span>
-<span class="nc" id="L103">			logger.error(&quot;Exception in createStudent student:{}&quot;, student, e);</span>
+<span class="fc" id="L103">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
+<span class="nc" id="L104">		} catch (Exception e) {</span>
+<span class="nc" id="L105">			logger.error(&quot;Exception in createStudent student:{}&quot;, student, e);</span>
 
-<span class="nc" id="L105">			return new ResponseEntity&lt;&gt;(null, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+<span class="nc" id="L107">			return new ResponseEntity&lt;&gt;(null, HttpStatus.INTERNAL_SERVER_ERROR);</span>
 		}
 	}
 

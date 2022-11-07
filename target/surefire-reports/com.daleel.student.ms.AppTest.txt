@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.daleel.student.ms.AppTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 41.627 s - in com.daleel.student.ms.AppTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 52.361 s - in com.daleel.student.ms.AppTest

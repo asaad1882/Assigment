@@ -38,18 +38,22 @@ public class StudentController {
 
 	@Autowired
 	private StudentService studentService;
-	private final Bucket bucket;
+	private final Bucket listBucket;
+	private final Bucket createBucket;
+	private final Bucket listPagedBucket;
 
 	public StudentController() {
 		Bandwidth limit = Bandwidth.classic(50, Refill.greedy(50, Duration.ofMinutes(1)));
-		this.bucket = Bucket4j.builder().addLimit(limit).build();
+		this.listBucket = Bucket4j.builder().addLimit(limit).build();
+		this.createBucket=Bucket4j.builder().addLimit(limit).build();
+		this.listPagedBucket=Bucket4j.builder().addLimit(limit).build();
 	}
 
 	@GetMapping("/students")
 	public ResponseEntity<List<Student>> getAllStudents(@RequestParam(required = false) String firstname,
 			@RequestParam(required = false) String lastname, @RequestParam(required = false) String departmentName) {
 		try {
-			if (bucket.tryConsume(1)) {
+			if (listBucket.tryConsume(1)) {
 				List<Student> students = studentService.getAllStudents(firstname, lastname, departmentName);
 
 				return new ResponseEntity<>(students, HttpStatus.OK);
@@ -67,7 +71,7 @@ public class StudentController {
 			@RequestParam(required = false) String lastname, @RequestParam(required = false) String departmentName,
 			@PathVariable("page") int page, @PathVariable("size") int size) {
 		try {
-			if (bucket.tryConsume(1)) {
+			if (listPagedBucket.tryConsume(1)) {
 				List<Student> students = studentService.getAllStudents(firstname, lastname, departmentName, page, size);
 
 				return new ResponseEntity<>(students, HttpStatus.OK);
@@ -82,18 +86,16 @@ public class StudentController {
 
 	@GetMapping("/students/{id}")
 	public ResponseEntity<Student> getStudentById(@PathVariable("id") String id) {
-		if (bucket.tryConsume(1)) {
-			return new ResponseEntity<>(studentService.getStudentById(id), HttpStatus.OK);
-		}
-		return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();
-
+		
+		return new ResponseEntity<>(studentService.getStudentById(id), HttpStatus.OK);
+		
 	}
 
 	@PostMapping("/students")
 
 	public ResponseEntity<Student> createStudent(@RequestBody StudentDTO student) {
 		try {
-			if (bucket.tryConsume(1)) {
+			if (createBucket.tryConsume(1)) {
 				return new ResponseEntity<>(studentService.createStudent(
 						new Student(student.getFirstname(), student.getLastname(), student.getDepartmentName())),
 						HttpStatus.CREATED);

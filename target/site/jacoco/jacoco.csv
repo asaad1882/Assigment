@@ -4,5 +4,5 @@ Coverage with JaCoCo,com.daleel.student.ms.confiuration,AuthenticationHandlerFil
 Coverage with JaCoCo,com.daleel.student.ms.confiuration,FilterConfig,0,24,0,0,0,5,0,2,0,2
 Coverage with JaCoCo,com.daleel.student.ms,App,0,8,0,0,0,3,0,2,0,2
 Coverage with JaCoCo,com.daleel.student.ms.service,StudentServiceImpl,0,193,16,40,0,38,16,19,0,7
-Coverage with JaCoCo,com.daleel.student.ms.controller,StudentController,84,95,4,4,13,16,4,6,0,6
+Coverage with JaCoCo,com.daleel.student.ms.controller,StudentController,68,116,0,6,11,21,0,9,0,6
 Coverage with JaCoCo,com.daleel.student.ms.model,Student,0,58,0,0,0,25,0,11,0,11

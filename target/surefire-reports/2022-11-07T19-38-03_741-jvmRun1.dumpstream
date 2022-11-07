@@ -1,0 +1,636 @@
+# Created at 2022-11-07T19:39:24.457
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2022-11-07T19:39:27.002
+Unexpected IOException with stream: 2022-11-07 19:39:27.001  INFO 7476 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+
+
+# Created at 2022-11-07T19:39:27.151
+Unexpected IOException with stream: 2022-11-07 19:39:27.150  INFO 7476 --- [           main] c.d.s.m.r.StudentRepositoryTest          : Started StudentRepositoryTest in 7.068 seconds (JVM running for 83.035)
+
+
+# Created at 2022-11-07T19:39:27.160
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentByFirstName,null,null,null
+
+
+# Created at 2022-11-07T19:39:27.230
+Unexpected IOException with stream: 2022-11-07 19:39:27.229  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:27.229+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:52225 #3 (3 connections now open)
+
+
+# Created at 2022-11-07T19:39:27.231
+Unexpected IOException with stream: 2022-11-07 19:39:27.230  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:27.231+0400 I NETWORK  [conn3] received client metadata from 127.0.0.1:52225 conn3: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-07T19:39:27.233
+Unexpected IOException with stream: 2022-11-07 19:39:27.232  INFO 7476 --- [           main] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:18, serverValue:3}] to localhost:52213
+
+
+# Created at 2022-11-07T19:39:27.516
+Unexpected IOException with stream: 2022-11-07 19:39:27.514  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:27.514+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 279ms
+
+
+# Created at 2022-11-07T19:39:27.518
+Unexpected IOException with stream: 2022-11-07 19:39:27.517  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:27.514+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 279ms
+
+
+# Created at 2022-11-07T19:39:27.595
+Unexpected IOException with stream: 2022-11-07 19:39:27.594  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:27.594+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:27.597
+Unexpected IOException with stream: 2022-11-07 19:39:27.596  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:27.595+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:27.619
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentByFirstName,null,null,null
+
+
+# Created at 2022-11-07T19:39:27.623
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindALLStudentPagable,null,null,null
+
+
+# Created at 2022-11-07T19:39:27.847
+Unexpected IOException with stream: 2022-11-07 19:39:27.845  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:27.846+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 211ms
+
+
+# Created at 2022-11-07T19:39:27.849
+Unexpected IOException with stream: 2022-11-07 19:39:27.848  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:27.846+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 211ms
+
+
+# Created at 2022-11-07T19:39:27.918
+Unexpected IOException with stream: 2022-11-07 19:39:27.917  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:27.917+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:27.920
+Unexpected IOException with stream: 2022-11-07 19:39:27.919  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:27.918+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:27.926
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindALLStudentPagable,null,null,null
+
+
+# Created at 2022-11-07T19:39:27.929
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudents,null,null,null
+
+
+# Created at 2022-11-07T19:39:28.224
+Unexpected IOException with stream: 2022-11-07 19:39:28.223  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:28.223+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 282ms
+
+
+# Created at 2022-11-07T19:39:28.226
+Unexpected IOException with stream: 2022-11-07 19:39:28.225  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:28.223+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 282ms
+
+
+# Created at 2022-11-07T19:39:28.613
+Unexpected IOException with stream: 2022-11-07 19:39:28.611  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:28.611+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:28.615
+Unexpected IOException with stream: 2022-11-07 19:39:28.614  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:28.612+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:28.622
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudents,null,null,null
+
+
+# Created at 2022-11-07T19:39:28.626
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentsByLastName,null,null,null
+
+
+# Created at 2022-11-07T19:39:28.855
+Unexpected IOException with stream: 2022-11-07 19:39:28.853  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:28.853+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 214ms
+
+
+# Created at 2022-11-07T19:39:28.856
+Unexpected IOException with stream: 2022-11-07 19:39:28.855  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:28.853+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 214ms
+
+
+# Created at 2022-11-07T19:39:28.913
+Unexpected IOException with stream: 2022-11-07 19:39:28.912  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:28.912+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:28.915
+Unexpected IOException with stream: 2022-11-07 19:39:28.914  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:28.913+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:28.920
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentsByLastName,null,null,null
+
+
+# Created at 2022-11-07T19:39:28.923
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentById,null,null,null
+
+
+# Created at 2022-11-07T19:39:29.198
+Unexpected IOException with stream: 2022-11-07 19:39:29.197  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:29.196+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 259ms
+
+
+# Created at 2022-11-07T19:39:29.200
+Unexpected IOException with stream: 2022-11-07 19:39:29.199  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:29.197+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 260ms
+
+
+# Created at 2022-11-07T19:39:29.692
+Unexpected IOException with stream: 2022-11-07 19:39:29.691  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:29.692+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:29.695
+Unexpected IOException with stream: 2022-11-07 19:39:29.693  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:29.693+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:29.700
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentById,null,null,null
+
+
+# Created at 2022-11-07T19:39:29.704
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentByFirstNamePagable,null,null,null
+
+
+# Created at 2022-11-07T19:39:29.940
+Unexpected IOException with stream: 2022-11-07 19:39:29.938  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:29.938+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 215ms
+
+
+# Created at 2022-11-07T19:39:29.942
+Unexpected IOException with stream: 2022-11-07 19:39:29.941  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:29.938+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 216ms
+
+
+# Created at 2022-11-07T19:39:30.002
+Unexpected IOException with stream: 2022-11-07 19:39:30.001  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:30.001+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:30.033
+Unexpected IOException with stream: 2022-11-07 19:39:30.031  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:30.031+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:30.040
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentByFirstNamePagable,null,null,null
+
+
+# Created at 2022-11-07T19:39:30.045
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentByLastNamePagable,null,null,null
+
+
+# Created at 2022-11-07T19:39:30.295
+Unexpected IOException with stream: 2022-11-07 19:39:30.293  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:30.292+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 232ms
+
+
+# Created at 2022-11-07T19:39:30.297
+Unexpected IOException with stream: 2022-11-07 19:39:30.295  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:30.293+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 232ms
+
+
+# Created at 2022-11-07T19:39:30.658
+Unexpected IOException with stream: 2022-11-07 19:39:30.657  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:30.658+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:30.660
+Unexpected IOException with stream: 2022-11-07 19:39:30.659  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:30.658+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:30.665
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentByLastNamePagable,null,null,null
+
+
+# Created at 2022-11-07T19:39:30.668
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentsByDepartmentName,null,null,null
+
+
+# Created at 2022-11-07T19:39:30.947
+Unexpected IOException with stream: 2022-11-07 19:39:30.945  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:30.945+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 264ms
+
+
+# Created at 2022-11-07T19:39:30.949
+Unexpected IOException with stream: 2022-11-07 19:39:30.947  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:30.945+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 264ms
+
+
+# Created at 2022-11-07T19:39:31.009
+Unexpected IOException with stream: 2022-11-07 19:39:31.007  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:31.008+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:31.021
+Unexpected IOException with stream: 2022-11-07 19:39:31.019  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:31.020+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:31.029
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentsByDepartmentName,null,null,null
+
+
+# Created at 2022-11-07T19:39:31.034
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testDeleteStudentById,null,null,null
+
+
+# Created at 2022-11-07T19:39:31.278
+Unexpected IOException with stream: 2022-11-07 19:39:31.277  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:31.277+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 224ms
+
+
+# Created at 2022-11-07T19:39:31.281
+Unexpected IOException with stream: 2022-11-07 19:39:31.279  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:31.277+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 224ms
+
+
+# Created at 2022-11-07T19:39:31.715
+Unexpected IOException with stream: 2022-11-07 19:39:31.713  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:31.713+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:31.716
+Unexpected IOException with stream: 2022-11-07 19:39:31.715  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:31.715+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:31.723
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testDeleteStudentById,null,null,null
+
+
+# Created at 2022-11-07T19:39:31.727
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,createStudent,null,null,null
+
+
+# Created at 2022-11-07T19:39:31.986
+Unexpected IOException with stream: 2022-11-07 19:39:31.985  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:31.985+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 247ms
+
+
+# Created at 2022-11-07T19:39:31.988
+Unexpected IOException with stream: 2022-11-07 19:39:31.987  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:31.985+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 247ms
+
+
+# Created at 2022-11-07T19:39:32.042
+Unexpected IOException with stream: 2022-11-07 19:39:32.041  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:32.041+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:32.045
+Unexpected IOException with stream: 2022-11-07 19:39:32.043  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:32.043+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:32.051
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,createStudent,null,null,null
+
+
+# Created at 2022-11-07T19:39:32.054
+Unexpected IOException: 5,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentByDepartmentNamePagable,null,null,null
+
+
+# Created at 2022-11-07T19:39:32.408
+Unexpected IOException with stream: 2022-11-07 19:39:32.406  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:32.407+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 338ms
+
+
+# Created at 2022-11-07T19:39:32.410
+Unexpected IOException with stream: 2022-11-07 19:39:32.409  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:32.407+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 339ms
+
+
+# Created at 2022-11-07T19:39:32.779
+Unexpected IOException with stream: 2022-11-07 19:39:32.778  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:32.778+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T19:39:32.781
+Unexpected IOException with stream: 2022-11-07 19:39:32.780  INFO 7476 --- [      Thread-19] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:32.778+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T19:39:32.786
+Unexpected IOException: 6,1,com.daleel.student.ms.reposistory.StudentRepositoryTest,testFindStudentByDepartmentNamePagable,null,null,null
+
+
+# Created at 2022-11-07T19:39:32.788
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.daleel.student.ms.reposistory.StudentRepositoryTest,null,null,null
+
+
+# Created at 2022-11-07T19:39:32.793
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.daleel.student.ms.service.StudentServiceImplTest,null,null,null
+
+
+# Created at 2022-11-07T19:39:32.795
+Unexpected IOException with stream: 2022-11-07 19:39:32.794  INFO 7476 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.daleel.student.ms.service.StudentServiceImplTest], using SpringBootContextLoader
+
+
+# Created at 2022-11-07T19:39:32.797
+Unexpected IOException with stream: 2022-11-07 19:39:32.796  INFO 7476 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.daleel.student.ms.service.StudentServiceImplTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+
+
+# Created at 2022-11-07T19:39:32.798
+Unexpected IOException with stream: 2022-11-07 19:39:32.798  INFO 7476 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.daleel.student.ms.service.StudentServiceImplTest]: StudentServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+
+
+# Created at 2022-11-07T19:39:32.813
+Unexpected IOException with stream: 2022-11-07 19:39:32.812  INFO 7476 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.daleel.student.ms.App for test class com.daleel.student.ms.service.StudentServiceImplTest
+
+
+# Created at 2022-11-07T19:39:32.819
+Unexpected IOException with stream: 2022-11-07 19:39:32.817  INFO 7476 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+
+
+# Created at 2022-11-07T19:39:32.821
+Unexpected IOException with stream: 2022-11-07 19:39:32.820  INFO 7476 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@67749a7e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5a0e497b, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@40cf22da, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3210d1c9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@71f41a9f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5919c04b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6079f040, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5453fb1f, org.springframework.test.context.event.EventPublishingTestExecutionListener@5a223e8, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@12aea08f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3dfaa96a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@763a36c9, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6293f685, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@55e9880, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6d87c0b8]
+
+
+# Created at 2022-11-07T19:39:32.922
+Unexpected IOException with stream: 
+
+
+# Created at 2022-11-07T19:39:32.923
+Unexpected IOException with stream:   .   ____          _            __ _ _
+
+
+# Created at 2022-11-07T19:39:32.925
+Unexpected IOException with stream:  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+
+
+# Created at 2022-11-07T19:39:32.927
+Unexpected IOException with stream: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+
+
+# Created at 2022-11-07T19:39:32.929
+Unexpected IOException with stream:  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+
+
+# Created at 2022-11-07T19:39:32.931
+Unexpected IOException with stream:   '  |____| .__|_| |_|_| |_\__, | / / / /
+
+
+# Created at 2022-11-07T19:39:32.933
+Unexpected IOException with stream:  =========|_|==============|___/=/_/_/_/
+
+
+# Created at 2022-11-07T19:39:32.934
+Unexpected IOException with stream:  :: Spring Boot ::                (v2.5.4)
+
+
+# Created at 2022-11-07T19:39:32.936
+Unexpected IOException with stream: 
+
+
+# Created at 2022-11-07T19:39:32.945
+Unexpected IOException with stream: 2022-11-07 19:39:32.943  INFO 7476 --- [           main] c.d.s.ms.service.StudentServiceImplTest  : Starting StudentServiceImplTest using Java 1.8.0_131 on Asmaa with PID 7476 (started by admin in C:\visionvlley\sdk\test\studAssigment)
+
+
+# Created at 2022-11-07T19:39:32.947
+Unexpected IOException with stream: 2022-11-07 19:39:32.946  INFO 7476 --- [           main] c.d.s.ms.service.StudentServiceImplTest  : The following profiles are active: test
+
+
+# Created at 2022-11-07T19:39:33.992
+Unexpected IOException with stream: 2022-11-07 19:39:33.990  INFO 7476 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+
+
+# Created at 2022-11-07T19:39:34.056
+Unexpected IOException with stream: 2022-11-07 19:39:34.052  INFO 7476 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 1 MongoDB repository interfaces.
+
+
+# Created at 2022-11-07T19:39:34.816
+Unexpected IOException with stream: 2022-11-07 19:39:34.815  INFO 7476 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 34ab9c64-0d26-4778-b807-62fb85c4a756
+
+
+
+# Created at 2022-11-07T19:39:35.052
+Unexpected IOException with stream: 2022-11-07 19:39:35.050  INFO 7476 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ca3335e, org.springframework.security.web.context.SecurityContextPersistenceFilter@2fba87dc, org.springframework.security.web.header.HeaderWriterFilter@2d32d022, org.springframework.security.web.authentication.logout.LogoutFilter@4d9e0eb8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@543fa841, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f37d124, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31f507bc, org.springframework.security.web.session.SessionManagementFilter@d8a80a5, org.springframework.security.web.access.ExceptionTranslationFilter@2df342e, org.springframework.security.web.access.intercept.AuthorizationFilter@35a589b6]
+
+
+# Created at 2022-11-07T19:39:38.110
+Unexpected IOException with stream: 2022-11-07 19:39:38.108  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : note: noprealloc may hurt performance in many applications
+
+
+# Created at 2022-11-07T19:39:38.278
+Unexpected IOException with stream: 2022-11-07 19:39:38.276  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.275+0400 I CONTROL  [initandlisten] MongoDB starting : pid=10004 port=52235 dbpath=C:\Users\admin\AppData\Local\Temp\embedmongo-db-61c66e74-ecac-4bdb-8fc0-cebb447e0909 64-bit host=Asmaa
+
+
+# Created at 2022-11-07T19:39:38.280
+Unexpected IOException with stream: 2022-11-07 19:39:38.279  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.276+0400 I CONTROL  [initandlisten] targetMinOS: Windows Vista/Windows Server 2008
+
+
+# Created at 2022-11-07T19:39:38.281
+Unexpected IOException with stream: 2022-11-07 19:39:38.280  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.276+0400 I CONTROL  [initandlisten] db version v3.5.5
+
+
+# Created at 2022-11-07T19:39:38.283
+Unexpected IOException with stream: 2022-11-07 19:39:38.282  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.277+0400 I CONTROL  [initandlisten] git version: 98515c812b6fa893613f063dae568ff8319cbfbd
+
+
+# Created at 2022-11-07T19:39:38.286
+Unexpected IOException with stream: 2022-11-07 19:39:38.284  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.277+0400 I CONTROL  [initandlisten] allocator: tcmalloc
+
+
+# Created at 2022-11-07T19:39:38.287
+Unexpected IOException with stream: 2022-11-07 19:39:38.286  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.277+0400 I CONTROL  [initandlisten] modules: none
+
+
+# Created at 2022-11-07T19:39:38.288
+Unexpected IOException with stream: 2022-11-07 19:39:38.288  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.277+0400 I CONTROL  [initandlisten] build environment:
+
+
+# Created at 2022-11-07T19:39:38.290
+Unexpected IOException with stream: 2022-11-07 19:39:38.289  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.277+0400 I CONTROL  [initandlisten]     distarch: x86_64
+
+
+# Created at 2022-11-07T19:39:38.291
+Unexpected IOException with stream: 2022-11-07 19:39:38.290  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.277+0400 I CONTROL  [initandlisten]     target_arch: x86_64
+
+
+# Created at 2022-11-07T19:39:38.293
+Unexpected IOException with stream: 2022-11-07 19:39:38.291  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.277+0400 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", http: { enabled: false }, port: 52235 }, security: { authorization: "disabled" }, storage: { dbPath: "C:\Users\admin\AppData\Local\Temp\embedmongo-db-61c66e74-ecac-4bdb-8fc0-cebb447e0909", journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+
+
+# Created at 2022-11-07T19:39:38.294
+Unexpected IOException with stream: 2022-11-07 19:39:38.293  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.280+0400 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3532M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=0,log_size=2GB),statistics_log=(wait=0),verbose=(recovery_progress),,log=(enabled=false),
+
+
+# Created at 2022-11-07T19:39:38.874
+Unexpected IOException with stream: 2022-11-07 19:39:38.873  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.873+0400 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+
+
+# Created at 2022-11-07T19:39:38.876
+Unexpected IOException with stream: 2022-11-07 19:39:38.875  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.873+0400 I CONTROL  [initandlisten] 
+
+
+# Created at 2022-11-07T19:39:38.878
+Unexpected IOException with stream: 2022-11-07 19:39:38.877  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.873+0400 I CONTROL  [initandlisten] ** NOTE: This is a development version (3.5.5) of MongoDB.
+
+
+# Created at 2022-11-07T19:39:38.880
+Unexpected IOException with stream: 2022-11-07 19:39:38.878  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.874+0400 I CONTROL  [initandlisten] **       Not recommended for production.
+
+
+# Created at 2022-11-07T19:39:38.881
+Unexpected IOException with stream: 2022-11-07 19:39:38.880  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:38.874+0400 I CONTROL  [initandlisten] 
+
+
+# Created at 2022-11-07T19:39:39.481
+Unexpected IOException with stream: 2022-11-07 19:39:39.479  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:39.479+0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/Users/admin/AppData/Local/Temp/embedmongo-db-61c66e74-ecac-4bdb-8fc0-cebb447e0909/diagnostic.data'
+
+
+# Created at 2022-11-07T19:39:39.834
+Unexpected IOException with stream: 2022-11-07 19:39:39.833  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:39.834+0400 I INDEX    [initandlisten] build index on: admin.system.version properties: { v: 2, key: { version: 1 }, name: "incompatible_with_version_32", ns: "admin.system.version" }
+
+
+# Created at 2022-11-07T19:39:39.835
+Unexpected IOException with stream: 2022-11-07 19:39:39.834  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:39.834+0400 I INDEX    [initandlisten] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+
+
+# Created at 2022-11-07T19:39:39.846
+Unexpected IOException with stream: 2022-11-07 19:39:39.845  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:39.845+0400 I INDEX    [initandlisten] build index done.  scanned 0 total records. 0 secs
+
+
+# Created at 2022-11-07T19:39:39.847
+Unexpected IOException with stream: 2022-11-07 19:39:39.846  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:39.847+0400 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 3.4
+
+
+# Created at 2022-11-07T19:39:39.849
+Unexpected IOException with stream: 2022-11-07 19:39:39.848  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:39.848+0400 I NETWORK  [thread1] waiting for connections on port 52235
+
+
+# Created at 2022-11-07T19:39:39.851
+Unexpected IOException with stream: 2022-11-07 19:39:39.849  INFO 7476 --- [           main] d.f.embed.mongo.MongodExecutable         : start MongodConfig{version=Version{3.5.5}, timeout=de.flapdoodle.embed.mongo.config.Timeout@5d17b8da, net=de.flapdoodle.embed.mongo.config.Net@18fcae45, cmdOptions=MongoCmdOptions{syncDelay=0, useDefaultSyncDelay=false, isVerbose=false, useNoPrealloc=true, useSmallFiles=true, useNoJournal=true, enableTextSearch=false, auth=false, master=false}, password=, userName=, replication=de.flapdoodle.embed.mongo.config.Storage@4918cd02, isConfigServer=false, isShardServer=false, processListener=de.flapdoodle.embed.mongo.config.processlistener.NoopProcessListener@595b0aa6, params={}, args={}, pidFile=mongod.pid, supportConfig=de.flapdoodle.embed.mongo.config.SupportConfig@396ab83f}
+
+
+# Created at 2022-11-07T19:39:39.905
+Unexpected IOException with stream: 2022-11-07 19:39:39.904  INFO 7476 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:52235], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+
+
+# Created at 2022-11-07T19:39:39.911
+Unexpected IOException with stream: 2022-11-07 19:39:39.910  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:39.910+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:52238 #1 (1 connection now open)
+
+
+# Created at 2022-11-07T19:39:39.913
+Unexpected IOException with stream: 2022-11-07 19:39:39.912  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:39.911+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:52237 #2 (2 connections now open)
+
+
+# Created at 2022-11-07T19:39:39.914
+Unexpected IOException with stream: 2022-11-07 19:39:39.913  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:39.911+0400 I NETWORK  [conn1] received client metadata from 127.0.0.1:52238 conn1: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-07T19:39:39.916
+Unexpected IOException with stream: 2022-11-07 19:39:39.914  INFO 7476 --- [localhost:52235] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:20, serverValue:1}] to localhost:52235
+
+
+# Created at 2022-11-07T19:39:39.918
+Unexpected IOException with stream: 2022-11-07 19:39:39.915  INFO 7476 --- [localhost:52235] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:19, serverValue:2}] to localhost:52235
+
+
+# Created at 2022-11-07T19:39:39.919
+Unexpected IOException with stream: 2022-11-07 19:39:39.915  INFO 7476 --- [      Thread-22] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T19:39:39.913+0400 I NETWORK  [conn2] received client metadata from 127.0.0.1:52237 conn2: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-07T19:39:39.921
+Unexpected IOException with stream: 2022-11-07 19:39:39.917  INFO 7476 --- [localhost:52235] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:52235, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=2706853}
+
+
+# Created at 2022-11-07T19:39:40.794
+Unexpected IOException with stream: 2022-11-07 19:39:40.792  INFO 7476 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+
+
+# Created at 2022-11-07T19:39:40.966
+Unexpected IOException with stream: 2022-11-07 19:39:40.964  INFO 7476 --- [           main] c.d.s.ms.service.StudentServiceImplTest  : Started StudentServiceImplTest in 8.135 seconds (JVM running for 96.849)
+
+
+# Created at 2022-11-07T19:39:40.976
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testFindStudentByIdFail,null,null,null
+
+
+# Created at 2022-11-07T19:39:41.007
+Unexpected IOException with stream: 2022-11-07 19:39:41.005 ERROR 7476 --- [           main] c.d.s.ms.service.StudentServiceImpl      : Student not found id:xxx
+
+
+# Created at 2022-11-07T19:39:44.523
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testFindStudentByIdFail,null,null,null
+
+
+# Created at 2022-11-07T19:39:44.532
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testCreateStudentSuccess,null,null,null
+
+
+# Created at 2022-11-07T19:39:45.744
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testCreateStudentSuccess,null,null,null
+
+
+# Created at 2022-11-07T19:39:45.748
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByFirstNamePageable_whenzerosize,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.403
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByFirstNamePageable_whenzerosize,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.405
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testFindStudentByIdSuccess,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.414
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testFindStudentByIdSuccess,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.416
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByDepartmentNamePageable,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.426
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByDepartmentNamePageable,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.427
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByLasttName,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.438
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByLasttName,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.441
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testGetAllStudents,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.451
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testGetAllStudents,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.454
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByFirstNamePageable,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.465
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByFirstNamePageable,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.468
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByLastNamePageable,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.477
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByLastNamePageable,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.480
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByDepartmenttName,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.490
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByDepartmenttName,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.492
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testAllStudentsPageable,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.506
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testAllStudentsPageable,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.508
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testAllStudents,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.516
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testAllStudents,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.518
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByFirstName,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.526
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testStudentsByFirstName,null,null,null
+
+
+# Created at 2022-11-07T19:39:46.528
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.daleel.student.ms.service.StudentServiceImplTest,null,null,null
+
+
