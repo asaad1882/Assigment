@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomExceptionHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Coverage with JaCoCo</a> &gt; <a href="index.source.html" class="el_package">com.daleel.student.ms.errorhandler</a> &gt; <span class="el_source">CustomExceptionHandler.java</span></div><h1>CustomExceptionHandler.java</h1><pre class="source lang-java linenums">package com.daleel.student.ms.errorhandler;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+
+import org.springframework.beans.TypeMismatchException;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindException;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.HttpMediaTypeNotSupportedException;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.multipart.support.MissingServletRequestPartException;
+import org.springframework.web.servlet.NoHandlerFoundException;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+@ControllerAdvice
+
+<span class="fc" id="L29">public class CustomExceptionHandler extends ResponseEntityExceptionHandler{</span>
+	// 400
+
+    @Override
+    protected ResponseEntity&lt;Object&gt; handleMethodArgumentNotValid(final MethodArgumentNotValidException ex, final HttpHeaders headers, final HttpStatus status, final WebRequest request) {
+<span class="nc" id="L34">        logger.info(ex.getClass().getName());</span>
+        //
+<span class="nc" id="L36">        final List&lt;String&gt; errors = new ArrayList&lt;String&gt;();</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        for (final FieldError error : ex.getBindingResult().getFieldErrors()) {</span>
+<span class="nc" id="L38">            errors.add(error.getField() + &quot;: &quot; + error.getDefaultMessage());</span>
+<span class="nc" id="L39">        }</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        for (final ObjectError error : ex.getBindingResult().getGlobalErrors()) {</span>
+<span class="nc" id="L41">            errors.add(error.getObjectName() + &quot;: &quot; + error.getDefaultMessage());</span>
+<span class="nc" id="L42">        }</span>
+<span class="nc" id="L43">        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), errors);</span>
+<span class="nc" id="L44">        return handleExceptionInternal(ex, apiError, headers, apiError.getStatus(), request);</span>
+    }
+
+    @Override
+    protected ResponseEntity&lt;Object&gt; handleBindException(final BindException ex, final HttpHeaders headers, final HttpStatus status, final WebRequest request) {
+<span class="nc" id="L49">        logger.info(ex.getClass().getName());</span>
+        //
+<span class="nc" id="L51">        final List&lt;String&gt; errors = new ArrayList&lt;String&gt;();</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        for (final FieldError error : ex.getBindingResult().getFieldErrors()) {</span>
+<span class="nc" id="L53">            errors.add(error.getField() + &quot;: &quot; + error.getDefaultMessage());</span>
+<span class="nc" id="L54">        }</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">        for (final ObjectError error : ex.getBindingResult().getGlobalErrors()) {</span>
+<span class="nc" id="L56">            errors.add(error.getObjectName() + &quot;: &quot; + error.getDefaultMessage());</span>
+<span class="nc" id="L57">        }</span>
+<span class="nc" id="L58">        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), errors);</span>
+<span class="nc" id="L59">        return handleExceptionInternal(ex, apiError, headers, apiError.getStatus(), request);</span>
+    }
+
+    @Override
+    protected ResponseEntity&lt;Object&gt; handleTypeMismatch(final TypeMismatchException ex, final HttpHeaders headers, final HttpStatus status, final WebRequest request) {
+<span class="nc" id="L64">        logger.info(ex.getClass().getName());</span>
+        //
+<span class="nc" id="L66">        final String error = ex.getValue() + &quot; value for &quot; + ex.getPropertyName() + &quot; should be of type &quot; + ex.getRequiredType();</span>
+
+<span class="nc" id="L68">        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);</span>
+<span class="nc" id="L69">        return new ResponseEntity&lt;Object&gt;(apiError, new HttpHeaders(), apiError.getStatus());</span>
+    }
+
+    @Override
+    protected ResponseEntity&lt;Object&gt; handleMissingServletRequestPart(final MissingServletRequestPartException ex, final HttpHeaders headers, final HttpStatus status, final WebRequest request) {
+<span class="nc" id="L74">        logger.info(ex.getClass().getName());</span>
+        //
+<span class="nc" id="L76">        final String error = ex.getRequestPartName() + &quot; part is missing&quot;;</span>
+<span class="nc" id="L77">        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);</span>
+<span class="nc" id="L78">        return new ResponseEntity&lt;Object&gt;(apiError, new HttpHeaders(), apiError.getStatus());</span>
+    }
+
+    @Override
+    protected ResponseEntity&lt;Object&gt; handleMissingServletRequestParameter(final MissingServletRequestParameterException ex, final HttpHeaders headers, final HttpStatus status, final WebRequest request) {
+<span class="nc" id="L83">        logger.info(ex.getClass().getName());</span>
+        //
+<span class="nc" id="L85">        final String error = ex.getParameterName() + &quot; parameter is missing&quot;;</span>
+<span class="nc" id="L86">        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);</span>
+<span class="nc" id="L87">        return new ResponseEntity&lt;Object&gt;(apiError, new HttpHeaders(), apiError.getStatus());</span>
+    }
+
+    //
+
+    @ExceptionHandler({ MethodArgumentTypeMismatchException.class })
+    public ResponseEntity&lt;Object&gt; handleMethodArgumentTypeMismatch(final MethodArgumentTypeMismatchException ex, final WebRequest request) {
+<span class="nc" id="L94">        logger.info(ex.getClass().getName());</span>
+        //
+<span class="nc" id="L96">        final String error = ex.getName() + &quot; should be of type &quot; + ex.getRequiredType().getName();</span>
+
+<span class="nc" id="L98">        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);</span>
+<span class="nc" id="L99">        return new ResponseEntity&lt;Object&gt;(apiError, new HttpHeaders(), apiError.getStatus());</span>
+    }
+
+    @ExceptionHandler({ ConstraintViolationException.class })
+    public ResponseEntity&lt;Object&gt; handleConstraintViolation(final ConstraintViolationException ex, final WebRequest request) {
+<span class="nc" id="L104">        logger.info(ex.getClass().getName());</span>
+        //
+<span class="nc" id="L106">        final List&lt;String&gt; errors = new ArrayList&lt;String&gt;();</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">        for (final ConstraintViolation&lt;?&gt; violation : ex.getConstraintViolations()) {</span>
+<span class="nc" id="L108">            errors.add(violation.getRootBeanClass().getName() + &quot; &quot; + violation.getPropertyPath() + &quot;: &quot; + violation.getMessage());</span>
+<span class="nc" id="L109">        }</span>
+
+<span class="nc" id="L111">        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), errors);</span>
+<span class="nc" id="L112">        return new ResponseEntity&lt;Object&gt;(apiError, new HttpHeaders(), apiError.getStatus());</span>
+    }
+
+    // 404
+
+    @Override
+    protected ResponseEntity&lt;Object&gt; handleNoHandlerFoundException(final NoHandlerFoundException ex, final HttpHeaders headers, final HttpStatus status, final WebRequest request) {
+<span class="nc" id="L119">        logger.info(ex.getClass().getName());</span>
+        //
+<span class="nc" id="L121">        final String error = &quot;No handler found for &quot; + ex.getHttpMethod() + &quot; &quot; + ex.getRequestURL();</span>
+
+<span class="nc" id="L123">        final ApiError apiError = new ApiError(HttpStatus.NOT_FOUND, ex.getLocalizedMessage(), error);</span>
+<span class="nc" id="L124">        return new ResponseEntity&lt;Object&gt;(apiError, new HttpHeaders(), apiError.getStatus());</span>
+    }
+
+    // 405
+
+    @Override
+    protected ResponseEntity&lt;Object&gt; handleHttpRequestMethodNotSupported(final HttpRequestMethodNotSupportedException ex, final HttpHeaders headers, final HttpStatus status, final WebRequest request) {
+<span class="nc" id="L131">        logger.info(ex.getClass().getName());</span>
+        //
+<span class="nc" id="L133">        final StringBuilder builder = new StringBuilder();</span>
+<span class="nc" id="L134">        builder.append(ex.getMethod());</span>
+<span class="nc" id="L135">        builder.append(&quot; method is not supported for this request. Supported methods are &quot;);</span>
+<span class="nc" id="L136">        ex.getSupportedHttpMethods().forEach(t -&gt; builder.append(t + &quot; &quot;));</span>
+
+<span class="nc" id="L138">        final ApiError apiError = new ApiError(HttpStatus.METHOD_NOT_ALLOWED, ex.getLocalizedMessage(), builder.toString());</span>
+<span class="nc" id="L139">        return new ResponseEntity&lt;Object&gt;(apiError, new HttpHeaders(), apiError.getStatus());</span>
+    }
+
+    // 415
+
+    @Override
+    protected ResponseEntity&lt;Object&gt; handleHttpMediaTypeNotSupported(final HttpMediaTypeNotSupportedException ex, final HttpHeaders headers, final HttpStatus status, final WebRequest request) {
+<span class="nc" id="L146">        logger.info(ex.getClass().getName());</span>
+        //
+<span class="nc" id="L148">        final StringBuilder builder = new StringBuilder();</span>
+<span class="nc" id="L149">        builder.append(ex.getContentType());</span>
+<span class="nc" id="L150">        builder.append(&quot; media type is not supported. Supported media types are &quot;);</span>
+<span class="nc" id="L151">        ex.getSupportedMediaTypes().forEach(t -&gt; builder.append(t + &quot; &quot;));</span>
+
+<span class="nc" id="L153">        final ApiError apiError = new ApiError(HttpStatus.UNSUPPORTED_MEDIA_TYPE, ex.getLocalizedMessage(), builder.substring(0, builder.length() - 2));</span>
+<span class="nc" id="L154">        return new ResponseEntity&lt;Object&gt;(apiError, new HttpHeaders(), apiError.getStatus());</span>
+    }
+
+    // 500
+
+    @ExceptionHandler({ Exception.class })
+    public ResponseEntity&lt;Object&gt; handleAll(final Exception ex, final WebRequest request) {
+<span class="nc" id="L161">        logger.info(ex.getClass().getName());</span>
+<span class="nc" id="L162">        logger.error(&quot;error&quot;, ex);</span>
+        //
+<span class="nc" id="L164">        final ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, ex.getLocalizedMessage(), &quot;error occurred&quot;);</span>
+<span class="nc" id="L165">        return new ResponseEntity&lt;Object&gt;(apiError, new HttpHeaders(), apiError.getStatus());</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,25 @@
+spring:
+    config:
+        activate:
+            on-profile: default
+    data:
+        mongodb:
+           
+            database: studdb
+            port: 27017
+            host: localhost
+            auto-index-creation: true
+server:
+    port: 8090
+    error:
+        include-message: always
+        include-binding-errors: always
+        include-exception: false
+
+
+
+---
+spring:
+    config:
+        activate:
+            on-profile: test

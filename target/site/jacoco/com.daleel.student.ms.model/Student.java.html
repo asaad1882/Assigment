@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Student.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Coverage with JaCoCo</a> &gt; <a href="index.source.html" class="el_package">com.daleel.student.ms.model</a> &gt; <span class="el_source">Student.java</span></div><h1>Student.java</h1><pre class="source lang-java linenums">package com.daleel.student.ms.model;
+
+import javax.validation.constraints.NotBlank;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = &quot;students&quot;)
+public class Student {
+	public Student(String firstname, String lastname, String departmentName) {
+<span class="fc" id="L12">		super();</span>
+<span class="fc" id="L13">		this.firstname = firstname;</span>
+<span class="fc" id="L14">		this.lastname = lastname;</span>
+<span class="fc" id="L15">		this.departmentName = departmentName;</span>
+<span class="fc" id="L16">	}</span>
+	public Student(String id,String firstname, String lastname, String departmentName) {
+<span class="fc" id="L18">		super();</span>
+<span class="fc" id="L19">		this.firstname = firstname;</span>
+<span class="fc" id="L20">		this.lastname = lastname;</span>
+<span class="fc" id="L21">		this.departmentName = departmentName;</span>
+<span class="fc" id="L22">		this.id=id;</span>
+<span class="fc" id="L23">	}</span>
+<span class="fc" id="L24">	public Student() {</span>
+		
+<span class="fc" id="L26">	}</span>
+
+
+	@Id
+	private String id;
+	@NotBlank
+	@Indexed(unique = false)
+	private String firstname;
+	@NotBlank
+	@Indexed(unique = false)
+	private String lastname;
+	@NotBlank
+	@Indexed(unique = false)
+	private String departmentName;
+
+	public String getId() {
+<span class="fc" id="L42">		return id;</span>
+	}
+
+	public void setId(String id) {
+<span class="fc" id="L46">		this.id = id;</span>
+<span class="fc" id="L47">	}</span>
+
+	public String getFirstname() {
+<span class="fc" id="L50">		return firstname;</span>
+	}
+
+	public void setFirstname(String firstname) {
+<span class="fc" id="L54">		this.firstname = firstname;</span>
+<span class="fc" id="L55">	}</span>
+
+	public String getLastname() {
+<span class="fc" id="L58">		return lastname;</span>
+	}
+
+	public void setLastname(String lastname) {
+<span class="fc" id="L62">		this.lastname = lastname;</span>
+<span class="fc" id="L63">	}</span>
+
+	public String getDepartmentName() {
+<span class="fc" id="L66">		return departmentName;</span>
+	}
+
+	public void setDepartmentName(String departmentName) {
+<span class="fc" id="L70">		this.departmentName = departmentName;</span>
+<span class="fc" id="L71">	}</span>
+
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

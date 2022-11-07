@@ -1,0 +1,129 @@
+# Created at 2022-11-06T19:53:16.870
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2022-11-06T19:53:18.092
+Unexpected IOException with stream: 2022-11-06 19:53:18.090  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:18.090+0400 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+
+
+# Created at 2022-11-06T19:53:18.093
+Unexpected IOException with stream: 2022-11-06 19:53:18.092  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:18.091+0400 I CONTROL  [initandlisten] 
+
+
+# Created at 2022-11-06T19:53:18.095
+Unexpected IOException with stream: 2022-11-06 19:53:18.094  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:18.091+0400 I CONTROL  [initandlisten] ** NOTE: This is a development version (3.5.5) of MongoDB.
+
+
+# Created at 2022-11-06T19:53:18.096
+Unexpected IOException with stream: 2022-11-06 19:53:18.095  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:18.091+0400 I CONTROL  [initandlisten] **       Not recommended for production.
+
+
+# Created at 2022-11-06T19:53:18.100
+Unexpected IOException with stream: 2022-11-06 19:53:18.096  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:18.091+0400 I CONTROL  [initandlisten] 
+
+
+# Created at 2022-11-06T19:53:19.447
+Unexpected IOException with stream: 2022-11-06 19:53:19.446  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:19.446+0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/Users/admin/AppData/Local/Temp/embedmongo-db-0aa90dfb-2590-443f-a9d8-413b1332f807/diagnostic.data'
+
+
+# Created at 2022-11-06T19:53:20.029
+Unexpected IOException with stream: 2022-11-06 19:53:20.028  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:20.028+0400 I INDEX    [initandlisten] build index on: admin.system.version properties: { v: 2, key: { version: 1 }, name: "incompatible_with_version_32", ns: "admin.system.version" }
+
+
+# Created at 2022-11-06T19:53:20.030
+Unexpected IOException with stream: 2022-11-06 19:53:20.029  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:20.028+0400 I INDEX    [initandlisten] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+
+
+# Created at 2022-11-06T19:53:20.050
+Unexpected IOException with stream: 2022-11-06 19:53:20.049  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:20.050+0400 I INDEX    [initandlisten] build index done.  scanned 0 total records. 0 secs
+
+
+# Created at 2022-11-06T19:53:20.052
+Unexpected IOException with stream: 2022-11-06 19:53:20.051  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:20.051+0400 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 3.4
+
+
+# Created at 2022-11-06T19:53:20.053
+Unexpected IOException with stream: 2022-11-06 19:53:20.052  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:20.053+0400 I NETWORK  [thread1] waiting for connections on port 58646
+
+
+# Created at 2022-11-06T19:53:20.055
+Unexpected IOException with stream: 2022-11-06 19:53:20.054  INFO 10548 --- [           main] d.f.embed.mongo.MongodExecutable         : start MongodConfig{version=Version{3.5.5}, timeout=de.flapdoodle.embed.mongo.config.Timeout@3aa63b53, net=de.flapdoodle.embed.mongo.config.Net@39a9becc, cmdOptions=MongoCmdOptions{syncDelay=0, useDefaultSyncDelay=false, isVerbose=false, useNoPrealloc=true, useSmallFiles=true, useNoJournal=true, enableTextSearch=false, auth=false, master=false}, password=, userName=, replication=de.flapdoodle.embed.mongo.config.Storage@177302d6, isConfigServer=false, isShardServer=false, processListener=de.flapdoodle.embed.mongo.config.processlistener.NoopProcessListener@2af3b054, params={}, args={}, pidFile=mongod.pid, supportConfig=de.flapdoodle.embed.mongo.config.SupportConfig@21046afa}
+
+
+# Created at 2022-11-06T19:53:20.079
+Unexpected IOException with stream: 2022-11-06 19:53:20.078  INFO 10548 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:58646], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+
+
+# Created at 2022-11-06T19:53:20.085
+Unexpected IOException with stream: 2022-11-06 19:53:20.085  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:20.084+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:58655 #1 (1 connection now open)
+
+
+# Created at 2022-11-06T19:53:20.098
+Unexpected IOException with stream: 2022-11-06 19:53:20.096  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:20.097+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:58656 #2 (2 connections now open)
+
+
+# Created at 2022-11-06T19:53:20.102
+Unexpected IOException with stream: 2022-11-06 19:53:20.101  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:20.102+0400 I NETWORK  [conn1] received client metadata from 127.0.0.1:58655 conn1: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-06T19:53:20.110
+Unexpected IOException with stream: 2022-11-06 19:53:20.109  INFO 10548 --- [localhost:58646] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:18, serverValue:1}] to localhost:58646
+
+
+# Created at 2022-11-06T19:53:20.112
+Unexpected IOException with stream: 2022-11-06 19:53:20.111  INFO 10548 --- [localhost:58646] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:58646, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=20507658}
+
+
+# Created at 2022-11-06T19:53:20.115
+Unexpected IOException with stream: 2022-11-06 19:53:20.114  INFO 10548 --- [      Thread-39] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-06T19:53:20.113+0400 I NETWORK  [conn2] received client metadata from 127.0.0.1:58656 conn2: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-06T19:53:20.128
+Unexpected IOException with stream: 2022-11-06 19:53:20.128  INFO 10548 --- [localhost:58646] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:19, serverValue:2}] to localhost:58646
+
+
+# Created at 2022-11-06T19:53:20.441
+Unexpected IOException with stream: 2022-11-06 19:53:20.439  INFO 10548 --- [           main] c.d.s.ms.service.StudentServiceImplTest  : Started StudentServiceImplTest in 10.435 seconds (JVM running for 86.071)
+
+
+# Created at 2022-11-06T19:53:20.463
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,getStudentsByLasttName,null,null,null
+
+
+# Created at 2022-11-06T19:53:24.301
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,getStudentsByLasttName,null,null,null
+
+
+# Created at 2022-11-06T19:53:24.304
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testCreateStudentSuccess,null,null,null
+
+
+# Created at 2022-11-06T19:53:24.315
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testCreateStudentSuccess,null,null,null
+
+
+# Created at 2022-11-06T19:53:24.317
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,testFindStudentByIdSuccess,null,null,null
+
+
+# Created at 2022-11-06T19:53:24.330
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,testFindStudentByIdSuccess,null,null,null
+
+
+# Created at 2022-11-06T19:53:24.334
+Unexpected IOException: 5,1,com.daleel.student.ms.service.StudentServiceImplTest,getStudentsByFirstName,null,null,null
+
+
+# Created at 2022-11-06T19:53:24.347
+Unexpected IOException: 6,1,com.daleel.student.ms.service.StudentServiceImplTest,getStudentsByFirstName,null,null,null
+
+
+# Created at 2022-11-06T19:53:24.348
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.daleel.student.ms.service.StudentServiceImplTest,null,null,null
+
+
