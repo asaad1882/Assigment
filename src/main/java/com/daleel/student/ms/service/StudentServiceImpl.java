@@ -8,6 +8,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -66,6 +69,31 @@ public class StudentServiceImpl implements StudentService {
 	      if(dbStudents!=null) {
 	    	  dbStudents.forEach(students::add);
 	    	  }
+		return students;
+	}
+	@Override
+	public List<Student> getAllStudents(String firstname, String lastname, String departmentName,int page,int size) {
+		 List<Student> students=new ArrayList<Student>();
+		 Page<Student> dbStudents=null;
+		 if(size==0) {
+			 size=10;
+		 }
+		 Pageable paging = PageRequest.of(page, size);
+	      if (StringUtils.isEmpty(firstname)  && StringUtils.isEmpty(lastname) && StringUtils.isEmpty(departmentName))
+	    	  dbStudents= studentRepository.findAll(paging);
+	     
+	      else if(!StringUtils.isEmpty(firstname) && StringUtils.isEmpty(lastname) && StringUtils.isEmpty(departmentName)) {
+	    	  dbStudents=studentRepository.findByFirstname(firstname,paging);
+	    	  
+	      }
+	      else if(StringUtils.isEmpty(firstname) && !StringUtils.isEmpty(lastname) && StringUtils.isEmpty(departmentName))
+	    	  dbStudents=studentRepository.findByLastname(lastname,paging);
+	      else if(StringUtils.isEmpty(firstname) && StringUtils.isEmpty(lastname) && !StringUtils.isEmpty(departmentName))
+	    	  dbStudents=studentRepository.findByDepartmentName(departmentName,paging);
+	     if(dbStudents!=null) {
+	    	 students=dbStudents.getContent();
+
+	     }
 		return students;
 	}
 

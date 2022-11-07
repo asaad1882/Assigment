@@ -3,15 +3,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
 
 
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = &quot;Students API&quot;, version = &quot;1.0&quot;, description = &quot;Students Information&quot;))
-<span class="fc" id="L12">public class App {</span>
+@OpenAPIDefinition(info = @Info(title = &quot;Students API&quot;, version = &quot;1.0&quot;, description = &quot;Students Information&quot;), security = { @SecurityRequirement(name = &quot;api_key&quot;)})
+@SecurityScheme(name = &quot;X-API-KEY&quot;,  type = SecuritySchemeType.APIKEY, in = SecuritySchemeIn.HEADER)
+<span class="fc" id="L17">public class App {</span>
 	public static void main(String[] args) {
-<span class="fc" id="L14">		SpringApplication.run(App.class, args);</span>
-<span class="fc" id="L15">	}</span>
+<span class="fc" id="L19">		SpringApplication.run(App.class, args);</span>
+<span class="fc" id="L20">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

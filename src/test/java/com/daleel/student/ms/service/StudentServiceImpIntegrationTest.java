@@ -1,4 +1,6 @@
 package com.daleel.student.ms.service;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -9,14 +11,11 @@ import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.daleel.student.ms.model.Student;
 import com.daleel.student.ms.repository.StudentRepository;
-import static org.assertj.core.api.Assertions.assertThat;
 
 
 

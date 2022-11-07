@@ -3,6 +3,7 @@ package com.daleel.student.ms.service;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +12,10 @@ import static org.assertj.core.api.BDDAssertions.then;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import org.assertj.core.api.SoftAssertions;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -166,6 +171,133 @@ public class StudentServiceImplTest {
 
 		// when
 		List<Student> findStudents = studentService.getAllStudents(null, null, null);
+
+		// then
+		SoftAssertions.assertSoftly(softly -> {
+			softly.assertThat(findStudents.size()).as("Check count of the Students found").isEqualTo(2);
+			
+		});
+	}
+	@Test
+	@DisplayName("Test - getAllStudents Pageable success")
+	public void testAllStudentsPageable() {
+		// given
+		Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
+		Student testStudent2 = new Student("xxx", "Adin", "John", "IT");
+		Student testStudent3 = new Student("id1", "Amr", "Mate", "IT");
+		Student testStudent4 = new Student("xxxx", "Omar", "Arun", "IT");
+		List<Student> testStudents=new ArrayList<Student>();
+		testStudents.add(testStudent);
+		testStudents.add(testStudent2);
+		testStudents.add(testStudent3);
+		testStudents.add(testStudent4);
+		Page<Student> pro= new PageImpl<Student>(testStudents);
+		
+		Pageable paging = PageRequest.of(0, 4);
+		given(studentRepository.findAll(paging)).willReturn(pro);
+
+		// when
+		List<Student> findStudents = studentService.getAllStudents(null, null, null,0,4);
+
+		// then
+		SoftAssertions.assertSoftly(softly -> {
+			softly.assertThat(findStudents.size()).as("Check count of the Students found").isEqualTo(4);
+			
+		});
+	}
+	@Test
+	@DisplayName("Test - testStudentsByFirstNamePageable Pageable success")
+	public void testStudentsByFirstNamePageable() {
+		// given
+		
+		Student testStudent4 = new Student("xxxx", "Omar", "Arun", "IT");
+		Student testStudent5 = new Student("xxxxx", "Omar", "Arun", "IT");
+		List<Student> testStudents=new ArrayList<Student>();
+		
+		testStudents.add(testStudent4);
+		testStudents.add(testStudent5);
+		Page<Student> pro= new PageImpl<Student>(testStudents);
+		
+		Pageable paging = PageRequest.of(0, 4);
+		given(studentRepository.findByFirstname("Omar",paging)).willReturn(pro);
+
+		// when
+		List<Student> findStudents = studentService.getAllStudents("Omar", null, null,0,4);
+
+		// then
+		SoftAssertions.assertSoftly(softly -> {
+			softly.assertThat(findStudents.size()).as("Check count of the Students found").isEqualTo(2);
+			
+		});
+	}
+	@Test
+	@DisplayName("Test - testStudentsByFirstNamePageable Pageable success")
+	public void testStudentsByLastNamePageable() {
+		// given
+		
+		Student testStudent4 = new Student("xxxx", "Omar", "Arun", "IT");
+		Student testStudent5 = new Student("xxxxx", "Omar", "Arun", "IT");
+		List<Student> testStudents=new ArrayList<Student>();
+		
+		testStudents.add(testStudent4);
+		testStudents.add(testStudent5);
+		Page<Student> pro= new PageImpl<Student>(testStudents);
+		
+		Pageable paging = PageRequest.of(0, 4);
+		given(studentRepository.findByLastname("Arun",paging)).willReturn(pro);
+
+		// when
+		List<Student> findStudents = studentService.getAllStudents (null,"Arun", null,0,4);
+
+		// then
+		SoftAssertions.assertSoftly(softly -> {
+			softly.assertThat(findStudents.size()).as("Check count of the Students found").isEqualTo(2);
+			
+		});
+	}
+	@Test
+	@DisplayName("Test - testStudentsByDepartmentNamePageable Pageable success")
+	public void testStudentsByDepartmentNamePageable() {
+		// given
+		
+		Student testStudent4 = new Student("xxxx", "Omar", "Arun", "IT");
+		Student testStudent5 = new Student("xxxxx", "Omar", "Arun", "IT");
+		List<Student> testStudents=new ArrayList<Student>();
+		
+		testStudents.add(testStudent4);
+		testStudents.add(testStudent5);
+		Page<Student> pro= new PageImpl<Student>(testStudents);
+		
+		Pageable paging = PageRequest.of(0, 4);
+		given(studentRepository.findByDepartmentName("IT",paging)).willReturn(pro);
+
+		// when
+		List<Student> findStudents = studentService.getAllStudents(null, null, "IT",0,4);
+
+		// then
+		SoftAssertions.assertSoftly(softly -> {
+			softly.assertThat(findStudents.size()).as("Check count of the Students found").isEqualTo(2);
+			
+		});
+	}
+	@Test
+	@DisplayName("Test - testStudentsByFirstNamePageable Pageable success")
+	public void testStudentsByFirstNamePageable_whenzerosize() {
+		// given
+		
+		Student testStudent4 = new Student("xxxx", "Omar", "Arun", "IT");
+		Student testStudent5 = new Student("xxxxx", "Omar", "Arun", "IT");
+		List<Student> testStudents=new ArrayList<Student>();
+		
+		testStudents.add(testStudent4);
+		testStudents.add(testStudent5);
+		Page<Student> pro= new PageImpl<Student>(testStudents);
+		
+		Pageable paging = PageRequest.of(0, 10);
+		given(studentRepository.findByFirstname("Omar",paging)).willReturn(pro);
+
+		// when
+		List<Student> findStudents = studentService.getAllStudents("Omar", null, null,0,0);
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {

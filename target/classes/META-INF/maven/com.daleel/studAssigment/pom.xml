@@ -65,7 +65,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			
+
 			<scope>test</scope>
 		</dependency>
 
@@ -79,14 +79,19 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-security</artifactId>
-            <version>${springdoc.version}</version>
-        </dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-security</artifactId>
+			<version>${springdoc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.vladimir-bukhtoyarov</groupId>
+			<artifactId>bucket4j-core</artifactId>
+			<version>4.10.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -127,7 +132,7 @@
 						<exclude>com/daleel/student/ms/entity/*.class</exclude>
 						<exclude>com/daleel/student/ms/domain/*.class</exclude>
 						<exclude>com/daleel/student/ms/exception/*.class</exclude>
-						
+
 					</excludes>
 				</configuration>
 				<executions>
@@ -210,23 +215,23 @@
 					</execution>
 				</executions>
 			</plugin>
-		
+
 		</plugins>
 	</build>
 	<reporting>
 		<plugins>
-        	<plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-            	<reportSets>
-                    <reportSet>
-                        <reports>
-     	                   <!-- select non-aggregate reports -->
-                            <report>report</report>
-                        </reports>
-                    </reportSet>
-            	</reportSets>
-        	</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<!-- select non-aggregate reports -->
+							<report>report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
 		</plugins>
 	</reporting>
 

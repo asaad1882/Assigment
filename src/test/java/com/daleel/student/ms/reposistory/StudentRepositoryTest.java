@@ -21,6 +21,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -98,6 +101,55 @@ public class StudentRepositoryTest {
 
 		assertEquals(1, fetchStudents.size());
 	}
+	@Test
+	@DisplayName("Repository - Find Students by firstName pagable")
+	public void testFindStudentByFirstNamePagable() {
+
+		Pageable paging = PageRequest.of(0, 3);
+		
+
+		// when
+		Page<Student> fetchStudents = studentRepository.findByFirstname("test", paging);
+
+		assertEquals(3, fetchStudents.getContent().size());
+	}
+	@Test
+	@DisplayName("Repository - Find Students by lastName pagable")
+	public void testFindStudentByLastNamePagable() {
+
+		Pageable paging = PageRequest.of(0, 3);
+		
+
+		// when
+		Page<Student> fetchStudents = studentRepository.findByLastname("test", paging);
+
+		assertEquals(4, fetchStudents.getTotalElements());
+	}
+	@Test
+	@DisplayName("Repository - Find Students by DepartmentName pagable")
+	public void testFindStudentByDepartmentNamePagable() {
+
+		Pageable paging = PageRequest.of(0, 3);
+		
+
+		// when
+		Page<Student> fetchStudents = studentRepository.findByDepartmentName("IT", paging);
+
+		assertEquals(4, fetchStudents.getTotalElements());
+	}
+	@Test
+	@DisplayName("Repository - Find ALL Students  pagable")
+	public void testFindALLStudentPagable() {
+
+		Pageable paging = PageRequest.of(0, 10);
+		
+
+		// when
+		Page<Student> fetchStudents = studentRepository.findAll( paging);
+
+		assertEquals(10, fetchStudents.getContent().size());
+	}
+
 
 	@Test
 	@DisplayName("Repository - Find Students by lastname")
@@ -126,7 +178,7 @@ public class StudentRepositoryTest {
 		// when
 		List<Student> fetchStudents = studentRepository.findByDepartmentName("IT");
 
-		assertEquals(2, fetchStudents.size());
+		assertEquals(6, fetchStudents.size());
 	}
 
 	@Test
@@ -144,8 +196,9 @@ public class StudentRepositoryTest {
 		// when
 		List<Student> fetchStudents = studentRepository.findAll();
 
-		assertEquals(4, fetchStudents.size());
+		assertEquals(16, fetchStudents.size());
 	}
+	
 
 	@Test
 	@DisplayName("Repository - Delete Student by Id")

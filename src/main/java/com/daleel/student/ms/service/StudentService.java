@@ -2,6 +2,8 @@ package com.daleel.student.ms.service;
 
 import java.util.List;
 
+
+
 import com.daleel.student.ms.model.Student;
 
 public interface StudentService {
@@ -11,6 +13,7 @@ public interface StudentService {
 	List<Student> getAllStudents();
 	List<Student> getAllStudents(String firstname,String lastname,String departmentName);
 	Student getStudentById(String studentId);
+	List<Student> getAllStudents(String firstname, String lastname, String departmentName,int page,int size);
 	
 
 }

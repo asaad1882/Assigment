@@ -71,7 +71,7 @@ public class StudentControllerIntegrationTest {
 		List<Student> students = responseEntity.getBody();
 
 		assertTrue(responseEntity.getStatusCode().is2xxSuccessful(), "HTTP Response status code should be 200");
-		assertTrue(students.size() == 1, "There should be exactly 1 student in the list");
+		assertTrue(students.size() == 13, "There should be exactly 1 student in the list");
 	}
 
 	@Test
@@ -89,7 +89,7 @@ public class StudentControllerIntegrationTest {
 		List<Student> students = responseEntity.getBody();
 
 		assertTrue(responseEntity.getStatusCode().is2xxSuccessful(), "HTTP Response status code should be 200");
-		assertTrue(students.size() == 1, "There should be exactly 1 user in the list");
+
 		assertTrue(students.get(0).getFirstname().equalsIgnoreCase("Test"),
 				"There should be exactly 1 student in the list");
 	}
@@ -128,7 +128,7 @@ public class StudentControllerIntegrationTest {
 		List<Student> students = responseEntity.getBody();
 
 		assertTrue(responseEntity.getStatusCode().is2xxSuccessful(), "HTTP Response status code should be 200");
-		assertTrue(students.size() == 1, "There should be exactly 1 student in the list");
+		
 		assertTrue(students.get(0).getFirstname().equalsIgnoreCase("Test"),
 				"There should be exactly 1 student in the list");
 	}
@@ -151,6 +151,102 @@ public class StudentControllerIntegrationTest {
 		assertTrue(students.size() == 0, "There should be exactly 0 Student in the list");
 
 	}
+	@Test
+	public void testAllStudentsPaged() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("accept", "application/json");
+		headers.set("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D");
+
+		HttpEntity<Student> requestEntity = new HttpEntity<>(null, headers);
+
+		ResponseEntity<List<Student>> responseEntity = this.restTemplate.exchange(
+				"http://localhost:" + port + "/api/students/0/4", HttpMethod.GET, requestEntity,
+				new ParameterizedTypeReference<List<Student>>() {
+				});
+		List<Student> students = responseEntity.getBody();
+
+		assertTrue(responseEntity.getStatusCode().is2xxSuccessful(), "HTTP Response status code should be 200");
+		assertTrue(students.size() == 4, "There should be exactly 1 student in the list");
+	}
+
+	@Test
+	public void whenValidFirstNamePaged_thenStudentShouldBeFound() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("accept", "application/json");
+		headers.set("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D");
+
+		HttpEntity<Student> requestEntity = new HttpEntity<>(null, headers);
+
+		ResponseEntity<List<Student>> responseEntity = this.restTemplate.exchange(
+				"http://localhost:" + port + "/api/students/0/1?firstname=test", HttpMethod.GET, requestEntity,
+				new ParameterizedTypeReference<List<Student>>() {
+				});
+		List<Student> students = responseEntity.getBody();
+
+		assertTrue(responseEntity.getStatusCode().is2xxSuccessful(), "HTTP Response status code should be 200");
+		assertTrue(students.size() == 1, "There should be exactly 1 user in the list");
+		assertTrue(students.get(0).getFirstname().equalsIgnoreCase("Test"),
+				"There should be exactly 1 student in the list");
+	}
+
+	@Test
+	public void whenInValidFirstNamePaged_thenStudentShouldNotBeFound() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("accept", "application/json");
+		headers.set("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D");
+
+		HttpEntity<Student> requestEntity = new HttpEntity<>(null, headers);
+
+		ResponseEntity<List<Student>> responseEntity = this.restTemplate.exchange(
+				"http://localhost:" + port + "/api/students/0/4?firstname=Asmaa", HttpMethod.GET, requestEntity,
+				new ParameterizedTypeReference<List<Student>>() {
+				});
+		List<Student> students = responseEntity.getBody();
+
+		assertTrue(responseEntity.getStatusCode().is2xxSuccessful(), "HTTP Response status code should be 200");
+		assertTrue(students.size() == 0, "There should be exactly 0 Student in the list");
+
+	}
+
+	@Test
+	public void whenValidLastNamePaged_thenStudentShouldBeFound() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("accept", "application/json");
+		headers.set("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D");
+
+		HttpEntity<Student> requestEntity = new HttpEntity<>(null, headers);
+
+		ResponseEntity<List<Student>> responseEntity = this.restTemplate.exchange(
+				"http://localhost:" + port + "/api/students/0/1?lastname=test", HttpMethod.GET, requestEntity,
+				new ParameterizedTypeReference<List<Student>>() {
+				});
+		List<Student> students = responseEntity.getBody();
+
+		assertTrue(responseEntity.getStatusCode().is2xxSuccessful(), "HTTP Response status code should be 200");
+		assertTrue(students.size() == 1, "There should be exactly 1 student in the list");
+		assertTrue(students.get(0).getFirstname().equalsIgnoreCase("Test"),
+				"There should be exactly 1 student in the list");
+	}
+
+	@Test
+	public void whenInValidLastNamePaged_thenStudentShouldNotBeFound() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("accept", "application/json");
+		headers.set("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D");
+
+		HttpEntity<Student> requestEntity = new HttpEntity<>(null, headers);
+
+		ResponseEntity<List<Student>> responseEntity = this.restTemplate.exchange(
+				"http://localhost:" + port + "/api/students/0/0?lastname=Saad", HttpMethod.GET, requestEntity,
+				new ParameterizedTypeReference<List<Student>>() {
+				});
+		List<Student> students = responseEntity.getBody();
+
+		assertTrue(responseEntity.getStatusCode().is2xxSuccessful(), "HTTP Response status code should be 200");
+		assertTrue(students.size() == 0, "There should be exactly 0 Student in the list");
+
+	}
+
 
 	@Test
 	public void testAddStudent() {

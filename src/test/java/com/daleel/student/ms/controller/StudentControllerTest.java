@@ -71,6 +71,44 @@ public class StudentControllerTest {
 
     }
     @Test
+    @DisplayName("GET /students  paged Asmaa - Success")
+    public void getAllStudentPagedSuccess() throws Exception {
+        //given
+
+    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
+    	List<Student> students=new ArrayList<Student>();
+    	students.add(testStudent);
+        given(studentService.getAllStudents(null,null,null,0,1)).willReturn(students);
+        //when
+
+        mockMvc.perform(get("/api/students/0/1").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+
+        //then
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.[:1].firstname").value("Asmaa"));
+
+
+    }
+    @Test
+    @DisplayName("GET /students by firstname paged Asmaa - Success")
+    public void getStudentByFirstNamePagedSuccess() throws Exception {
+        //given
+
+    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
+    	List<Student> students=new ArrayList<Student>();
+    	students.add(testStudent);
+        given(studentService.getAllStudents("Asmaa",null,null,0,1)).willReturn(students);
+        //when
+
+        mockMvc.perform(get("/api/students/0/1?firstname=Asmaa").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+
+        //then
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.[:1].firstname").value("Asmaa"));
+
+
+    }
+    @Test
     @DisplayName("GET /students by firstname Test - Fail")
     public void getStudentByFirstNameFailure() throws Exception {
         //given
@@ -131,6 +169,86 @@ public class StudentControllerTest {
 
     }
     @Test
+    @DisplayName("GET /students by firstname Test - Fail")
+    public void getStudentByFirstNamePagedFailure() throws Exception {
+        //given
+
+    	
+    	List<Student> students=new ArrayList<Student>();
+    	
+        given(studentService.getAllStudents("Test",null,null,0,1)).willReturn(students);
+        //when
+
+        mockMvc.perform(get("/api/students/0/1?firstname=Test").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+
+        //then
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.[:1].firstname").doesNotExist());
+               
+
+
+    }
+    @Test
+    @DisplayName("GET /students by firstname Test - Fail")
+    public void getStudentByLastNamePagedFailure() throws Exception {
+        //given
+
+    	
+    	List<Student> students=new ArrayList<Student>();
+    	
+        given(studentService.getAllStudents(null,"Test",null,0,1)).willReturn(students);
+        //when
+
+        mockMvc.perform(get("/api/students/0/1?lastname=Test").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+
+        //then
+                .andExpect(status().isOk())
+        .andExpect(jsonPath("$.[:1].lastname").doesNotExist());
+               
+
+
+    }
+    @Test
+    @DisplayName("GET /students All Paged Test - Fail")
+    public void getAllStudentPagedFailure() throws Exception {
+        //given
+
+    	
+    	List<Student> students=new ArrayList<Student>();
+    	
+        given(studentService.getAllStudents(null,null,null,0,1)).willReturn(students);
+        //when
+
+        mockMvc.perform(get("/api/students/0/1").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+
+        //then
+                .andExpect(status().isOk())
+        .andExpect(jsonPath("$.[:1].lastname").doesNotExist());
+               
+
+
+    }
+    @Test
+    @DisplayName("GET /students by departmentname IT - Fail")
+    public void getStudentByDepartmentNamePagedFailure() throws Exception {
+        //given
+
+    	
+    	List<Student> students=new ArrayList<Student>();
+    	
+        given(studentService.getAllStudents(null,null,"IT",0,1)).willReturn(students);
+        //when
+
+        mockMvc.perform(get("/api/students/0/1?departmentName=IT").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+
+        //then
+                .andExpect(status().isOk())
+        .andExpect(jsonPath("$.[:1].departmentName").doesNotExist());
+               
+
+
+    }
+    @Test
     @DisplayName("GET /students by lastname Saad - Success")
     public void getStudentByLastNameSuccess() throws Exception {
         //given
@@ -142,6 +260,25 @@ public class StudentControllerTest {
         //when
 
         mockMvc.perform(get("/api/students?lastname=Saad").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+
+        //then
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.[:1].lastname").value("Saad"));
+
+
+    }
+    @Test
+    @DisplayName("GET /students by lastname Paged Saad - Success")
+    public void getStudentByLastNamePagedSuccess() throws Exception {
+        //given
+
+    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
+    	List<Student> students=new ArrayList<Student>();
+    	students.add(testStudent);
+        given(studentService.getAllStudents(null,"Saad",null,0,1)).willReturn(students);
+        //when
+
+        mockMvc.perform(get("/api/students/0/1?lastname=Saad").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
 
         //then
                 .andExpect(status().isOk())
@@ -168,6 +305,25 @@ public class StudentControllerTest {
 
 
     }
+    @Test
+    @DisplayName("GET /students by Department Name IT - Success")
+    public void getStudentByDepartmentNamePagedSuccess() throws Exception {
+        //given
+
+    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
+    	List<Student> students=new ArrayList<Student>();
+    	students.add(testStudent);
+        given(studentService.getAllStudents(null,null,"IT",0,1)).willReturn(students);
+        //when
+
+        mockMvc.perform(get("/api/students/0/1?departmentName=IT").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+
+        //then
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.[:1].departmentName").value("IT"));
+
+
+    }
 
     @Test
     @DisplayName("POST /students Asmaa - Success")
@@ -184,7 +340,7 @@ public class StudentControllerTest {
         .andExpect(status().isCreated());
 
     }
-
+    
     
 
 
