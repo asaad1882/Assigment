@@ -1,0 +1,1671 @@
+# Created at 2022-11-07T20:34:43.474
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2022-11-07T20:34:43.524
+Unexpected IOException with stream: 2022-11-07 20:34:43.523  INFO 9384 --- [           main] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:9, serverValue:3}] to localhost:55181 because the pool has been closed.
+
+
+# Created at 2022-11-07T20:34:43.541
+Unexpected IOException with stream: 2022-11-07 20:34:43.541  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:43.541+0400 I -        [conn3] end connection 127.0.0.1:55192 (3 connections now open)
+
+
+# Created at 2022-11-07T20:34:43.542
+Unexpected IOException with stream: 2022-11-07 20:34:43.542  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:43.541+0400 I -        [conn2] end connection 127.0.0.1:55191 (2 connections now open)
+
+
+# Created at 2022-11-07T20:34:43.543
+Unexpected IOException with stream: 2022-11-07 20:34:43.542  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:43.543+0400 I -        [conn1] end connection 127.0.0.1:55190 (1 connection now open)
+
+
+# Created at 2022-11-07T20:34:43.544
+Unexpected IOException with stream: 2022-11-07 20:34:43.544  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:43.544+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:55193 #4 (1 connection now open)
+
+
+# Created at 2022-11-07T20:34:43.547
+Unexpected IOException with stream: 2022-11-07 20:34:43.546  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:43.547+0400 I COMMAND  [conn4] terminating, shutdown command received
+
+
+# Created at 2022-11-07T20:34:43.547
+Unexpected IOException with stream: 2022-11-07 20:34:43.547  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:43.547+0400 I NETWORK  [conn4] shutdown: going to close listening sockets...
+
+
+# Created at 2022-11-07T20:34:43.548
+Unexpected IOException with stream: 2022-11-07 20:34:43.548  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:43.547+0400 I NETWORK  [conn4] closing listening socket: 396
+
+
+# Created at 2022-11-07T20:34:43.548
+Unexpected IOException with stream: 2022-11-07 20:34:43.548  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:43.547+0400 I NETWORK  [conn4] shutdown: going to flush diaglog...
+
+
+# Created at 2022-11-07T20:34:43.549
+Unexpected IOException with stream: 2022-11-07 20:34:43.549  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:43.547+0400 I FTDC     [conn4] Shutting down full-time diagnostic data capture
+
+
+# Created at 2022-11-07T20:34:43.551
+Unexpected IOException with stream: 2022-11-07 20:34:43.551  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:43.551+0400 I STORAGE  [conn4] WiredTigerKVEngine shutting down
+
+
+# Created at 2022-11-07T20:34:44.074
+Unexpected IOException with stream: 2022-11-07 20:34:44.073  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:44.074+0400 I STORAGE  [conn4] shutdown: removing fs lock...
+
+
+# Created at 2022-11-07T20:34:44.074
+Unexpected IOException with stream: 2022-11-07 20:34:44.074  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:44.074+0400 I CONTROL  [conn4] now exiting
+
+
+# Created at 2022-11-07T20:34:44.075
+Unexpected IOException with stream: 2022-11-07 20:34:44.074  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:44.074+0400 I CONTROL  [conn4] shutting down with code:0
+
+
+# Created at 2022-11-07T20:34:44.075
+Unexpected IOException with stream: 2022-11-07 20:34:44.075  INFO 9384 --- [       Thread-9] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:44.074+0400 I CONTROL  [initandlisten] shutting down with code:0
+
+
+# Created at 2022-11-07T20:34:44.202
+Unexpected IOException: 6,1,com.daleel.student.ms.AppTest,contextLoads,null,null,null
+
+
+# Created at 2022-11-07T20:34:44.213
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.daleel.student.ms.AppTest,null,null,null
+
+
+# Created at 2022-11-07T20:34:44.232
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.daleel.student.ms.controller.StudentControllerIntegrationTest,null,null,null
+
+
+# Created at 2022-11-07T20:34:44.238
+Unexpected IOException with stream: 2022-11-07 20:34:44.236  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.daleel.student.ms.controller.StudentControllerIntegrationTest], using SpringBootContextLoader
+
+
+# Created at 2022-11-07T20:34:44.242
+Unexpected IOException with stream: 2022-11-07 20:34:44.240  INFO 9384 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.daleel.student.ms.controller.StudentControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+
+
+# Created at 2022-11-07T20:34:44.260
+Unexpected IOException with stream: 2022-11-07 20:34:44.258  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+
+
+# Created at 2022-11-07T20:34:44.264
+Unexpected IOException with stream: 2022-11-07 20:34:44.262  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@33d574a5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@765758ee, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@10622e6b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@190d79f4, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@165462c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4d39eec6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4c29807c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3e1992d4, org.springframework.test.context.event.EventPublishingTestExecutionListener@15e6f71d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@172b64b9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@17013c40, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@65fc9346, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4780cefb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@b42741e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@153faa0a]
+
+
+# Created at 2022-11-07T20:34:44.444
+Unexpected IOException with stream: 
+
+
+# Created at 2022-11-07T20:34:44.447
+Unexpected IOException with stream:   .   ____          _            __ _ _
+
+
+# Created at 2022-11-07T20:34:44.449
+Unexpected IOException with stream:  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+
+
+# Created at 2022-11-07T20:34:44.459
+Unexpected IOException with stream: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+
+
+# Created at 2022-11-07T20:34:44.465
+Unexpected IOException with stream:  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+
+
+# Created at 2022-11-07T20:34:44.467
+Unexpected IOException with stream:   '  |____| .__|_| |_|_| |_\__, | / / / /
+
+
+# Created at 2022-11-07T20:34:44.470
+Unexpected IOException with stream:  =========|_|==============|___/=/_/_/_/
+
+
+# Created at 2022-11-07T20:34:44.472
+Unexpected IOException with stream:  :: Spring Boot ::                (v2.5.4)
+
+
+# Created at 2022-11-07T20:34:44.475
+Unexpected IOException with stream: 
+
+
+# Created at 2022-11-07T20:34:44.493
+Unexpected IOException with stream: 2022-11-07 20:34:44.490  INFO 9384 --- [           main] d.s.m.c.StudentControllerIntegrationTest : Starting StudentControllerIntegrationTest using Java 1.8.0_131 on Asmaa with PID 9384 (started by admin in C:\visionvlley\sdk\test\studAssigment)
+
+
+# Created at 2022-11-07T20:34:44.498
+Unexpected IOException with stream: 2022-11-07 20:34:44.497  INFO 9384 --- [           main] d.s.m.c.StudentControllerIntegrationTest : No active profile set, falling back to default profiles: default
+
+
+# Created at 2022-11-07T20:34:46.563
+Unexpected IOException with stream: 2022-11-07 20:34:46.562  INFO 9384 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+
+
+# Created at 2022-11-07T20:34:46.698
+Unexpected IOException with stream: 2022-11-07 20:34:46.695  INFO 9384 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 1 MongoDB repository interfaces.
+
+
+# Created at 2022-11-07T20:34:47.214
+Unexpected IOException with stream: 2022-11-07 20:34:47.210  INFO 9384 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+
+
+# Created at 2022-11-07T20:34:47.247
+Unexpected IOException with stream: 2022-11-07 20:34:47.246  INFO 9384 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+
+
+# Created at 2022-11-07T20:34:47.259
+Unexpected IOException with stream: 2022-11-07 20:34:47.257  INFO 9384 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+
+
+# Created at 2022-11-07T20:34:47.277
+Unexpected IOException with stream: 2022-11-07 20:34:47.276  INFO 9384 --- [           main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+
+
+# Created at 2022-11-07T20:34:47.278
+Unexpected IOException with stream: 2022-11-07 20:34:47.278  INFO 9384 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2757 ms
+
+
+# Created at 2022-11-07T20:34:47.763
+Unexpected IOException with stream: 2022-11-07 20:34:47.762  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Initializing filter :com.daleel.student.ms.confiuration.AuthenticationHandlerFilter@27c66620
+
+
+# Created at 2022-11-07T20:34:48.373
+Unexpected IOException with stream: 2022-11-07 20:34:48.371  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : note: noprealloc may hurt performance in many applications
+
+
+# Created at 2022-11-07T20:34:48.426
+Unexpected IOException with stream: 2022-11-07 20:34:48.426  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.425+0400 I CONTROL  [initandlisten] MongoDB starting : pid=6392 port=55199 dbpath=C:\Users\admin\AppData\Local\Temp\embedmongo-db-c1fedd99-542e-4a9b-ac36-6075a88e07bb 64-bit host=Asmaa
+
+
+# Created at 2022-11-07T20:34:48.427
+Unexpected IOException with stream: 2022-11-07 20:34:48.427  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.425+0400 I CONTROL  [initandlisten] targetMinOS: Windows Vista/Windows Server 2008
+
+
+# Created at 2022-11-07T20:34:48.428
+Unexpected IOException with stream: 2022-11-07 20:34:48.428  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.425+0400 I CONTROL  [initandlisten] db version v3.5.5
+
+
+# Created at 2022-11-07T20:34:48.428
+Unexpected IOException with stream: 2022-11-07 20:34:48.428  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.426+0400 I CONTROL  [initandlisten] git version: 98515c812b6fa893613f063dae568ff8319cbfbd
+
+
+# Created at 2022-11-07T20:34:48.429
+Unexpected IOException with stream: 2022-11-07 20:34:48.429  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.426+0400 I CONTROL  [initandlisten] allocator: tcmalloc
+
+
+# Created at 2022-11-07T20:34:48.430
+Unexpected IOException with stream: 2022-11-07 20:34:48.429  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.426+0400 I CONTROL  [initandlisten] modules: none
+
+
+# Created at 2022-11-07T20:34:48.431
+Unexpected IOException with stream: 2022-11-07 20:34:48.430  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.426+0400 I CONTROL  [initandlisten] build environment:
+
+
+# Created at 2022-11-07T20:34:48.432
+Unexpected IOException with stream: 2022-11-07 20:34:48.431  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.426+0400 I CONTROL  [initandlisten]     distarch: x86_64
+
+
+# Created at 2022-11-07T20:34:48.433
+Unexpected IOException with stream: 2022-11-07 20:34:48.432  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.426+0400 I CONTROL  [initandlisten]     target_arch: x86_64
+
+
+# Created at 2022-11-07T20:34:48.435
+Unexpected IOException with stream: 2022-11-07 20:34:48.434  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.426+0400 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", http: { enabled: false }, port: 55199 }, security: { authorization: "disabled" }, storage: { dbPath: "C:\Users\admin\AppData\Local\Temp\embedmongo-db-c1fedd99-542e-4a9b-ac36-6075a88e07bb", journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+
+
+# Created at 2022-11-07T20:34:48.436
+Unexpected IOException with stream: 2022-11-07 20:34:48.435  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:48.427+0400 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3532M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=0,log_size=2GB),statistics_log=(wait=0),verbose=(recovery_progress),,log=(enabled=false),
+
+
+# Created at 2022-11-07T20:34:49.160
+Unexpected IOException with stream: 2022-11-07 20:34:49.158  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:49.158+0400 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+
+
+# Created at 2022-11-07T20:34:49.162
+Unexpected IOException with stream: 2022-11-07 20:34:49.161  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:49.161+0400 I CONTROL  [initandlisten] 
+
+
+# Created at 2022-11-07T20:34:49.164
+Unexpected IOException with stream: 2022-11-07 20:34:49.163  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:49.161+0400 I CONTROL  [initandlisten] ** NOTE: This is a development version (3.5.5) of MongoDB.
+
+
+# Created at 2022-11-07T20:34:49.167
+Unexpected IOException with stream: 2022-11-07 20:34:49.165  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:49.161+0400 I CONTROL  [initandlisten] **       Not recommended for production.
+
+
+# Created at 2022-11-07T20:34:49.169
+Unexpected IOException with stream: 2022-11-07 20:34:49.168  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:49.161+0400 I CONTROL  [initandlisten] 
+
+
+# Created at 2022-11-07T20:34:49.706
+Unexpected IOException with stream: 2022-11-07 20:34:49.704  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:49.705+0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/Users/admin/AppData/Local/Temp/embedmongo-db-c1fedd99-542e-4a9b-ac36-6075a88e07bb/diagnostic.data'
+
+
+# Created at 2022-11-07T20:34:50.254
+Unexpected IOException with stream: 2022-11-07 20:34:50.253  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.252+0400 I INDEX    [initandlisten] build index on: admin.system.version properties: { v: 2, key: { version: 1 }, name: "incompatible_with_version_32", ns: "admin.system.version" }
+
+
+# Created at 2022-11-07T20:34:50.257
+Unexpected IOException with stream: 2022-11-07 20:34:50.256  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.255+0400 I INDEX    [initandlisten] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+
+
+# Created at 2022-11-07T20:34:50.286
+Unexpected IOException with stream: 2022-11-07 20:34:50.285  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.285+0400 I INDEX    [initandlisten] build index done.  scanned 0 total records. 0 secs
+
+
+# Created at 2022-11-07T20:34:50.292
+Unexpected IOException with stream: 2022-11-07 20:34:50.291  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.291+0400 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 3.4
+
+
+# Created at 2022-11-07T20:34:50.343
+Unexpected IOException with stream: 2022-11-07 20:34:50.342  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.342+0400 I NETWORK  [thread1] waiting for connections on port 55199
+
+
+# Created at 2022-11-07T20:34:50.346
+Unexpected IOException with stream: 2022-11-07 20:34:50.344  INFO 9384 --- [           main] d.f.embed.mongo.MongodExecutable         : start MongodConfig{version=Version{3.5.5}, timeout=de.flapdoodle.embed.mongo.config.Timeout@64a134bb, net=de.flapdoodle.embed.mongo.config.Net@135c5345, cmdOptions=MongoCmdOptions{syncDelay=0, useDefaultSyncDelay=false, isVerbose=false, useNoPrealloc=true, useSmallFiles=true, useNoJournal=true, enableTextSearch=false, auth=false, master=false}, password=, userName=, replication=de.flapdoodle.embed.mongo.config.Storage@5c18e822, isConfigServer=false, isShardServer=false, processListener=de.flapdoodle.embed.mongo.config.processlistener.NoopProcessListener@3ac5a206, params={}, args={}, pidFile=mongod.pid, supportConfig=de.flapdoodle.embed.mongo.config.SupportConfig@57ac5d09}
+
+
+# Created at 2022-11-07T20:34:50.507
+Unexpected IOException with stream: 2022-11-07 20:34:50.504  INFO 9384 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:55199], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+
+
+# Created at 2022-11-07T20:34:50.618
+Unexpected IOException with stream: 2022-11-07 20:34:50.604  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.603+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:55205 #1 (1 connection now open)
+
+
+# Created at 2022-11-07T20:34:50.751
+Unexpected IOException with stream: 2022-11-07 20:34:50.749  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.749+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:55206 #2 (2 connections now open)
+
+
+# Created at 2022-11-07T20:34:50.754
+Unexpected IOException with stream: 2022-11-07 20:34:50.753  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.753+0400 I NETWORK  [conn1] received client metadata from 127.0.0.1:55205 conn1: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-07T20:34:50.762
+Unexpected IOException with stream: 2022-11-07 20:34:50.760  INFO 9384 --- [localhost:55199] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:10, serverValue:1}] to localhost:55199
+
+
+# Created at 2022-11-07T20:34:50.764
+Unexpected IOException with stream: 2022-11-07 20:34:50.763  INFO 9384 --- [localhost:55199] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:55199, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=134707879}
+
+
+# Created at 2022-11-07T20:34:50.825
+Unexpected IOException with stream: 2022-11-07 20:34:50.823  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.824+0400 I NETWORK  [conn2] received client metadata from 127.0.0.1:55206 conn2: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-07T20:34:50.872
+Unexpected IOException with stream: 2022-11-07 20:34:50.870  INFO 9384 --- [localhost:55199] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:11, serverValue:2}] to localhost:55199
+
+
+# Created at 2022-11-07T20:34:50.928
+Unexpected IOException with stream: 2022-11-07 20:34:50.926  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.926+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:55207 #3 (3 connections now open)
+
+
+# Created at 2022-11-07T20:34:50.971
+Unexpected IOException with stream: 2022-11-07 20:34:50.969  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:50.969+0400 I NETWORK  [conn3] received client metadata from 127.0.0.1:55207 conn3: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-07T20:34:50.982
+Unexpected IOException with stream: 2022-11-07 20:34:50.980  INFO 9384 --- [           main] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:12, serverValue:3}] to localhost:55199
+
+
+# Created at 2022-11-07T20:34:51.691
+Unexpected IOException with stream: 2022-11-07 20:34:51.689  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:51.689+0400 I INDEX    [conn3] build index on: studdb.students properties: { v: 2, key: { firstname: 1 }, name: "firstname", ns: "studdb.students" }
+
+
+# Created at 2022-11-07T20:34:51.692
+Unexpected IOException with stream: 2022-11-07 20:34:51.691  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:51.689+0400 I INDEX    [conn3] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+
+
+# Created at 2022-11-07T20:34:51.744
+Unexpected IOException with stream: 2022-11-07 20:34:51.740  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:51.741+0400 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+
+
+# Created at 2022-11-07T20:34:51.746
+Unexpected IOException with stream: 2022-11-07 20:34:51.745  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:51.741+0400 I COMMAND  [conn3] command studdb.$cmd command: createIndexes { createIndexes: "students", indexes: [ { key: { firstname: 1 }, name: "firstname", ns: "studdb.students" } ] } numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 755ms
+
+
+# Created at 2022-11-07T20:34:51.888
+Unexpected IOException with stream: 2022-11-07 20:34:51.887  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:51.887+0400 I INDEX    [conn3] build index on: studdb.students properties: { v: 2, key: { lastname: 1 }, name: "lastname", ns: "studdb.students" }
+
+
+# Created at 2022-11-07T20:34:51.890
+Unexpected IOException with stream: 2022-11-07 20:34:51.889  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:51.889+0400 I INDEX    [conn3] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+
+
+# Created at 2022-11-07T20:34:51.939
+Unexpected IOException with stream: 2022-11-07 20:34:51.937  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:51.938+0400 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+
+
+# Created at 2022-11-07T20:34:51.945
+Unexpected IOException with stream: 2022-11-07 20:34:51.944  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:51.944+0400 I COMMAND  [conn3] command studdb.$cmd command: createIndexes { createIndexes: "students", indexes: [ { key: { lastname: 1 }, name: "lastname", ns: "studdb.students" } ] } numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 195ms
+
+
+# Created at 2022-11-07T20:34:52.343
+Unexpected IOException with stream: 2022-11-07 20:34:52.342  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:52.342+0400 I INDEX    [conn3] build index on: studdb.students properties: { v: 2, key: { departmentName: 1 }, name: "departmentName", ns: "studdb.students" }
+
+
+# Created at 2022-11-07T20:34:52.344
+Unexpected IOException with stream: 2022-11-07 20:34:52.343  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:52.344+0400 I INDEX    [conn3] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+
+
+# Created at 2022-11-07T20:34:52.356
+Unexpected IOException with stream: 2022-11-07 20:34:52.355  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:52.356+0400 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+
+
+# Created at 2022-11-07T20:34:52.359
+Unexpected IOException with stream: 2022-11-07 20:34:52.358  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:52.359+0400 I COMMAND  [conn3] command studdb.$cmd command: createIndexes { createIndexes: "students", indexes: [ { key: { departmentName: 1 }, name: "departmentName", ns: "studdb.students" } ] } numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 403ms
+
+
+# Created at 2022-11-07T20:34:52.499
+Unexpected IOException with stream: 2022-11-07 20:34:52.498  INFO 9384 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a45cf6a6-58cd-47aa-9b30-1a25e8a7d7c7
+
+
+
+# Created at 2022-11-07T20:34:52.624
+Unexpected IOException with stream: 2022-11-07 20:34:52.623  INFO 9384 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2bb2e6b5, org.springframework.security.web.context.SecurityContextPersistenceFilter@ab186cf, org.springframework.security.web.header.HeaderWriterFilter@6ee79ac, org.springframework.security.web.authentication.logout.LogoutFilter@594c592f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d31ca44, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6867f357, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@100c57cd, org.springframework.security.web.session.SessionManagementFilter@60dae8f4, org.springframework.security.web.access.ExceptionTranslationFilter@883f297, org.springframework.security.web.access.intercept.AuthorizationFilter@1d1674e3]
+
+
+# Created at 2022-11-07T20:34:54.456
+Unexpected IOException with stream: 2022-11-07 20:34:54.455  INFO 9384 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+
+
+# Created at 2022-11-07T20:34:54.573
+Unexpected IOException with stream: 2022-11-07 20:34:54.573  INFO 9384 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55208 (http) with context path ''
+
+
+# Created at 2022-11-07T20:34:54.581
+Unexpected IOException with stream: 2022-11-07 20:34:54.581  INFO 9384 --- [           main] d.s.m.c.StudentControllerIntegrationTest : Started StudentControllerIntegrationTest in 10.308 seconds (JVM running for 61.457)
+
+
+# Created at 2022-11-07T20:34:54.590
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenInValidFirstNamePaged_thenStudentShouldNotBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:55.070
+Unexpected IOException with stream: 2022-11-07 20:34:55.070  INFO 9384 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+
+
+# Created at 2022-11-07T20:34:55.071
+Unexpected IOException with stream: 2022-11-07 20:34:55.071  INFO 9384 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+
+
+# Created at 2022-11-07T20:34:55.074
+Unexpected IOException with stream: 2022-11-07 20:34:55.073  INFO 9384 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+
+
+# Created at 2022-11-07T20:34:55.115
+Unexpected IOException with stream: 2022-11-07 20:34:55.114  INFO 9384 --- [o-auto-1-exec-1] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/4, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:34:55.338
+Unexpected IOException with stream: 2022-11-07 20:34:55.337  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:55.337+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:34:55.341
+Unexpected IOException with stream: 2022-11-07 20:34:55.340  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:55.338+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:34:55.342
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenInValidFirstNamePaged_thenStudentShouldNotBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:55.344
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,testAllStudentsPaged,null,null,null
+
+
+# Created at 2022-11-07T20:34:55.565
+Unexpected IOException with stream: 2022-11-07 20:34:55.564  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:55.564+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 211ms
+
+
+# Created at 2022-11-07T20:34:55.567
+Unexpected IOException with stream: 2022-11-07 20:34:55.566  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:55.564+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 211ms
+
+
+# Created at 2022-11-07T20:34:55.657
+Unexpected IOException with stream: 2022-11-07 20:34:55.655  INFO 9384 --- [o-auto-1-exec-2] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/4, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:34:56.125
+Unexpected IOException with stream: 2022-11-07 20:34:56.123  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:56.123+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:34:56.149
+Unexpected IOException with stream: 2022-11-07 20:34:56.147  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:56.147+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:34:56.163
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,testAllStudentsPaged,null,null,null
+
+
+# Created at 2022-11-07T20:34:56.169
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenInValidFirstName_thenStudentShouldNotBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:56.796
+Unexpected IOException with stream: 2022-11-07 20:34:56.781  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:56.781+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:1 locks:{ Global: { acquireCount: { r: 4, w: 4 } }, Database: { acquireCount: { w: 3, W: 1 } }, Collection: { acquireCount: { w: 3 } } } 589ms
+
+
+# Created at 2022-11-07T20:34:56.802
+Unexpected IOException with stream: 2022-11-07 20:34:56.797  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:56.782+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 4, w: 4 } }, Database: { acquireCount: { w: 3, W: 1 } }, Collection: { acquireCount: { w: 3 } } } protocol:op_query 590ms
+
+
+# Created at 2022-11-07T20:34:56.899
+Unexpected IOException with stream: 2022-11-07 20:34:56.897  INFO 9384 --- [o-auto-1-exec-3] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:34:56.942
+Unexpected IOException with stream: 2022-11-07 20:34:56.941  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:56.941+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:34:57.090
+Unexpected IOException with stream: 2022-11-07 20:34:57.089  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:57.089+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:34:57.093
+Unexpected IOException with stream: 2022-11-07 20:34:57.091  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:57.091+0400 I COMMAND  [conn3] command studdb command: dropDatabase { dropDatabase: 1 } numYields:0 reslen:57 locks:{ Global: { acquireCount: { r: 2, w: 1, W: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_query 150ms
+
+
+# Created at 2022-11-07T20:34:57.106
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenInValidFirstName_thenStudentShouldNotBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:57.111
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenValidLastName_thenStudentShouldBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:57.625
+Unexpected IOException with stream: 2022-11-07 20:34:57.624  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:57.623+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 491ms
+
+
+# Created at 2022-11-07T20:34:57.628
+Unexpected IOException with stream: 2022-11-07 20:34:57.626  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:57.623+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 492ms
+
+
+# Created at 2022-11-07T20:34:57.737
+Unexpected IOException with stream: 2022-11-07 20:34:57.735  INFO 9384 --- [o-auto-1-exec-4] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:34:57.778
+Unexpected IOException with stream: 2022-11-07 20:34:57.777  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:57.776+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:34:57.786
+Unexpected IOException with stream: 2022-11-07 20:34:57.785  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:57.785+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:34:57.801
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenValidLastName_thenStudentShouldBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:57.805
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenInValidLastNamePaged_thenStudentShouldNotBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:58.223
+Unexpected IOException with stream: 2022-11-07 20:34:58.222  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:58.221+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 400ms
+
+
+# Created at 2022-11-07T20:34:58.225
+Unexpected IOException with stream: 2022-11-07 20:34:58.224  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:58.222+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 400ms
+
+
+# Created at 2022-11-07T20:34:58.304
+Unexpected IOException with stream: 2022-11-07 20:34:58.303  INFO 9384 --- [o-auto-1-exec-5] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/0, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:34:58.328
+Unexpected IOException with stream: 2022-11-07 20:34:58.327  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:58.327+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:34:58.337
+Unexpected IOException with stream: 2022-11-07 20:34:58.336  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:58.337+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:34:58.347
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenInValidLastNamePaged_thenStudentShouldNotBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:58.351
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,testAddStudent,null,null,null
+
+
+# Created at 2022-11-07T20:34:58.565
+Unexpected IOException with stream: 2022-11-07 20:34:58.564  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:58.564+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 196ms
+
+
+# Created at 2022-11-07T20:34:58.567
+Unexpected IOException with stream: 2022-11-07 20:34:58.566  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:58.567+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 199ms
+
+
+# Created at 2022-11-07T20:34:58.630
+Unexpected IOException with stream: 2022-11-07 20:34:58.629  INFO 9384 --- [o-auto-1-exec-6] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:34:59.092
+Unexpected IOException with stream: 2022-11-07 20:34:59.091  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:59.092+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:34:59.094
+Unexpected IOException with stream: 2022-11-07 20:34:59.093  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:59.094+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:34:59.102
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,testAddStudent,null,null,null
+
+
+# Created at 2022-11-07T20:34:59.105
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenInValidLastName_thenStudentShouldNotBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:59.394
+Unexpected IOException with stream: 2022-11-07 20:34:59.393  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:59.394+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 277ms
+
+
+# Created at 2022-11-07T20:34:59.395
+Unexpected IOException with stream: 2022-11-07 20:34:59.395  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:59.394+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 277ms
+
+
+# Created at 2022-11-07T20:34:59.496
+Unexpected IOException with stream: 2022-11-07 20:34:59.481  INFO 9384 --- [o-auto-1-exec-7] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:34:59.512
+Unexpected IOException with stream: 2022-11-07 20:34:59.511  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:59.511+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:34:59.526
+Unexpected IOException with stream: 2022-11-07 20:34:59.524  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:59.524+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:34:59.530
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenInValidLastName_thenStudentShouldNotBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:59.534
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenValidFirstNamePaged_thenStudentShouldBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:34:59.770
+Unexpected IOException with stream: 2022-11-07 20:34:59.769  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:59.769+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 224ms
+
+
+# Created at 2022-11-07T20:34:59.771
+Unexpected IOException with stream: 2022-11-07 20:34:59.771  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:34:59.769+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 224ms
+
+
+# Created at 2022-11-07T20:35:00.221
+Unexpected IOException with stream: 2022-11-07 20:35:00.220  INFO 9384 --- [o-auto-1-exec-8] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:00.245
+Unexpected IOException with stream: 2022-11-07 20:35:00.244  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:00.244+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:35:00.247
+Unexpected IOException with stream: 2022-11-07 20:35:00.246  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:00.246+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:35:00.252
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenValidFirstNamePaged_thenStudentShouldBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:35:00.254
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenValidFirstName_thenStudentShouldBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:35:00.537
+Unexpected IOException with stream: 2022-11-07 20:35:00.537  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:00.537+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 273ms
+
+
+# Created at 2022-11-07T20:35:00.539
+Unexpected IOException with stream: 2022-11-07 20:35:00.538  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:00.538+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 275ms
+
+
+# Created at 2022-11-07T20:35:00.592
+Unexpected IOException with stream: 2022-11-07 20:35:00.590  INFO 9384 --- [o-auto-1-exec-9] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:00.631
+Unexpected IOException with stream: 2022-11-07 20:35:00.630  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:00.630+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:35:00.644
+Unexpected IOException with stream: 2022-11-07 20:35:00.643  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:00.643+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:35:00.649
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenValidFirstName_thenStudentShouldBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:35:00.651
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,testAllStudents,null,null,null
+
+
+# Created at 2022-11-07T20:35:01.115
+Unexpected IOException with stream: 2022-11-07 20:35:01.115  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:01.115+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 455ms
+
+
+# Created at 2022-11-07T20:35:01.117
+Unexpected IOException with stream: 2022-11-07 20:35:01.116  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:01.115+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 455ms
+
+
+# Created at 2022-11-07T20:35:01.785
+Unexpected IOException with stream: 2022-11-07 20:35:01.782  INFO 9384 --- [-auto-1-exec-10] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:01.817
+Unexpected IOException with stream: 2022-11-07 20:35:01.817  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:01.817+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:35:01.837
+Unexpected IOException with stream: 2022-11-07 20:35:01.837  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:01.837+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:35:01.842
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,testAllStudents,null,null,null
+
+
+# Created at 2022-11-07T20:35:01.844
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenValidLastNamePaged_thenStudentShouldBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:35:02.190
+Unexpected IOException with stream: 2022-11-07 20:35:02.189  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:02.189+0400 I WRITE    [conn3] update studdb.students query: { _id: ObjectId('63677fe6397e9b04819eb790') } planSummary: IDHACK update: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" } keysExamined:0 docsExamined:0 nMatched:0 nModified:0 upsert:1 keysInserted:1 numYields:0 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } 339ms
+
+
+# Created at 2022-11-07T20:35:02.191
+Unexpected IOException with stream: 2022-11-07 20:35:02.190  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:02.191+0400 I COMMAND  [conn3] command studdb.$cmd command: update { update: "students", ordered: true, updates: [ { q: { _id: ObjectId('63677fe6397e9b04819eb790') }, u: { _id: ObjectId('63677fe6397e9b04819eb790'), firstname: "test", lastname: "test", departmentName: "test", _class: "com.daleel.student.ms.model.Student" }, upsert: true } ] } numYields:0 reslen:110 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 340ms
+
+
+# Created at 2022-11-07T20:35:02.402
+Unexpected IOException with stream: 2022-11-07 20:35:02.402  INFO 9384 --- [o-auto-1-exec-1] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:02.414
+Unexpected IOException with stream: 2022-11-07 20:35:02.413  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:02.414+0400 I COMMAND  [conn3] dropDatabase studdb starting
+
+
+# Created at 2022-11-07T20:35:02.449
+Unexpected IOException with stream: 2022-11-07 20:35:02.449  INFO 9384 --- [      Thread-12] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:02.449+0400 I COMMAND  [conn3] dropDatabase studdb finished
+
+
+# Created at 2022-11-07T20:35:02.453
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerIntegrationTest,whenValidLastNamePaged_thenStudentShouldBeFound,null,null,null
+
+
+# Created at 2022-11-07T20:35:02.455
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.daleel.student.ms.controller.StudentControllerIntegrationTest,null,null,null
+
+
+# Created at 2022-11-07T20:35:02.461
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.daleel.student.ms.controller.StudentControllerRateLimitTest,null,null,null
+
+
+# Created at 2022-11-07T20:35:02.463
+Unexpected IOException with stream: 2022-11-07 20:35:02.463  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.daleel.student.ms.controller.StudentControllerRateLimitTest], using SpringBootContextLoader
+
+
+# Created at 2022-11-07T20:35:02.465
+Unexpected IOException with stream: 2022-11-07 20:35:02.465  INFO 9384 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.daleel.student.ms.controller.StudentControllerRateLimitTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+
+
+# Created at 2022-11-07T20:35:02.466
+Unexpected IOException with stream: 2022-11-07 20:35:02.465  INFO 9384 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.daleel.student.ms.controller.StudentControllerRateLimitTest]: StudentControllerRateLimitTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+
+
+# Created at 2022-11-07T20:35:02.532
+Unexpected IOException with stream: 2022-11-07 20:35:02.531  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.daleel.student.ms.App for test class com.daleel.student.ms.controller.StudentControllerRateLimitTest
+
+
+# Created at 2022-11-07T20:35:02.536
+Unexpected IOException with stream: 2022-11-07 20:35:02.535  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+
+
+# Created at 2022-11-07T20:35:02.537
+Unexpected IOException with stream: 2022-11-07 20:35:02.536  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@45fe8d4c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@37973b49, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@786a8c39, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@17687553, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@264d0e1f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@288e24ec, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4296e80, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@50bf51bb, org.springframework.test.context.event.EventPublishingTestExecutionListener@1e4c8045, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@47bc6e24, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@82e553d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2236ff0a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@58020da1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7c6b95cb, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@616a0c6]
+
+
+# Created at 2022-11-07T20:35:02.922
+Unexpected IOException with stream: 
+
+
+# Created at 2022-11-07T20:35:02.923
+Unexpected IOException with stream:   .   ____          _            __ _ _
+
+
+# Created at 2022-11-07T20:35:02.923
+Unexpected IOException with stream:  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+
+
+# Created at 2022-11-07T20:35:02.924
+Unexpected IOException with stream: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+
+
+# Created at 2022-11-07T20:35:02.924
+Unexpected IOException with stream:  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+
+
+# Created at 2022-11-07T20:35:02.924
+Unexpected IOException with stream:   '  |____| .__|_| |_|_| |_\__, | / / / /
+
+
+# Created at 2022-11-07T20:35:02.925
+Unexpected IOException with stream:  =========|_|==============|___/=/_/_/_/
+
+
+# Created at 2022-11-07T20:35:02.926
+Unexpected IOException with stream:  :: Spring Boot ::                (v2.5.4)
+
+
+# Created at 2022-11-07T20:35:02.927
+Unexpected IOException with stream: 
+
+
+# Created at 2022-11-07T20:35:03.139
+Unexpected IOException with stream: 2022-11-07 20:35:03.138  INFO 9384 --- [           main] c.d.s.m.c.StudentControllerRateLimitTest : Starting StudentControllerRateLimitTest using Java 1.8.0_131 on Asmaa with PID 9384 (started by admin in C:\visionvlley\sdk\test\studAssigment)
+
+
+# Created at 2022-11-07T20:35:03.140
+Unexpected IOException with stream: 2022-11-07 20:35:03.139  INFO 9384 --- [           main] c.d.s.m.c.StudentControllerRateLimitTest : No active profile set, falling back to default profiles: default
+
+
+# Created at 2022-11-07T20:35:04.661
+Unexpected IOException with stream: 2022-11-07 20:35:04.660  INFO 9384 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+
+
+# Created at 2022-11-07T20:35:04.677
+Unexpected IOException with stream: 2022-11-07 20:35:04.676  INFO 9384 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 1 MongoDB repository interfaces.
+
+
+# Created at 2022-11-07T20:35:05.816
+Unexpected IOException with stream: 2022-11-07 20:35:05.815  INFO 9384 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 38839fe8-30fb-4415-963d-7fcbd1470520
+
+
+
+# Created at 2022-11-07T20:35:05.922
+Unexpected IOException with stream: 2022-11-07 20:35:05.921  INFO 9384 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5261a62b, org.springframework.security.web.context.SecurityContextPersistenceFilter@3ee0728a, org.springframework.security.web.header.HeaderWriterFilter@33e18d13, org.springframework.security.web.authentication.logout.LogoutFilter@c45c8eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63b0df3b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c064f4b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70412e1c, org.springframework.security.web.session.SessionManagementFilter@143f2b12, org.springframework.security.web.access.ExceptionTranslationFilter@42b3f7ca, org.springframework.security.web.access.intercept.AuthorizationFilter@7fbf13e]
+
+
+# Created at 2022-11-07T20:35:10.226
+Unexpected IOException with stream: 2022-11-07 20:35:10.225  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : note: noprealloc may hurt performance in many applications
+
+
+# Created at 2022-11-07T20:35:10.312
+Unexpected IOException with stream: 2022-11-07 20:35:10.312  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.312+0400 I CONTROL  [initandlisten] MongoDB starting : pid=6828 port=55218 dbpath=C:\Users\admin\AppData\Local\Temp\embedmongo-db-62df220c-7293-47b9-bf18-3c61b583ea15 64-bit host=Asmaa
+
+
+# Created at 2022-11-07T20:35:10.313
+Unexpected IOException with stream: 2022-11-07 20:35:10.313  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.312+0400 I CONTROL  [initandlisten] targetMinOS: Windows Vista/Windows Server 2008
+
+
+# Created at 2022-11-07T20:35:10.313
+Unexpected IOException with stream: 2022-11-07 20:35:10.313  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.312+0400 I CONTROL  [initandlisten] db version v3.5.5
+
+
+# Created at 2022-11-07T20:35:10.314
+Unexpected IOException with stream: 2022-11-07 20:35:10.314  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.312+0400 I CONTROL  [initandlisten] git version: 98515c812b6fa893613f063dae568ff8319cbfbd
+
+
+# Created at 2022-11-07T20:35:10.314
+Unexpected IOException with stream: 2022-11-07 20:35:10.314  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.312+0400 I CONTROL  [initandlisten] allocator: tcmalloc
+
+
+# Created at 2022-11-07T20:35:10.315
+Unexpected IOException with stream: 2022-11-07 20:35:10.314  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.313+0400 I CONTROL  [initandlisten] modules: none
+
+
+# Created at 2022-11-07T20:35:10.315
+Unexpected IOException with stream: 2022-11-07 20:35:10.315  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.313+0400 I CONTROL  [initandlisten] build environment:
+
+
+# Created at 2022-11-07T20:35:10.316
+Unexpected IOException with stream: 2022-11-07 20:35:10.315  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.313+0400 I CONTROL  [initandlisten]     distarch: x86_64
+
+
+# Created at 2022-11-07T20:35:10.316
+Unexpected IOException with stream: 2022-11-07 20:35:10.316  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.313+0400 I CONTROL  [initandlisten]     target_arch: x86_64
+
+
+# Created at 2022-11-07T20:35:10.317
+Unexpected IOException with stream: 2022-11-07 20:35:10.316  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.313+0400 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", http: { enabled: false }, port: 55218 }, security: { authorization: "disabled" }, storage: { dbPath: "C:\Users\admin\AppData\Local\Temp\embedmongo-db-62df220c-7293-47b9-bf18-3c61b583ea15", journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+
+
+# Created at 2022-11-07T20:35:10.317
+Unexpected IOException with stream: 2022-11-07 20:35:10.317  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:10.314+0400 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3532M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=0,log_size=2GB),statistics_log=(wait=0),verbose=(recovery_progress),,log=(enabled=false),
+
+
+# Created at 2022-11-07T20:35:11.409
+Unexpected IOException with stream: 2022-11-07 20:35:11.408  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:11.409+0400 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+
+
+# Created at 2022-11-07T20:35:11.410
+Unexpected IOException with stream: 2022-11-07 20:35:11.410  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:11.410+0400 I CONTROL  [initandlisten] 
+
+
+# Created at 2022-11-07T20:35:11.411
+Unexpected IOException with stream: 2022-11-07 20:35:11.410  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:11.411+0400 I CONTROL  [initandlisten] ** NOTE: This is a development version (3.5.5) of MongoDB.
+
+
+# Created at 2022-11-07T20:35:11.412
+Unexpected IOException with stream: 2022-11-07 20:35:11.411  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:11.412+0400 I CONTROL  [initandlisten] **       Not recommended for production.
+
+
+# Created at 2022-11-07T20:35:11.413
+Unexpected IOException with stream: 2022-11-07 20:35:11.412  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:11.413+0400 I CONTROL  [initandlisten] 
+
+
+# Created at 2022-11-07T20:35:12.577
+Unexpected IOException with stream: 2022-11-07 20:35:12.576  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:12.577+0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/Users/admin/AppData/Local/Temp/embedmongo-db-62df220c-7293-47b9-bf18-3c61b583ea15/diagnostic.data'
+
+
+# Created at 2022-11-07T20:35:13.186
+Unexpected IOException with stream: 2022-11-07 20:35:13.185  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.186+0400 I INDEX    [initandlisten] build index on: admin.system.version properties: { v: 2, key: { version: 1 }, name: "incompatible_with_version_32", ns: "admin.system.version" }
+
+
+# Created at 2022-11-07T20:35:13.186
+Unexpected IOException with stream: 2022-11-07 20:35:13.186  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.186+0400 I INDEX    [initandlisten] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+
+
+# Created at 2022-11-07T20:35:13.197
+Unexpected IOException with stream: 2022-11-07 20:35:13.196  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.196+0400 I INDEX    [initandlisten] build index done.  scanned 0 total records. 0 secs
+
+
+# Created at 2022-11-07T20:35:13.199
+Unexpected IOException with stream: 2022-11-07 20:35:13.199  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.199+0400 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 3.4
+
+
+# Created at 2022-11-07T20:35:13.201
+Unexpected IOException with stream: 2022-11-07 20:35:13.201  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.201+0400 I NETWORK  [thread1] waiting for connections on port 55218
+
+
+# Created at 2022-11-07T20:35:13.202
+Unexpected IOException with stream: 2022-11-07 20:35:13.201  INFO 9384 --- [           main] d.f.embed.mongo.MongodExecutable         : start MongodConfig{version=Version{3.5.5}, timeout=de.flapdoodle.embed.mongo.config.Timeout@481207fd, net=de.flapdoodle.embed.mongo.config.Net@7ac9d990, cmdOptions=MongoCmdOptions{syncDelay=0, useDefaultSyncDelay=false, isVerbose=false, useNoPrealloc=true, useSmallFiles=true, useNoJournal=true, enableTextSearch=false, auth=false, master=false}, password=, userName=, replication=de.flapdoodle.embed.mongo.config.Storage@5405c426, isConfigServer=false, isShardServer=false, processListener=de.flapdoodle.embed.mongo.config.processlistener.NoopProcessListener@4b4d4c68, params={}, args={}, pidFile=mongod.pid, supportConfig=de.flapdoodle.embed.mongo.config.SupportConfig@13b89713}
+
+
+# Created at 2022-11-07T20:35:13.266
+Unexpected IOException with stream: 2022-11-07 20:35:13.264  INFO 9384 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:55218], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+
+
+# Created at 2022-11-07T20:35:13.309
+Unexpected IOException with stream: 2022-11-07 20:35:13.308  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.308+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:55232 #1 (1 connection now open)
+
+
+# Created at 2022-11-07T20:35:13.327
+Unexpected IOException with stream: 2022-11-07 20:35:13.327  INFO 9384 --- [           main] org.mongodb.driver.cluster               : Cluster description not yet available. Waiting for 30000 ms before timing out
+
+
+# Created at 2022-11-07T20:35:13.329
+Unexpected IOException with stream: 2022-11-07 20:35:13.329  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.330+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:55233 #2 (2 connections now open)
+
+
+# Created at 2022-11-07T20:35:13.330
+Unexpected IOException with stream: 2022-11-07 20:35:13.330  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.330+0400 I NETWORK  [conn1] received client metadata from 127.0.0.1:55232 conn1: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-07T20:35:13.331
+Unexpected IOException with stream: 2022-11-07 20:35:13.331  INFO 9384 --- [localhost:55218] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:13, serverValue:1}] to localhost:55218
+
+
+# Created at 2022-11-07T20:35:13.334
+Unexpected IOException with stream: 2022-11-07 20:35:13.333  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.333+0400 I NETWORK  [conn2] received client metadata from 127.0.0.1:55233 conn2: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-07T20:35:13.335
+Unexpected IOException with stream: 2022-11-07 20:35:13.335  INFO 9384 --- [localhost:55218] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:14, serverValue:2}] to localhost:55218
+
+
+# Created at 2022-11-07T20:35:13.336
+Unexpected IOException with stream: 2022-11-07 20:35:13.336  INFO 9384 --- [localhost:55218] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:55218, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=4825517}
+
+
+# Created at 2022-11-07T20:35:13.339
+Unexpected IOException with stream: 2022-11-07 20:35:13.339  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.339+0400 I NETWORK  [thread1] connection accepted from 127.0.0.1:55234 #3 (3 connections now open)
+
+
+# Created at 2022-11-07T20:35:13.342
+Unexpected IOException with stream: 2022-11-07 20:35:13.341  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.341+0400 I NETWORK  [conn3] received client metadata from 127.0.0.1:55234 conn3: { driver: { name: "mongo-java-driver|sync|spring-boot", version: "4.2.3" }, os: { type: "Windows", name: "Windows 8.1", architecture: "amd64", version: "6.3" }, platform: "Java/Oracle Corporation/1.8.0_131-b11" }
+
+
+# Created at 2022-11-07T20:35:13.343
+Unexpected IOException with stream: 2022-11-07 20:35:13.342  INFO 9384 --- [           main] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:15, serverValue:3}] to localhost:55218
+
+
+# Created at 2022-11-07T20:35:13.595
+Unexpected IOException with stream: 2022-11-07 20:35:13.594  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.595+0400 I INDEX    [conn3] build index on: studdb.students properties: { v: 2, key: { firstname: 1 }, name: "firstname", ns: "studdb.students" }
+
+
+# Created at 2022-11-07T20:35:13.595
+Unexpected IOException with stream: 2022-11-07 20:35:13.595  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.595+0400 I INDEX    [conn3] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+
+
+# Created at 2022-11-07T20:35:13.607
+Unexpected IOException with stream: 2022-11-07 20:35:13.606  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.607+0400 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+
+
+# Created at 2022-11-07T20:35:13.607
+Unexpected IOException with stream: 2022-11-07 20:35:13.607  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.607+0400 I COMMAND  [conn3] command studdb.$cmd command: createIndexes { createIndexes: "students", indexes: [ { key: { firstname: 1 }, name: "firstname", ns: "studdb.students" } ] } numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 262ms
+
+
+# Created at 2022-11-07T20:35:13.695
+Unexpected IOException with stream: 2022-11-07 20:35:13.695  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.695+0400 I INDEX    [conn3] build index on: studdb.students properties: { v: 2, key: { lastname: 1 }, name: "lastname", ns: "studdb.students" }
+
+
+# Created at 2022-11-07T20:35:13.696
+Unexpected IOException with stream: 2022-11-07 20:35:13.695  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.695+0400 I INDEX    [conn3] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+
+
+# Created at 2022-11-07T20:35:13.707
+Unexpected IOException with stream: 2022-11-07 20:35:13.705  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.705+0400 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+
+
+# Created at 2022-11-07T20:35:13.795
+Unexpected IOException with stream: 2022-11-07 20:35:13.794  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.794+0400 I INDEX    [conn3] build index on: studdb.students properties: { v: 2, key: { departmentName: 1 }, name: "departmentName", ns: "studdb.students" }
+
+
+# Created at 2022-11-07T20:35:13.795
+Unexpected IOException with stream: 2022-11-07 20:35:13.795  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.794+0400 I INDEX    [conn3] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+
+
+# Created at 2022-11-07T20:35:13.806
+Unexpected IOException with stream: 2022-11-07 20:35:13.805  INFO 9384 --- [      Thread-16] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2022-11-07T20:35:13.806+0400 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+
+
+# Created at 2022-11-07T20:35:14.117
+Unexpected IOException with stream: 2022-11-07 20:35:14.116  INFO 9384 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2022-11-07T20:35:14.121
+Unexpected IOException with stream: 2022-11-07 20:35:14.120  INFO 9384 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+
+
+# Created at 2022-11-07T20:35:14.135
+Unexpected IOException with stream: 2022-11-07 20:35:14.134  INFO 9384 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+
+
+# Created at 2022-11-07T20:35:14.197
+Unexpected IOException with stream: 2022-11-07 20:35:14.197  INFO 9384 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 76 ms
+
+
+# Created at 2022-11-07T20:35:14.284
+Unexpected IOException with stream: 2022-11-07 20:35:14.284  INFO 9384 --- [           main] c.d.s.m.c.StudentControllerRateLimitTest : Started StudentControllerRateLimitTest in 11.742 seconds (JVM running for 81.16)
+
+
+# Created at 2022-11-07T20:35:14.381
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerRateLimitTest,getAllStudentPagedExhastLimit,null,null,null
+
+
+# Created at 2022-11-07T20:35:14.514
+Unexpected IOException with stream: 2022-11-07 20:35:14.512  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.678
+Unexpected IOException with stream: 2022-11-07 20:35:14.676  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.687
+Unexpected IOException with stream: 2022-11-07 20:35:14.686  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.699
+Unexpected IOException with stream: 2022-11-07 20:35:14.699  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.706
+Unexpected IOException with stream: 2022-11-07 20:35:14.705  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.737
+Unexpected IOException with stream: 2022-11-07 20:35:14.735  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.760
+Unexpected IOException with stream: 2022-11-07 20:35:14.760  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.788
+Unexpected IOException with stream: 2022-11-07 20:35:14.787  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.795
+Unexpected IOException with stream: 2022-11-07 20:35:14.795  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.810
+Unexpected IOException with stream: 2022-11-07 20:35:14.809  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.821
+Unexpected IOException with stream: 2022-11-07 20:35:14.820  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.826
+Unexpected IOException with stream: 2022-11-07 20:35:14.826  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.833
+Unexpected IOException with stream: 2022-11-07 20:35:14.832  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.840
+Unexpected IOException with stream: 2022-11-07 20:35:14.840  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.847
+Unexpected IOException with stream: 2022-11-07 20:35:14.847  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.852
+Unexpected IOException with stream: 2022-11-07 20:35:14.851  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.857
+Unexpected IOException with stream: 2022-11-07 20:35:14.856  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.866
+Unexpected IOException with stream: 2022-11-07 20:35:14.865  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.871
+Unexpected IOException with stream: 2022-11-07 20:35:14.870  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.882
+Unexpected IOException with stream: 2022-11-07 20:35:14.880  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.888
+Unexpected IOException with stream: 2022-11-07 20:35:14.888  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.894
+Unexpected IOException with stream: 2022-11-07 20:35:14.893  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.903
+Unexpected IOException with stream: 2022-11-07 20:35:14.903  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.908
+Unexpected IOException with stream: 2022-11-07 20:35:14.907  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.918
+Unexpected IOException with stream: 2022-11-07 20:35:14.918  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.949
+Unexpected IOException with stream: 2022-11-07 20:35:14.948  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.954
+Unexpected IOException with stream: 2022-11-07 20:35:14.954  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.977
+Unexpected IOException with stream: 2022-11-07 20:35:14.977  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.987
+Unexpected IOException with stream: 2022-11-07 20:35:14.986  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:14.992
+Unexpected IOException with stream: 2022-11-07 20:35:14.991  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.003
+Unexpected IOException with stream: 2022-11-07 20:35:15.002  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.008
+Unexpected IOException with stream: 2022-11-07 20:35:15.007  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.042
+Unexpected IOException with stream: 2022-11-07 20:35:15.041  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.048
+Unexpected IOException with stream: 2022-11-07 20:35:15.047  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.053
+Unexpected IOException with stream: 2022-11-07 20:35:15.053  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.058
+Unexpected IOException with stream: 2022-11-07 20:35:15.058  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.081
+Unexpected IOException with stream: 2022-11-07 20:35:15.062  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.100
+Unexpected IOException with stream: 2022-11-07 20:35:15.095  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.186
+Unexpected IOException with stream: 2022-11-07 20:35:15.185  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.271
+Unexpected IOException with stream: 2022-11-07 20:35:15.270  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.285
+Unexpected IOException with stream: 2022-11-07 20:35:15.284  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.298
+Unexpected IOException with stream: 2022-11-07 20:35:15.297  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.303
+Unexpected IOException with stream: 2022-11-07 20:35:15.302  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.349
+Unexpected IOException with stream: 2022-11-07 20:35:15.349  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.406
+Unexpected IOException with stream: 2022-11-07 20:35:15.402  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.451
+Unexpected IOException with stream: 2022-11-07 20:35:15.451  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.456
+Unexpected IOException with stream: 2022-11-07 20:35:15.455  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.459
+Unexpected IOException with stream: 2022-11-07 20:35:15.459  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.500
+Unexpected IOException with stream: 2022-11-07 20:35:15.499  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.518
+Unexpected IOException with stream: 2022-11-07 20:35:15.518  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.523
+Unexpected IOException with stream: 2022-11-07 20:35:15.523  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students/0/1, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.602
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerRateLimitTest,getAllStudentPagedExhastLimit,null,null,null
+
+
+# Created at 2022-11-07T20:35:15.657
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerRateLimitTest,createStudentSuccess,null,null,null
+
+
+# Created at 2022-11-07T20:35:15.851
+Unexpected IOException with stream: 2022-11-07 20:35:15.849  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.890
+Unexpected IOException with stream: 2022-11-07 20:35:15.889  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.951
+Unexpected IOException with stream: 2022-11-07 20:35:15.949  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.977
+Unexpected IOException with stream: 2022-11-07 20:35:15.976  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.987
+Unexpected IOException with stream: 2022-11-07 20:35:15.986  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:15.993
+Unexpected IOException with stream: 2022-11-07 20:35:15.992  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.004
+Unexpected IOException with stream: 2022-11-07 20:35:16.004  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.068
+Unexpected IOException with stream: 2022-11-07 20:35:16.068  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.139
+Unexpected IOException with stream: 2022-11-07 20:35:16.138  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.201
+Unexpected IOException with stream: 2022-11-07 20:35:16.201  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.207
+Unexpected IOException with stream: 2022-11-07 20:35:16.206  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.213
+Unexpected IOException with stream: 2022-11-07 20:35:16.212  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.219
+Unexpected IOException with stream: 2022-11-07 20:35:16.218  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.233
+Unexpected IOException with stream: 2022-11-07 20:35:16.232  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.240
+Unexpected IOException with stream: 2022-11-07 20:35:16.240  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.248
+Unexpected IOException with stream: 2022-11-07 20:35:16.248  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.254
+Unexpected IOException with stream: 2022-11-07 20:35:16.254  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.259
+Unexpected IOException with stream: 2022-11-07 20:35:16.259  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.267
+Unexpected IOException with stream: 2022-11-07 20:35:16.266  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.293
+Unexpected IOException with stream: 2022-11-07 20:35:16.293  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.304
+Unexpected IOException with stream: 2022-11-07 20:35:16.303  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.310
+Unexpected IOException with stream: 2022-11-07 20:35:16.309  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.322
+Unexpected IOException with stream: 2022-11-07 20:35:16.321  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.326
+Unexpected IOException with stream: 2022-11-07 20:35:16.326  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.332
+Unexpected IOException with stream: 2022-11-07 20:35:16.331  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.339
+Unexpected IOException with stream: 2022-11-07 20:35:16.339  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.345
+Unexpected IOException with stream: 2022-11-07 20:35:16.344  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.364
+Unexpected IOException with stream: 2022-11-07 20:35:16.363  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.382
+Unexpected IOException with stream: 2022-11-07 20:35:16.381  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.391
+Unexpected IOException with stream: 2022-11-07 20:35:16.390  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.397
+Unexpected IOException with stream: 2022-11-07 20:35:16.396  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.423
+Unexpected IOException with stream: 2022-11-07 20:35:16.422  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.434
+Unexpected IOException with stream: 2022-11-07 20:35:16.433  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.451
+Unexpected IOException with stream: 2022-11-07 20:35:16.451  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.458
+Unexpected IOException with stream: 2022-11-07 20:35:16.457  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.464
+Unexpected IOException with stream: 2022-11-07 20:35:16.463  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.470
+Unexpected IOException with stream: 2022-11-07 20:35:16.469  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.476
+Unexpected IOException with stream: 2022-11-07 20:35:16.476  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.482
+Unexpected IOException with stream: 2022-11-07 20:35:16.481  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.488
+Unexpected IOException with stream: 2022-11-07 20:35:16.487  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.497
+Unexpected IOException with stream: 2022-11-07 20:35:16.496  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.528
+Unexpected IOException with stream: 2022-11-07 20:35:16.508  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.535
+Unexpected IOException with stream: 2022-11-07 20:35:16.534  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.543
+Unexpected IOException with stream: 2022-11-07 20:35:16.541  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.560
+Unexpected IOException with stream: 2022-11-07 20:35:16.560  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.570
+Unexpected IOException with stream: 2022-11-07 20:35:16.569  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.575
+Unexpected IOException with stream: 2022-11-07 20:35:16.574  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.583
+Unexpected IOException with stream: 2022-11-07 20:35:16.582  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.592
+Unexpected IOException with stream: 2022-11-07 20:35:16.591  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.599
+Unexpected IOException with stream: 2022-11-07 20:35:16.597  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.607
+Unexpected IOException with stream: 2022-11-07 20:35:16.607  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.615
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerRateLimitTest,createStudentSuccess,null,null,null
+
+
+# Created at 2022-11-07T20:35:16.619
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerRateLimitTest,getStudentByFirstNameExhastLimit,null,null,null
+
+
+# Created at 2022-11-07T20:35:16.624
+Unexpected IOException with stream: 2022-11-07 20:35:16.624  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.635
+Unexpected IOException with stream: 2022-11-07 20:35:16.634  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.641
+Unexpected IOException with stream: 2022-11-07 20:35:16.641  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.649
+Unexpected IOException with stream: 2022-11-07 20:35:16.647  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.656
+Unexpected IOException with stream: 2022-11-07 20:35:16.655  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.667
+Unexpected IOException with stream: 2022-11-07 20:35:16.660  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.673
+Unexpected IOException with stream: 2022-11-07 20:35:16.673  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.677
+Unexpected IOException with stream: 2022-11-07 20:35:16.676  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.687
+Unexpected IOException with stream: 2022-11-07 20:35:16.686  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.691
+Unexpected IOException with stream: 2022-11-07 20:35:16.690  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.696
+Unexpected IOException with stream: 2022-11-07 20:35:16.694  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.705
+Unexpected IOException with stream: 2022-11-07 20:35:16.705  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.711
+Unexpected IOException with stream: 2022-11-07 20:35:16.710  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.717
+Unexpected IOException with stream: 2022-11-07 20:35:16.716  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.723
+Unexpected IOException with stream: 2022-11-07 20:35:16.723  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.727
+Unexpected IOException with stream: 2022-11-07 20:35:16.726  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.734
+Unexpected IOException with stream: 2022-11-07 20:35:16.734  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.746
+Unexpected IOException with stream: 2022-11-07 20:35:16.745  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.764
+Unexpected IOException with stream: 2022-11-07 20:35:16.761  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.787
+Unexpected IOException with stream: 2022-11-07 20:35:16.787  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.791
+Unexpected IOException with stream: 2022-11-07 20:35:16.790  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.796
+Unexpected IOException with stream: 2022-11-07 20:35:16.795  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.799
+Unexpected IOException with stream: 2022-11-07 20:35:16.799  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.803
+Unexpected IOException with stream: 2022-11-07 20:35:16.803  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.808
+Unexpected IOException with stream: 2022-11-07 20:35:16.807  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.811
+Unexpected IOException with stream: 2022-11-07 20:35:16.810  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.822
+Unexpected IOException with stream: 2022-11-07 20:35:16.822  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.827
+Unexpected IOException with stream: 2022-11-07 20:35:16.826  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.831
+Unexpected IOException with stream: 2022-11-07 20:35:16.830  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.838
+Unexpected IOException with stream: 2022-11-07 20:35:16.837  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.842
+Unexpected IOException with stream: 2022-11-07 20:35:16.842  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.846
+Unexpected IOException with stream: 2022-11-07 20:35:16.845  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.850
+Unexpected IOException with stream: 2022-11-07 20:35:16.849  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.853
+Unexpected IOException with stream: 2022-11-07 20:35:16.853  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.857
+Unexpected IOException with stream: 2022-11-07 20:35:16.857  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.863
+Unexpected IOException with stream: 2022-11-07 20:35:16.862  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.867
+Unexpected IOException with stream: 2022-11-07 20:35:16.866  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.871
+Unexpected IOException with stream: 2022-11-07 20:35:16.870  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.874
+Unexpected IOException with stream: 2022-11-07 20:35:16.874  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.879
+Unexpected IOException with stream: 2022-11-07 20:35:16.878  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.883
+Unexpected IOException with stream: 2022-11-07 20:35:16.882  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.886
+Unexpected IOException with stream: 2022-11-07 20:35:16.886  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.890
+Unexpected IOException with stream: 2022-11-07 20:35:16.890  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.894
+Unexpected IOException with stream: 2022-11-07 20:35:16.894  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.898
+Unexpected IOException with stream: 2022-11-07 20:35:16.898  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.901
+Unexpected IOException with stream: 2022-11-07 20:35:16.901  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.906
+Unexpected IOException with stream: 2022-11-07 20:35:16.905  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.910
+Unexpected IOException with stream: 2022-11-07 20:35:16.909  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.914
+Unexpected IOException with stream: 2022-11-07 20:35:16.913  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.919
+Unexpected IOException with stream: 2022-11-07 20:35:16.919  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.923
+Unexpected IOException with stream: 2022-11-07 20:35:16.923  INFO 9384 --- [           main] c.d.s.m.c.AuthenticationHandlerFilter    : Starting a transaction for req : /api/students, 184DA27F6D8E9181EB44DA79A983D
+
+
+# Created at 2022-11-07T20:35:16.930
+Unexpected IOException: 6,1,com.daleel.student.ms.controller.StudentControllerRateLimitTest,getStudentByFirstNameExhastLimit,null,null,null
+
+
+# Created at 2022-11-07T20:35:16.931
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.daleel.student.ms.controller.StudentControllerRateLimitTest,null,null,null
+
+
+# Created at 2022-11-07T20:35:16.933
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.daleel.student.ms.controller.StudentControllerTest,null,null,null
+
+
+# Created at 2022-11-07T20:35:16.936
+Unexpected IOException with stream: 2022-11-07 20:35:16.935  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.daleel.student.ms.controller.StudentControllerTest], using SpringBootContextLoader
+
+
+# Created at 2022-11-07T20:35:16.937
+Unexpected IOException with stream: 2022-11-07 20:35:16.936  INFO 9384 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.daleel.student.ms.controller.StudentControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+
+
+# Created at 2022-11-07T20:35:16.937
+Unexpected IOException with stream: 2022-11-07 20:35:16.937  INFO 9384 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.daleel.student.ms.controller.StudentControllerTest]: StudentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+
+
+# Created at 2022-11-07T20:35:16.941
+Unexpected IOException with stream: 2022-11-07 20:35:16.941  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.daleel.student.ms.App for test class com.daleel.student.ms.controller.StudentControllerTest
+
+
+# Created at 2022-11-07T20:35:16.943
+Unexpected IOException with stream: 2022-11-07 20:35:16.943  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+
+
+# Created at 2022-11-07T20:35:16.944
+Unexpected IOException with stream: 2022-11-07 20:35:16.944  INFO 9384 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@34111390, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@307d03a9, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@68a6566d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4369f80f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7f58ee61, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2760da68, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7d2fe5d7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@718ad3fd, org.springframework.test.context.event.EventPublishingTestExecutionListener@4999004b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@688b308a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6a086111, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4dba5296, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4c209832, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7d1efe5c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@54b71807]
+
+
+# Created at 2022-11-07T20:35:16.950
+Unexpected IOException: 5,1,com.daleel.student.ms.controller.StudentControllerTest,getStudentByLastNameSuccess,null,null,null
+
+

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.daleel.student.ms.entity.StudentDTO;
@@ -27,7 +28,10 @@ import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
 import io.github.bucket4j.Bucket4j;
 import io.github.bucket4j.Refill;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
@@ -45,12 +49,18 @@ public class StudentController {
 	public StudentController() {
 		Bandwidth limit = Bandwidth.classic(50, Refill.greedy(50, Duration.ofMinutes(1)));
 		this.listBucket = Bucket4j.builder().addLimit(limit).build();
-		this.createBucket=Bucket4j.builder().addLimit(limit).build();
-		this.listPagedBucket=Bucket4j.builder().addLimit(limit).build();
+		this.createBucket = Bucket4j.builder().addLimit(limit).build();
+		this.listPagedBucket = Bucket4j.builder().addLimit(limit).build();
 	}
 
+	@Operation(summary = "Retrieve Matching Student filtered by firstname, lastname or department ")
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Successfully List students"),
+			@ApiResponse(responseCode = "401", description = "Invalid token"),
+
+			@ApiResponse(responseCode = "500", description = "Unexpected system exception"),
+			@ApiResponse(responseCode = "429", description = "Reach current API rate limit") })
 	@GetMapping("/students")
-	public ResponseEntity<List<Student>> getAllStudents(@RequestParam(required = false) String firstname,
+	public @ResponseBody ResponseEntity<List<Student>> getAllStudents(@RequestParam(required = false) String firstname,
 			@RequestParam(required = false) String lastname, @RequestParam(required = false) String departmentName) {
 		try {
 			if (listBucket.tryConsume(1)) {
@@ -65,9 +75,15 @@ public class StudentController {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	@Operation(summary = "Retrieve Matching Student filtered by firstname, lastname or department paged by current page and page size")
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Successfully List students"),
+			@ApiResponse(responseCode = "401", description = "Invalid token"),
+
+			@ApiResponse(responseCode = "500", description = "Unexpected system exception"),
+			@ApiResponse(responseCode = "429", description = "Reach current API rate limit") })
 
 	@GetMapping("/students/{page}/{size}")
-	public ResponseEntity<List<Student>> getAllStudentsPaged(@RequestParam(required = false) String firstname,
+	public @ResponseBody ResponseEntity<List<Student>> getAllStudentsPaged(@RequestParam(required = false) String firstname,
 			@RequestParam(required = false) String lastname, @RequestParam(required = false) String departmentName,
 			@PathVariable("page") int page, @PathVariable("size") int size) {
 		try {
@@ -83,17 +99,28 @@ public class StudentController {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	@Operation(summary = "Retrieve Matching Student by Id")
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Successfully get student"),
+			@ApiResponse(responseCode = "401", description = "Invalid token"),
 
+			@ApiResponse(responseCode = "500", description = "Unexpected system exception"),
+			@ApiResponse(responseCode = "429", description = "Reach current API rate limit") })
 	@GetMapping("/students/{id}")
-	public ResponseEntity<Student> getStudentById(@PathVariable("id") String id) {
-		
-		return new ResponseEntity<>(studentService.getStudentById(id), HttpStatus.OK);
-		
-	}
+	public @ResponseBody ResponseEntity<Student> getStudentById(@PathVariable("id") String id) {
 
+		return new ResponseEntity<>(studentService.getStudentById(id), HttpStatus.OK);
+
+	}
+	@Operation(summary = "Create student ")
+	@ApiResponses(value = { @ApiResponse(responseCode = "201", description = "Successfully created"),
+			@ApiResponse(responseCode = "401", description = "Invalid token"),
+
+			@ApiResponse(responseCode = "500", description = "Unexpected system exception"),
+			@ApiResponse(responseCode = "429", description = "Reach current API rate limit") })
+	
 	@PostMapping("/students")
 
-	public ResponseEntity<Student> createStudent(@RequestBody StudentDTO student) {
+	public @ResponseBody ResponseEntity<Student> createStudent(@RequestBody StudentDTO student) {
 		try {
 			if (createBucket.tryConsume(1)) {
 				return new ResponseEntity<>(studentService.createStudent(

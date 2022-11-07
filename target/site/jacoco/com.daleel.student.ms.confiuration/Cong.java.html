@@ -14,7 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 <span class="fc" id="L15">		return http.authorizeHttpRequests(authorizeRequests -&gt; authorizeRequests</span>
 <span class="fc" id="L16">				.antMatchers(&quot;/api/auth/**&quot;, &quot;/swagger-ui-custom.html&quot;, &quot;/swagger-ui.html&quot;, &quot;/swagger-ui/**&quot;,</span>
-						&quot;/v3/api-docs/**&quot;, &quot;/webjars/**&quot;, &quot;/swagger-ui/index.html&quot;, &quot;/api-docs/**&quot;,&quot;/api/**&quot;)
+<span class="fc" id="L17">						&quot;/v3/api-docs/**&quot;, &quot;/webjars/**&quot;, &quot;/swagger-ui/index.html&quot;, &quot;/api-docs/**&quot;,&quot;/api/**&quot;)</span>
 <span class="fc" id="L18">				.permitAll().antMatchers(HttpMethod.POST, &quot;/api/students&quot;).permitAll().anyRequest().authenticated()).csrf().disable().build();</span>
 		
 		

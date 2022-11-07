@@ -61,7 +61,7 @@ import com.daleel.student.ms.repository.StudentRepository;
 <span class="pc bpc" id="L61" title="2 of 6 branches missed.">	      else if(!StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName)) {</span>
 <span class="fc" id="L62">	    	  dbStudents=studentRepository.findByFirstname(firstname);</span>
 	    	  
-	      }
+<span class="fc" id="L64">	      }</span>
 <span class="pc bpc" id="L65" title="2 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; !StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName))</span>
 <span class="fc" id="L66">	    	  dbStudents=studentRepository.findByLastname(lastname);</span>
 <span class="pc bpc" id="L67" title="3 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; !StringUtils.isEmpty(departmentName))</span>
@@ -85,7 +85,7 @@ import com.daleel.student.ms.repository.StudentRepository;
 <span class="pc bpc" id="L85" title="2 of 6 branches missed.">	      else if(!StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName)) {</span>
 <span class="fc" id="L86">	    	  dbStudents=studentRepository.findByFirstname(firstname,paging);</span>
 	    	  
-	      }
+<span class="fc" id="L88">	      }</span>
 <span class="pc bpc" id="L89" title="2 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; !StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName))</span>
 <span class="fc" id="L90">	    	  dbStudents=studentRepository.findByLastname(lastname,paging);</span>
 <span class="pc bpc" id="L91" title="3 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; !StringUtils.isEmpty(departmentName))</span>
