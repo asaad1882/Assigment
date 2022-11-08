@@ -7,7 +7,7 @@ spring:
            
             database: studdb
             port: 27017
-            host: localhost
+            host: mongodb_stud
             auto-index-creation: true
 server:
     port: 8090
