@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
-
-
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -18,6 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.daleel.student.ms.data.StudentDTO;
 import com.daleel.student.ms.model.Student;
 import com.daleel.student.ms.repository.StudentRepository;
+import org.springframework.cache.annotation.CacheEvict;
+
+import org.springframework.cache.annotation.Caching;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,13 +29,16 @@ import lombok.extern.slf4j.Slf4j;
 @Transactional
 @Slf4j
 @RequiredArgsConstructor
+@CacheConfig(cacheNames={"students"})   
 public class StudentServiceImpl implements StudentService {
 	
 	
 	private final StudentRepository studentRepository;
 	private final ModelMapper modelMapper;
 
-
+	@Caching(evict = {
+            @CacheEvict(value="student", allEntries=true),
+            @CacheEvict(value="students", allEntries=true)})
 	@Override
 	public StudentDTO createStudent(StudentDTO student) {
 		return mapToDTO(studentRepository.save(mapToEntity(student)));
@@ -43,7 +49,7 @@ public class StudentServiceImpl implements StudentService {
 	public List<StudentDTO> getAllStudents() {
 		return mapToDTOs(studentRepository.findAll());
 	}
-
+	@Cacheable("student")
 	@Override
 	public StudentDTO getStudentById(String studentId) {
       Optional<Student> studentDb = this.studentRepository.findById(studentId);
@@ -57,7 +63,7 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 
-
+	@Cacheable("students")
 	@Override
 	public List<StudentDTO> getAllStudents(String firstname, String lastname, String departmentName) {
 		 List<StudentDTO> students = new ArrayList<>();
