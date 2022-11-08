@@ -5,8 +5,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +31,8 @@ import io.github.bucket4j.Bucket;
 import io.github.bucket4j.Refill;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
+import lombok.extern.slf4j.Slf4j;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
@@ -39,9 +40,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @RestController
 @RequestMapping("/api")
 @SecurityRequirement(name = "X-API-KEY")
-public class StudentController {
-	private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
+@Slf4j
 
+public class StudentController {
 	
 	private final StudentService studentService;
 	private final Bucket listBucket;
@@ -63,18 +64,20 @@ public class StudentController {
 
 			@ApiResponse(responseCode = "500", description = "Unexpected system exception"),
 			@ApiResponse(responseCode = "429", description = "Reach current API rate limit") })
-	@GetMapping("/students")
+	@GetMapping(value="/students",produces="application/json")
 	public @ResponseBody ResponseEntity<List<StudentDTO>> getAllStudents(@RequestParam(required = false) String firstname,
 			@RequestParam(required = false) String lastname, @RequestParam(required = false) String departmentName) {
+		log.info("Request  {}{}{}",firstname,lastname,departmentName);
 		try {
 			if (listBucket.tryConsume(1)) {
 				List<StudentDTO> students = studentService.getAllStudents(firstname, lastname, departmentName);
-
+				log.info("Request  {}{}{} response {}",firstname,lastname,departmentName,students);
 				return new ResponseEntity<>(students, HttpStatus.OK);
 			}
+			log.info("Request  {}{}{} too Many Requests",firstname,lastname,departmentName);
 			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();
 		} catch (Exception e) {
-			logger.error("Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}", firstname,
+			log.error("Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}", firstname,
 					lastname, departmentName, e);
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
@@ -98,7 +101,7 @@ public class StudentController {
 			}
 			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();
 		} catch (Exception e) {
-			logger.error("Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}", firstname,
+			log.error("Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}", firstname,
 					lastname, departmentName, e);
 			return  ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
@@ -129,7 +132,8 @@ public class StudentController {
 			@ApiResponse(responseCode = "500", description = "Unexpected system exception"),
 			@ApiResponse(responseCode = "429", description = "Reach current API rate limit") })
 	
-	@PostMapping("/students")
+	@PostMapping(value="/students",consumes="application/json",produces="application/json")
+	
 
 	public @ResponseBody ResponseEntity<StudentDTO> createStudent(@Valid @RequestBody  StudentDTO student) {
 		try {
@@ -140,7 +144,7 @@ public class StudentController {
 			}
 			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();
 		} catch (Exception e) {
-			logger.error("Exception in createStudent student:{}", student, e);
+			log.error("Exception in createStudent student:{}", student, e);
 
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}

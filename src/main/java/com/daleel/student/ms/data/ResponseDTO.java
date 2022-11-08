@@ -6,7 +6,8 @@ import java.time.format.DateTimeFormatter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-
+import lombok.Data;
+@Data
 public class ResponseDTO {
 	private String timestamp;
 
@@ -22,11 +23,6 @@ public class ResponseDTO {
         this.errorCode = errorCode;
         this.error = error;
     }
-	public String getTimestamp() {
-		return timestamp;
-	}
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
-	}
+	
 
 }

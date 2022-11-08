@@ -10,8 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.boot.web.servlet.filter.OrderedFilter;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -22,9 +21,12 @@ import com.daleel.student.ms.exception.BusinessException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Order(OrderedFilter.HIGHEST_PRECEDENCE)
+@Slf4j
 public class AuthenticationHandlerFilter implements Filter{
-	private static final Logger log = LoggerFactory.getLogger(AuthenticationHandlerFilter.class);
+	
 	private String apiKeyVal;
 	 public static final String AUTH_KEY="X-API-KEY";
     public AuthenticationHandlerFilter(String apiKeyVal) {
@@ -40,8 +42,8 @@ public class AuthenticationHandlerFilter implements Filter{
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         log.info(
-                "Starting a transaction for req : {}, {}", 
-                httpServletRequest.getRequestURI(),apiKeyVal);
+                "Starting a transaction for req : {}", 
+                httpServletRequest.getRequestURI());
         final String apiKey= httpServletRequest.getHeader(AUTH_KEY);
         try {
             if (apiKey!=null && apiKeyVal.equals(apiKey)) {
@@ -56,6 +58,9 @@ public class AuthenticationHandlerFilter implements Filter{
             httpServletResponse.setContentType(MediaType.APPLICATION_JSON_VALUE);
             httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
             httpServletResponse.getWriter().write(convertObjectToJson(errorResponse));
+            log.info(
+                    "Error a transaction for req : {} is having invalid token", 
+                    httpServletRequest.getRequestURI());
     }
 }
 

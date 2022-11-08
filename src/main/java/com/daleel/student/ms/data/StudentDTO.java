@@ -5,6 +5,12 @@ import javax.validation.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class StudentDTO {
 	private String id;
 	@NotEmpty(message = "The firstname is required.") 
@@ -16,40 +22,7 @@ public class StudentDTO {
 	@NotEmpty(message = "The departmentName is required.") 
 	@Size(min = 2, max = 20, message = "The length of departmentName must be between 2 and 20 characters.")
 	private String departmentName;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getFirstname() {
-		return firstname;
-	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-	public String getLastname() {
-		return lastname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-	public String getDepartmentName() {
-		return departmentName;
-	}
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
-	}
-	public StudentDTO(String id,  String firstname,  String lastname,
-			 String departmentName) {
-		super();
-		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.departmentName = departmentName;
-	}
-	public StudentDTO() {
-		
-	}
+	
+	
 
 }

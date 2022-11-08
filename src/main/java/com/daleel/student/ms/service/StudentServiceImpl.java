@@ -7,9 +7,8 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,18 +19,19 @@ import com.daleel.student.ms.data.StudentDTO;
 import com.daleel.student.ms.model.Student;
 import com.daleel.student.ms.repository.StudentRepository;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 @Service
 @Transactional
+@Slf4j
+@RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
-	private static final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
+	
 	
 	private final StudentRepository studentRepository;
 	private final ModelMapper modelMapper;
-	@Autowired 
-	public StudentServiceImpl(ModelMapper modelMapper,StudentRepository studentRepository) {
-		this.modelMapper=modelMapper;
-		this.studentRepository=studentRepository;
-	}
+
 
 	@Override
 	public StudentDTO createStudent(StudentDTO student) {
@@ -51,7 +51,7 @@ public class StudentServiceImpl implements StudentService {
 		if(studentDb.isPresent()) {
 			return mapToDTO(studentDb.get());
 		}else {
-			logger.error("Student not found id:{}",studentId);
+			log.error("Student not found id:{}",studentId);
 			return null;
 		}
 	}

@@ -62,7 +62,7 @@ public class StudentRepositoryTest {
 	@DisplayName("Repository - Create Student")
 	public void createStudent() {
 		// given
-		Student testStudent = new Student("Asmaa", "Saad", "IT");
+		Student testStudent = Student.builder().firstname("test").lastname("test").departmentName("test").build();
 
 		// when
 		Student savedStudent = studentRepository.save(testStudent);

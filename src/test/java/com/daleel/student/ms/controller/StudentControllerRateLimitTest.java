@@ -14,6 +14,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -36,10 +37,13 @@ public class StudentControllerRateLimitTest {
 
 	@Autowired
 	private MockMvc mockMvc;
+	@Value("${web.authentication.apikey}")
+    private String apiKeyVal;
+	private static final String API_KEY="X-API-KEY";
 
 	@Test
 	@DisplayName("GET /students by firstname Asmaa - Success")
-	public void getStudentByFirstNameExhastLimit() throws Exception {
+	public void testGetStudentByFirstNameExhastLimit() throws Exception {
 		// given
 
 		StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
@@ -48,12 +52,12 @@ public class StudentControllerRateLimitTest {
 		given(studentService.getAllStudents(any(), any(), any())).willReturn(students);
 		// when
 		for (int i = 1; i <= 50; i++) {
-			mockMvc.perform(get("/api/students?firstname=Asmaa").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+			mockMvc.perform(get("/api/students?firstname=Asmaa").header(API_KEY, apiKeyVal))
 
 					// then
 					.andExpect(status().isOk()).andExpect(jsonPath("$.[:1].firstname").value("Asmaa"));
 		}
-		mockMvc.perform(get("/api/students?firstname=Asmaa").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+		mockMvc.perform(get("/api/students?firstname=Asmaa").header(API_KEY, apiKeyVal))
 
 				.andExpect(status().isTooManyRequests());
 
@@ -61,7 +65,7 @@ public class StudentControllerRateLimitTest {
 
 	@Test
 	@DisplayName("GET /students  paged Asmaa - Success")
-	public void getAllStudentPagedExhastLimit() throws Exception {
+	public void testGetAllStudentPagedExhastLimit() throws Exception {
 		// given
 
 		StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
@@ -70,12 +74,12 @@ public class StudentControllerRateLimitTest {
 		given(studentService.getAllStudents(null, null, null, 0, 1)).willReturn(students);
 		// when
 		for (int i = 1; i <= 50; i++) {
-			mockMvc.perform(get("/api/students/0/1").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+			mockMvc.perform(get("/api/students/0/1").header(API_KEY, apiKeyVal))
 
 					// then
 					.andExpect(status().isOk()).andExpect(jsonPath("$.[:1].firstname").value("Asmaa"));
 		}
-		mockMvc.perform(get("/api/students/0/1").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+		mockMvc.perform(get("/api/students/0/1").header(API_KEY, apiKeyVal))
 
 				.andExpect(status().isTooManyRequests());
 
@@ -83,19 +87,19 @@ public class StudentControllerRateLimitTest {
 
 	@Test
 	@DisplayName("POST /students Asmaa - Success")
-	public void createStudentSuccess() throws Exception {
+	public void testCreateStudentSuccess() throws Exception {
 		// Given
 		StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
 		given(studentService.createStudent(any())).willReturn(testStudent);
 		// when
 		for (int i = 1; i <= 50; i++) {
 			mockMvc.perform(post("/api/students").contentType(MediaType.APPLICATION_JSON)
-					.header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D").content(asJsonString(testStudent)))
+					.header(API_KEY, apiKeyVal).content(asJsonString(testStudent)))
 					// then
 					.andExpect(status().isCreated());
 		}
 		mockMvc.perform(post("/api/students").contentType(MediaType.APPLICATION_JSON)
-				.header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D").content(asJsonString(testStudent)))
+				.header(API_KEY, apiKeyVal).content(asJsonString(testStudent)))
 				.andExpect(status().isTooManyRequests());
 
 	}
