@@ -1,9 +1,17 @@
 package com.daleel.student.ms.controller;
-import com.daleel.student.ms.model.Student;
-import com.daleel.student.ms.service.StudentService;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.junit.Before;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,15 +23,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.BDDMockito.given;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import com.daleel.student.ms.data.StudentDTO;
+import com.daleel.student.ms.service.StudentService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @ExtendWith(SpringExtension.class)
@@ -35,23 +37,19 @@ public class StudentControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-    @Before
-    void setup() throws IOException{
-    	try {
-    		System.out.println("WAIT!!!!!!!!!!!!!!!!!!!!!!!");
-			Thread.sleep(60000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    private final UUID STUDENT_UNKNOWN = new UUID(0, 999);
+    @BeforeEach
+    void setup() throws Exception {
+    	 mockMvc.perform(get("/api/bucketsReset").header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"));
     }
+    
 
     @Test
     @DisplayName("GET /students/{id} Asmaa - Success")
-    public void getStudentByIdSuccess() throws Exception {
+    public void testGetStudentById() throws Exception {
         //given
 
-    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
         given(studentService.getStudentById(any())).willReturn(testStudent);
         //when
 
@@ -64,12 +62,31 @@ public class StudentControllerTest {
 
     }
     @Test
+    public void testGetStudentByHeader_InvalidHeader() throws Exception {
+        mockMvc.perform(get("/api/students/{id}", "id").header("X-API-KEY", "test"))
+                .andExpect(status().isUnauthorized())
+                .andExpect(jsonPath("$.error-code").value("401"))
+                .andExpect(jsonPath("$.error-message").value("Authorization header is invalid/not found"));
+    }
+    @Test
+    public void testGetStudentByHeader_MissingHeader() throws Exception {
+        mockMvc.perform(get("/api/students/{id}", "id"))
+                .andExpect(status().isUnauthorized())
+                .andExpect(jsonPath("$.error-code").value("401"))
+                .andExpect(jsonPath("$.error-message").value("Authorization header is invalid/not found"));
+    }
+    @Test
+    public void testGetStudentById_StudentUnknown() throws Exception {
+    	mockMvc.perform(get("/api/students/{id}", STUDENT_UNKNOWN).header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D"))
+                .andExpect(status().isNotFound());
+    }
+    @Test
     @DisplayName("GET /students by firstname Asmaa - Success")
-    public void getStudentByFirstNameSuccess() throws Exception {
+    public void testGetStudentByFirstName() throws Exception {
         //given
 
-    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
-    	List<Student> students=new ArrayList<Student>();
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
+    	List<StudentDTO> students=new ArrayList<>();
     	students.add(testStudent);
         given(studentService.getAllStudents(any(),any(),any())).willReturn(students);
         //when
@@ -85,12 +102,12 @@ public class StudentControllerTest {
     
     @Test
     @DisplayName("GET /students  paged Asmaa - Success")
-    public void getAllStudentPagedSuccess() throws Exception {
+    public void testGetAllStudentPaged() throws Exception {
     	
         //given
 
-    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
-    	List<Student> students=new ArrayList<Student>();
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
+    	List<StudentDTO> students=new ArrayList<>();
     	students.add(testStudent);
         given(studentService.getAllStudents(null,null,null,0,1)).willReturn(students);
         //when
@@ -105,11 +122,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by firstname paged Asmaa - Success")
-    public void getStudentByFirstNamePagedSuccess() throws Exception {
+    public void testGetStudentByFirstNamePaged() throws Exception {
         //given
 
-    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
-    	List<Student> students=new ArrayList<Student>();
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
+    	List<StudentDTO> students=new ArrayList<>();
     	students.add(testStudent);
         given(studentService.getAllStudents("Asmaa",null,null,0,1)).willReturn(students);
         //when
@@ -124,11 +141,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by firstname Test - Fail")
-    public void getStudentByFirstNameFailure() throws Exception {
+    public void testGetStudentByFirstName_UnKnowFirstName() throws Exception {
         //given
 
     	
-    	List<Student> students=new ArrayList<Student>();
+    	List<StudentDTO> students=new ArrayList<>();
     	
         given(studentService.getAllStudents("Test",null,null)).willReturn(students);
         //when
@@ -144,11 +161,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by firstname Test - Fail")
-    public void getStudentByLastNameFailure() throws Exception {
+    public void testGetStudentByLastName_UnKnowLastName() throws Exception {
         //given
 
     	
-    	List<Student> students=new ArrayList<Student>();
+    	List<StudentDTO> students=new ArrayList<>();
     	
         given(studentService.getAllStudents(null,"Test",null)).willReturn(students);
         //when
@@ -164,11 +181,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by departmentname IT - Fail")
-    public void getStudentByDepartmentNameFailure() throws Exception {
+    public void testGetStudentByDepartmentName_UnKnownDepartmentName() throws Exception {
         //given
 
     	
-    	List<Student> students=new ArrayList<Student>();
+    	List<StudentDTO> students=new ArrayList<>();
     	
         given(studentService.getAllStudents(null,null,"IT")).willReturn(students);
         //when
@@ -184,11 +201,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by firstname Test - Fail")
-    public void getStudentByFirstNamePagedFailure() throws Exception {
+    public void testGetStudentByFirstNamePaged_UnKnowFirstName() throws Exception {
         //given
 
     	
-    	List<Student> students=new ArrayList<Student>();
+    	List<StudentDTO> students=new ArrayList<>();
     	
         given(studentService.getAllStudents("Test",null,null,0,1)).willReturn(students);
         //when
@@ -204,11 +221,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by firstname Test - Fail")
-    public void getStudentByLastNamePagedFailure() throws Exception {
+    public void testGetStudentByLastPaged_UnKnowLastName() throws Exception {
         //given
 
     	
-    	List<Student> students=new ArrayList<Student>();
+    	List<StudentDTO> students=new ArrayList<>();
     	
         given(studentService.getAllStudents(null,"Test",null,0,1)).willReturn(students);
         //when
@@ -224,11 +241,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students All Paged Test - Fail")
-    public void getAllStudentPagedFailure() throws Exception {
+    public void testGetAllStudentPaged_Empty() throws Exception {
         //given
 
     	
-    	List<Student> students=new ArrayList<Student>();
+    	List<StudentDTO> students=new ArrayList<>();
     	
         given(studentService.getAllStudents(null,null,null,0,1)).willReturn(students);
         //when
@@ -244,11 +261,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by departmentname IT - Fail")
-    public void getStudentByDepartmentNamePagedFailure() throws Exception {
+    public void testGetStudentByDepartmentNamePaged_UnKnowDepartmentName() throws Exception {
         //given
 
     	
-    	List<Student> students=new ArrayList<Student>();
+    	List<StudentDTO> students=new ArrayList<>();
     	
         given(studentService.getAllStudents(null,null,"IT",0,1)).willReturn(students);
         //when
@@ -264,12 +281,12 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by lastname Saad - Success")
-    public void getStudentByLastNameSuccess() throws Exception {
-    	Thread.sleep(60000);
+    public void testGetStudentByLastName() throws Exception {
+    	
         //given
 
-    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
-    	List<Student> students=new ArrayList<Student>();
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
+    	List<StudentDTO> students=new ArrayList<>();
     	students.add(testStudent);
         given(studentService.getAllStudents(any(),any(),any())).willReturn(students);
         //when
@@ -284,11 +301,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by lastname Paged Saad - Success")
-    public void getStudentByLastNamePagedSuccess() throws Exception {
+    public void testGetStudentByLastNamePaged() throws Exception {
         //given
 
-    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
-    	List<Student> students=new ArrayList<Student>();
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
+    	List<StudentDTO> students=new ArrayList<>();
     	students.add(testStudent);
         given(studentService.getAllStudents(null,"Saad",null,0,1)).willReturn(students);
         //when
@@ -303,11 +320,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by Department Name IT - Success")
-    public void getStudentByDepartmentNameSuccess() throws Exception {
+    public void testGetStudentByDepartmentName() throws Exception {
         //given
 
-    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
-    	List<Student> students=new ArrayList<Student>();
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
+    	List<StudentDTO> students=new ArrayList<>();
     	students.add(testStudent);
         given(studentService.getAllStudents(null,null,"IT")).willReturn(students);
         //when
@@ -322,11 +339,11 @@ public class StudentControllerTest {
     }
     @Test
     @DisplayName("GET /students by Department Name IT - Success")
-    public void getStudentByDepartmentNamePagedSuccess() throws Exception {
+    public void testGetStudentByDepartmentNamePaged() throws Exception {
         //given
 
-    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
-    	List<Student> students=new ArrayList<Student>();
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
+    	List<StudentDTO> students=new ArrayList<>();
     	students.add(testStudent);
         given(studentService.getAllStudents(null,null,"IT",0,1)).willReturn(students);
         //when
@@ -342,9 +359,9 @@ public class StudentControllerTest {
 
     @Test
     @DisplayName("POST /students Asmaa - Success")
-    public void createStudentSuccess() throws Exception {
+    public void testCreateStudent() throws Exception {
         //Given
-    	Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
         given(studentService.createStudent(any())).willReturn(testStudent);
         //when
         mockMvc.perform(post("/api/students")
@@ -355,7 +372,141 @@ public class StudentControllerTest {
         .andExpect(status().isCreated());
 
     }
-    
+    @Test
+    @DisplayName("POST /students Asmaa - Success")
+    public void testCreateStudent_EmptyFirstName() throws Exception {
+        //Given
+    	StudentDTO testStudent = new StudentDTO("id", "", "Saad", "IT");
+        given(studentService.createStudent(any())).willReturn(testStudent);
+        //when
+        mockMvc.perform(post("/api/students")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D")
+        .content(asJsonString(testStudent)))
+        //then
+        .andExpect(status().is4xxClientError());
+
+    }
+    @Test
+    @DisplayName("POST /students Asmaa - Success")
+    public void testCreateStudent_EmptyLastName() throws Exception {
+        //Given
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "", "IT");
+        given(studentService.createStudent(any())).willReturn(testStudent);
+        //when
+        mockMvc.perform(post("/api/students")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D")
+        .content(asJsonString(testStudent)))
+        //then
+        .andExpect(status().is4xxClientError());
+
+    }
+    @Test
+    @DisplayName("POST /students Asmaa - Success")
+    public void testCreateStudent_EmptyDepartmentName() throws Exception {
+        //Given
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "");
+        given(studentService.createStudent(any())).willReturn(testStudent);
+        //when
+        mockMvc.perform(post("/api/students")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D")
+        .content(asJsonString(testStudent)))
+        //then
+        .andExpect(status().is4xxClientError());
+
+    }
+    @Test
+    @DisplayName("POST /students Asmaa - Success")
+    public void testCreateStudent_MinFirstName() throws Exception {
+        //Given
+    	StudentDTO testStudent = new StudentDTO("id", "A", "Saad", "IT");
+        given(studentService.createStudent(any())).willReturn(testStudent);
+        //when
+        mockMvc.perform(post("/api/students")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D")
+        .content(asJsonString(testStudent)))
+        //then
+        .andExpect(status().is4xxClientError());
+
+    }
+    @Test
+    @DisplayName("POST /students Asmaa - Success")
+    public void testCreateStudent_MaxFirstName() throws Exception {
+        //Given
+    	StudentDTO testStudent = new StudentDTO("id", "ITTTTTTTTTTTTTTTTTTTT", "Saad", "IT");
+        given(studentService.createStudent(any())).willReturn(testStudent);
+        //when
+        mockMvc.perform(post("/api/students")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D")
+        .content(asJsonString(testStudent)))
+        //then
+        .andExpect(status().is4xxClientError());
+
+    }
+    @Test
+    @DisplayName("POST /students Asmaa - Success")
+    public void testCreateStudent_MinLastName() throws Exception {
+        //Given
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "S", "IT");
+        given(studentService.createStudent(any())).willReturn(testStudent);
+        //when
+        mockMvc.perform(post("/api/students")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D")
+        .content(asJsonString(testStudent)))
+        //then
+        .andExpect(status().is4xxClientError());
+
+    }
+    @Test
+    @DisplayName("POST /students Asmaa - Success")
+    public void testCreateStudent_MaxLastName() throws Exception {
+        //Given
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "ITTTTTTTTTTTTTTTTTTTT");
+        given(studentService.createStudent(any())).willReturn(testStudent);
+        //when
+        mockMvc.perform(post("/api/students")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D")
+        .content(asJsonString(testStudent)))
+        //then
+        .andExpect(status().is4xxClientError());
+
+    }
+    @Test
+    @DisplayName("POST /students Asmaa - Success")
+    public void testCreateStudent_MinDepartmentName() throws Exception {
+        //Given
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "I");
+        given(studentService.createStudent(any())).willReturn(testStudent);
+        //when
+        mockMvc.perform(post("/api/students")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D")
+        .content(asJsonString(testStudent)))
+        //then
+        .andExpect(status().is4xxClientError());
+
+    }
+    @Test
+    @DisplayName("POST /students Asmaa - Success")
+    public void testCreateStudent_MaxDepartmentName() throws Exception {
+        //Given
+    	StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "ITTTTTTTTTTTTTTTTTTTT");
+        given(studentService.createStudent(any())).willReturn(testStudent);
+        //when
+        mockMvc.perform(post("/api/students")
+        .contentType(MediaType.APPLICATION_JSON)
+        .header("X-API-KEY", "184DA27F6D8E9181EB44DA79A983D")
+        .content(asJsonString(testStudent)))
+        //then
+        .andExpect(status().is4xxClientError());
+
+    }
     
 
 

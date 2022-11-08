@@ -15,7 +15,17 @@ server:
         include-message: always
         include-binding-errors: always
         include-exception: false
-
+springdoc:
+  swagger-ui:
+    path: /apidoc
+    displayRequestDuration: true
+    disable-swagger-default-url: true
+    csrf:
+      enabled: true
+    operationsSorter: method #For sorting endpoints by http methods
+    tagsSorter: alpha #For sorting tags alphabetically
+  api-docs:
+    path: /api
 
 
 ---

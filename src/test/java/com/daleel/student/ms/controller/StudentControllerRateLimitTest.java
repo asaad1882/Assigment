@@ -21,7 +21,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.daleel.student.ms.model.Student;
+import com.daleel.student.ms.data.StudentDTO;
+
 import com.daleel.student.ms.service.StudentService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -41,8 +42,8 @@ public class StudentControllerRateLimitTest {
 	public void getStudentByFirstNameExhastLimit() throws Exception {
 		// given
 
-		Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
-		List<Student> students = new ArrayList<Student>();
+		StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
+		List<StudentDTO> students = new ArrayList<>();
 		students.add(testStudent);
 		given(studentService.getAllStudents(any(), any(), any())).willReturn(students);
 		// when
@@ -63,8 +64,8 @@ public class StudentControllerRateLimitTest {
 	public void getAllStudentPagedExhastLimit() throws Exception {
 		// given
 
-		Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
-		List<Student> students = new ArrayList<Student>();
+		StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
+		List<StudentDTO> students = new ArrayList<>();
 		students.add(testStudent);
 		given(studentService.getAllStudents(null, null, null, 0, 1)).willReturn(students);
 		// when
@@ -84,7 +85,7 @@ public class StudentControllerRateLimitTest {
 	@DisplayName("POST /students Asmaa - Success")
 	public void createStudentSuccess() throws Exception {
 		// Given
-		Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
+		StudentDTO testStudent = new StudentDTO("id", "Asmaa", "Saad", "IT");
 		given(studentService.createStudent(any())).willReturn(testStudent);
 		// when
 		for (int i = 1; i <= 50; i++) {

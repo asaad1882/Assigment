@@ -2,18 +2,17 @@ package com.daleel.student.ms.service;
 
 import java.util.List;
 
+import com.daleel.student.ms.data.StudentDTO;
 
-
-import com.daleel.student.ms.model.Student;
 
 public interface StudentService {
-	Student createStudent(Student student);
+	StudentDTO createStudent(StudentDTO student);
 	
 	
-	List<Student> getAllStudents();
-	List<Student> getAllStudents(String firstname,String lastname,String departmentName);
-	Student getStudentById(String studentId);
-	List<Student> getAllStudents(String firstname, String lastname, String departmentName,int page,int size);
+	List<StudentDTO> getAllStudents();
+	List<StudentDTO> getAllStudents(String firstname,String lastname,String departmentName);
+	StudentDTO getStudentById(String studentId);
+	List<StudentDTO> getAllStudents(String firstname, String lastname, String departmentName,int page,int size);
 	
 
 }

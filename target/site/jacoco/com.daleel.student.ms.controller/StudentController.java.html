@@ -3,6 +3,8 @@
 import java.time.Duration;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +22,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.daleel.student.ms.entity.StudentDTO;
-import com.daleel.student.ms.model.Student;
+import com.daleel.student.ms.data.StudentDTO;
+
 import com.daleel.student.ms.service.StudentService;
 
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
-import io.github.bucket4j.Bucket4j;
+
 import io.github.bucket4j.Refill;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -38,20 +40,22 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @RequestMapping(&quot;/api&quot;)
 @SecurityRequirement(name = &quot;X-API-KEY&quot;)
 public class StudentController {
-<span class="fc" id="L41">	private static final Logger logger = LoggerFactory.getLogger(StudentController.class);</span>
+<span class="fc" id="L43">	private static final Logger logger = LoggerFactory.getLogger(StudentController.class);</span>
 
-	@Autowired
-	private StudentService studentService;
+	
+	private final StudentService studentService;
 	private final Bucket listBucket;
 	private final Bucket createBucket;
 	private final Bucket listPagedBucket;
-
-<span class="fc" id="L49">	public StudentController() {</span>
-<span class="fc" id="L50">		Bandwidth limit = Bandwidth.classic(50, Refill.greedy(50, Duration.ofMinutes(1)));</span>
-<span class="fc" id="L51">		this.listBucket = Bucket4j.builder().addLimit(limit).build();</span>
-<span class="fc" id="L52">		this.createBucket = Bucket4j.builder().addLimit(limit).build();</span>
-<span class="fc" id="L53">		this.listPagedBucket = Bucket4j.builder().addLimit(limit).build();</span>
-<span class="fc" id="L54">	}</span>
+	@Autowired
+<span class="fc" id="L51">	public StudentController(StudentService studentService) {</span>
+<span class="fc" id="L52">		this.studentService=studentService;</span>
+<span class="fc" id="L53">		Bandwidth limit = Bandwidth.classic(50, Refill.greedy(50, Duration.ofMinutes(1)));</span>
+<span class="fc" id="L54">		this.listBucket = Bucket.builder().addLimit(limit).build();</span>
+<span class="fc" id="L55">		this.createBucket = Bucket.builder().addLimit(limit).build();</span>
+<span class="fc" id="L56">		this.listPagedBucket = Bucket.builder().addLimit(limit).build();</span>
+		
+<span class="fc" id="L58">	}</span>
 
 	@Operation(summary = &quot;Retrieve Matching Student filtered by firstname, lastname or department &quot;)
 	@ApiResponses(value = { @ApiResponse(responseCode = &quot;200&quot;, description = &quot;Successfully List students&quot;),
@@ -60,19 +64,19 @@ public class StudentController {
 			@ApiResponse(responseCode = &quot;500&quot;, description = &quot;Unexpected system exception&quot;),
 			@ApiResponse(responseCode = &quot;429&quot;, description = &quot;Reach current API rate limit&quot;) })
 	@GetMapping(&quot;/students&quot;)
-	public @ResponseBody ResponseEntity&lt;List&lt;Student&gt;&gt; getAllStudents(@RequestParam(required = false) String firstname,
+	public @ResponseBody ResponseEntity&lt;List&lt;StudentDTO&gt;&gt; getAllStudents(@RequestParam(required = false) String firstname,
 			@RequestParam(required = false) String lastname, @RequestParam(required = false) String departmentName) {
 		try {
-<span class="fc bfc" id="L66" title="All 2 branches covered.">			if (listBucket.tryConsume(1)) {</span>
-<span class="fc" id="L67">				List&lt;Student&gt; students = studentService.getAllStudents(firstname, lastname, departmentName);</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">			if (listBucket.tryConsume(1)) {</span>
+<span class="fc" id="L71">				List&lt;StudentDTO&gt; students = studentService.getAllStudents(firstname, lastname, departmentName);</span>
 
-<span class="fc" id="L69">				return new ResponseEntity&lt;&gt;(students, HttpStatus.OK);</span>
+<span class="fc" id="L73">				return new ResponseEntity&lt;&gt;(students, HttpStatus.OK);</span>
 			}
-<span class="fc" id="L71">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
-<span class="nc" id="L72">		} catch (Exception e) {</span>
-<span class="nc" id="L73">			logger.error(&quot;Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}&quot;, firstname,</span>
-<span class="nc" id="L74">					lastname, departmentName, e);</span>
-<span class="nc" id="L75">			return new ResponseEntity&lt;&gt;(null, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+<span class="fc" id="L75">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
+<span class="nc" id="L76">		} catch (Exception e) {</span>
+<span class="nc" id="L77">			logger.error(&quot;Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}&quot;, firstname,</span>
+<span class="nc" id="L78">					lastname, departmentName, e);</span>
+<span class="nc" id="L79">			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();</span>
 		}
 	}
 	@Operation(summary = &quot;Retrieve Matching Student filtered by firstname, lastname or department paged by current page and page size&quot;)
@@ -83,20 +87,20 @@ public class StudentController {
 			@ApiResponse(responseCode = &quot;429&quot;, description = &quot;Reach current API rate limit&quot;) })
 
 	@GetMapping(&quot;/students/{page}/{size}&quot;)
-	public @ResponseBody ResponseEntity&lt;List&lt;Student&gt;&gt; getAllStudentsPaged(@RequestParam(required = false) String firstname,
+	public @ResponseBody ResponseEntity&lt;List&lt;StudentDTO&gt;&gt; getAllStudentsPaged(@RequestParam(required = false) String firstname,
 			@RequestParam(required = false) String lastname, @RequestParam(required = false) String departmentName,
 			@PathVariable(&quot;page&quot;) int page, @PathVariable(&quot;size&quot;) int size) {
 		try {
-<span class="fc bfc" id="L90" title="All 2 branches covered.">			if (listPagedBucket.tryConsume(1)) {</span>
-<span class="fc" id="L91">				List&lt;Student&gt; students = studentService.getAllStudents(firstname, lastname, departmentName, page, size);</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">			if (listPagedBucket.tryConsume(1)) {</span>
+<span class="fc" id="L95">				List&lt;StudentDTO&gt; students = studentService.getAllStudents(firstname, lastname, departmentName, page, size);</span>
 
-<span class="fc" id="L93">				return new ResponseEntity&lt;&gt;(students, HttpStatus.OK);</span>
+<span class="fc" id="L97">				return new ResponseEntity&lt;&gt;(students, HttpStatus.OK);</span>
 			}
-<span class="fc" id="L95">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
-<span class="nc" id="L96">		} catch (Exception e) {</span>
-<span class="nc" id="L97">			logger.error(&quot;Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}&quot;, firstname,</span>
-<span class="nc" id="L98">					lastname, departmentName, e);</span>
-<span class="nc" id="L99">			return new ResponseEntity&lt;&gt;(null, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+<span class="fc" id="L99">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
+<span class="nc" id="L100">		} catch (Exception e) {</span>
+<span class="nc" id="L101">			logger.error(&quot;Exception in getAllStudents first name:{}, lastname:{}, departmentname:{}&quot;, firstname,</span>
+<span class="nc" id="L102">					lastname, departmentName, e);</span>
+<span class="nc" id="L103">			return  ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();</span>
 		}
 	}
 	@Operation(summary = &quot;Retrieve Matching Student by Id&quot;)
@@ -106,34 +110,48 @@ public class StudentController {
 			@ApiResponse(responseCode = &quot;500&quot;, description = &quot;Unexpected system exception&quot;),
 			@ApiResponse(responseCode = &quot;429&quot;, description = &quot;Reach current API rate limit&quot;) })
 	@GetMapping(&quot;/students/{id}&quot;)
-	public @ResponseBody ResponseEntity&lt;Student&gt; getStudentById(@PathVariable(&quot;id&quot;) String id) {
+	public @ResponseBody ResponseEntity&lt;StudentDTO&gt; getStudentById(@PathVariable(&quot;id&quot;) String id) {
+<span class="fc" id="L114">		StudentDTO studentDTO=studentService.getStudentById(id);</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">		if(studentDTO!=null) {</span>
 
-<span class="fc" id="L111">		return new ResponseEntity&lt;&gt;(studentService.getStudentById(id), HttpStatus.OK);</span>
+<span class="fc" id="L117">		return new ResponseEntity&lt;&gt;(studentService.getStudentById(id), HttpStatus.OK);</span>
+		}else {
+			
+<span class="fc" id="L120">			      return new ResponseEntity&lt;&gt;(HttpStatus.NOT_FOUND);</span>
+	
+		}
 
 	}
 	@Operation(summary = &quot;Create student &quot;)
 	@ApiResponses(value = { @ApiResponse(responseCode = &quot;201&quot;, description = &quot;Successfully created&quot;),
 			@ApiResponse(responseCode = &quot;401&quot;, description = &quot;Invalid token&quot;),
-
+			@ApiResponse(responseCode = &quot;400&quot;, description = &quot;Bad Request&quot;),
 			@ApiResponse(responseCode = &quot;500&quot;, description = &quot;Unexpected system exception&quot;),
 			@ApiResponse(responseCode = &quot;429&quot;, description = &quot;Reach current API rate limit&quot;) })
 	
 	@PostMapping(&quot;/students&quot;)
 
-	public @ResponseBody ResponseEntity&lt;Student&gt; createStudent(@RequestBody StudentDTO student) {
+	public @ResponseBody ResponseEntity&lt;StudentDTO&gt; createStudent(@Valid @RequestBody  StudentDTO student) {
 		try {
-<span class="fc bfc" id="L125" title="All 2 branches covered.">			if (createBucket.tryConsume(1)) {</span>
-<span class="fc" id="L126">				return new ResponseEntity&lt;&gt;(studentService.createStudent(</span>
-<span class="fc" id="L127">						new Student(student.getFirstname(), student.getLastname(), student.getDepartmentName())),</span>
-<span class="fc" id="L128">						HttpStatus.CREATED);</span>
+<span class="fc bfc" id="L136" title="All 2 branches covered.">			if (createBucket.tryConsume(1)) {</span>
+<span class="fc" id="L137">				return new ResponseEntity&lt;&gt;(studentService.createStudent(</span>
+<span class="fc" id="L138">						student),</span>
+<span class="fc" id="L139">						HttpStatus.CREATED);</span>
 			}
-<span class="fc" id="L130">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
-<span class="nc" id="L131">		} catch (Exception e) {</span>
-<span class="nc" id="L132">			logger.error(&quot;Exception in createStudent student:{}&quot;, student, e);</span>
+<span class="fc" id="L141">			return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();</span>
+<span class="nc" id="L142">		} catch (Exception e) {</span>
+<span class="nc" id="L143">			logger.error(&quot;Exception in createStudent student:{}&quot;, student, e);</span>
 
-<span class="nc" id="L134">			return new ResponseEntity&lt;&gt;(null, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+<span class="nc" id="L145">			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();</span>
 		}
 	}
+	@GetMapping(&quot;/bucketsReset&quot;)
+
+	public  void resetBucket() {
+<span class="fc" id="L151">		listBucket.reset();</span>
+<span class="fc" id="L152">		createBucket.reset();</span>
+<span class="fc" id="L153">		listPagedBucket.reset();</span>
+<span class="fc" id="L154">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

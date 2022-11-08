@@ -3,8 +3,10 @@ package com.daleel.student.ms.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +16,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
-
+import com.daleel.student.ms.data.StudentDTO;
 import com.daleel.student.ms.model.Student;
 import com.daleel.student.ms.repository.StudentRepository;
 
@@ -23,26 +24,32 @@ import com.daleel.student.ms.repository.StudentRepository;
 @Transactional
 public class StudentServiceImpl implements StudentService {
 	private static final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
-	@Autowired
-	private StudentRepository studentRepository;
+	
+	private final StudentRepository studentRepository;
+	private final ModelMapper modelMapper;
+	@Autowired 
+	public StudentServiceImpl(ModelMapper modelMapper,StudentRepository studentRepository) {
+		this.modelMapper=modelMapper;
+		this.studentRepository=studentRepository;
+	}
 
 	@Override
-	public Student createStudent(Student student) {
-		return studentRepository.save(student);
+	public StudentDTO createStudent(StudentDTO student) {
+		return mapToDTO(studentRepository.save(mapToEntity(student)));
 	}
 
 
 	@Override
-	public List<Student> getAllStudents() {
-		return studentRepository.findAll();
+	public List<StudentDTO> getAllStudents() {
+		return mapToDTOs(studentRepository.findAll());
 	}
 
 	@Override
-	public Student getStudentById(String studentId) {
+	public StudentDTO getStudentById(String studentId) {
       Optional<Student> studentDb = this.studentRepository.findById(studentId);
 		
 		if(studentDb.isPresent()) {
-			return studentDb.get();
+			return mapToDTO(studentDb.get());
 		}else {
 			logger.error("Student not found id:{}",studentId);
 			return null;
@@ -52,8 +59,8 @@ public class StudentServiceImpl implements StudentService {
 
 
 	@Override
-	public List<Student> getAllStudents(String firstname, String lastname, String departmentName) {
-		 List<Student> students = new ArrayList<>();
+	public List<StudentDTO> getAllStudents(String firstname, String lastname, String departmentName) {
+		 List<StudentDTO> students = new ArrayList<>();
 		 List<Student> dbStudents=null;
 	      if (StringUtils.isEmpty(firstname)  && StringUtils.isEmpty(lastname) && StringUtils.isEmpty(departmentName))
 	    	  dbStudents= studentRepository.findAll();
@@ -67,13 +74,13 @@ public class StudentServiceImpl implements StudentService {
 	      else if(StringUtils.isEmpty(firstname) && StringUtils.isEmpty(lastname) && !StringUtils.isEmpty(departmentName))
 	    	  dbStudents=studentRepository.findByDepartmentName(departmentName);
 	      if(dbStudents!=null) {
-	    	  dbStudents.forEach(students::add);
+	    	  return mapToDTOs(dbStudents);
 	    	  }
 		return students;
 	}
 	@Override
-	public List<Student> getAllStudents(String firstname, String lastname, String departmentName,int page,int size) {
-		 List<Student> students=new ArrayList<Student>();
+	public List<StudentDTO> getAllStudents(String firstname, String lastname, String departmentName,int page,int size) {
+		 List<StudentDTO> students=new ArrayList<>();
 		 Page<Student> dbStudents=null;
 		 if(size==0) {
 			 size=10;
@@ -91,10 +98,24 @@ public class StudentServiceImpl implements StudentService {
 	      else if(StringUtils.isEmpty(firstname) && StringUtils.isEmpty(lastname) && !StringUtils.isEmpty(departmentName))
 	    	  dbStudents=studentRepository.findByDepartmentName(departmentName,paging);
 	     if(dbStudents!=null) {
-	    	 students=dbStudents.getContent();
+	    	 students=mapToDTOs(dbStudents.getContent());
 
 	     }
 		return students;
+	}
+	private StudentDTO mapToDTO(Student student) {
+		return modelMapper.map(student,StudentDTO.class);
+	}
+	private Student mapToEntity(StudentDTO student) {
+		return modelMapper.map(student,Student.class);
+	}
+	private List<StudentDTO> mapToDTOs(List<Student> students) {
+		if(!students.isEmpty()) {
+		return students.stream().map(student-> modelMapper.map(student, StudentDTO.class))
+				.collect(Collectors.toList());
+		}else {
+			return new ArrayList<StudentDTO>();
+		}
 	}
 
 }

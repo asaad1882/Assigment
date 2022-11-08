@@ -17,7 +17,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
-import com.daleel.student.ms.entity.APIResponse;
+import com.daleel.student.ms.data.ResponseDTO;
 import com.daleel.student.ms.exception.BusinessException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -52,7 +52,7 @@ public class AuthenticationHandlerFilter implements Filter{
         } catch (BusinessException e) {
 
             // custom error response class used across my project
-            APIResponse errorResponse = new APIResponse(HttpStatus.UNAUTHORIZED.value(),e.getMessage());
+            ResponseDTO errorResponse = new ResponseDTO(HttpStatus.UNAUTHORIZED.value(),e.getMessage());
             httpServletResponse.setContentType(MediaType.APPLICATION_JSON_VALUE);
             httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
             httpServletResponse.getWriter().write(convertObjectToJson(errorResponse));

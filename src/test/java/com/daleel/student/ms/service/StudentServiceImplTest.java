@@ -19,6 +19,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.ActiveProfiles;
 
+import com.daleel.student.ms.data.StudentDTO;
 import com.daleel.student.ms.model.Student;
 import com.daleel.student.ms.repository.StudentRepository;
 
@@ -46,10 +47,11 @@ public class StudentServiceImplTest {
 		// given
 
 		Student testStudent = new Student("id", "Asmaa", "Saad", "IT");
+		StudentDTO testStudentDTO = new StudentDTO("id", "Asmaa", "Saad", "IT");
 		given(studentRepository.save(any())).willReturn(testStudent);
 
 		// when
-		Student savedStudent = studentService.createStudent(testStudent);
+		StudentDTO savedStudent = studentService.createStudent(testStudentDTO);
 
 		// then
 
@@ -76,7 +78,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findById(any())).willReturn(Optional.of(testStudent));
 
 		// when
-		Student findStudent = studentService.getStudentById("id");
+		StudentDTO findStudent = studentService.getStudentById("id");
 
 		// then
 
@@ -95,7 +97,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findById("xxx")).willReturn(Optional.empty());
 
 		// when
-		Student findStudent = studentService.getStudentById("xxx");
+		StudentDTO findStudent = studentService.getStudentById("xxx");
 
 		// then
 
@@ -114,7 +116,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findByFirstname(any())).willReturn(testStudents);
 
 		// when
-		List<Student> findStudents = studentService.getAllStudents("Asmaa", null, null);
+		List<StudentDTO> findStudents = studentService.getAllStudents("Asmaa", null, null);
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {
@@ -132,7 +134,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findByLastname(any())).willReturn(testStudents);
 
 		// when
-		List<Student> findStudents = studentService.getAllStudents(null, "Saad", null);
+		List<StudentDTO> findStudents = studentService.getAllStudents(null, "Saad", null);
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {
@@ -150,7 +152,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findByDepartmentName(any())).willReturn(testStudents);
 
 		// when
-		List<Student> findStudents = studentService.getAllStudents(null, null, "IT");
+		List<StudentDTO> findStudents = studentService.getAllStudents(null, null, "IT");
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {
@@ -170,7 +172,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findAll()).willReturn(testStudents);
 
 		// when
-		List<Student> findStudents = studentService.getAllStudents(null, null, null);
+		List<StudentDTO> findStudents = studentService.getAllStudents(null, null, null);
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {
@@ -197,7 +199,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findAll(paging)).willReturn(pro);
 
 		// when
-		List<Student> findStudents = studentService.getAllStudents(null, null, null,0,4);
+		List<StudentDTO> findStudents = studentService.getAllStudents(null, null, null,0,4);
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {
@@ -222,7 +224,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findByFirstname("Omar",paging)).willReturn(pro);
 
 		// when
-		List<Student> findStudents = studentService.getAllStudents("Omar", null, null,0,4);
+		List<StudentDTO> findStudents = studentService.getAllStudents("Omar", null, null,0,4);
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {
@@ -247,7 +249,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findByLastname("Arun",paging)).willReturn(pro);
 
 		// when
-		List<Student> findStudents = studentService.getAllStudents (null,"Arun", null,0,4);
+		List<StudentDTO> findStudents = studentService.getAllStudents (null,"Arun", null,0,4);
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {
@@ -272,7 +274,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findByDepartmentName("IT",paging)).willReturn(pro);
 
 		// when
-		List<Student> findStudents = studentService.getAllStudents(null, null, "IT",0,4);
+		List<StudentDTO> findStudents = studentService.getAllStudents(null, null, "IT",0,4);
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {
@@ -297,7 +299,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findByFirstname("Omar",paging)).willReturn(pro);
 
 		// when
-		List<Student> findStudents = studentService.getAllStudents("Omar", null, null,0,0);
+		List<StudentDTO> findStudents = studentService.getAllStudents("Omar", null, null,0,0);
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {
@@ -317,7 +319,7 @@ public class StudentServiceImplTest {
 		given(studentRepository.findAll()).willReturn(testStudents);
 
 		// when
-		List<Student> findStudents = studentService.getAllStudents();
+		List<StudentDTO> findStudents = studentService.getAllStudents();
 
 		// then
 		SoftAssertions.assertSoftly(softly -> {

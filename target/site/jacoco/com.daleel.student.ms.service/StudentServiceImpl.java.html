@@ -3,8 +3,10 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,87 +16,106 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
-
+import com.daleel.student.ms.data.StudentDTO;
 import com.daleel.student.ms.model.Student;
 import com.daleel.student.ms.repository.StudentRepository;
 
 @Service
 @Transactional
-<span class="fc" id="L24">public class StudentServiceImpl implements StudentService {</span>
-<span class="fc" id="L25">	private static final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);</span>
-	@Autowired
-	private StudentRepository studentRepository;
+public class StudentServiceImpl implements StudentService {
+<span class="fc" id="L26">	private static final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);</span>
+	
+	private final StudentRepository studentRepository;
+	private final ModelMapper modelMapper;
+	@Autowired 
+<span class="fc" id="L31">	public StudentServiceImpl(ModelMapper modelMapper,StudentRepository studentRepository) {</span>
+<span class="fc" id="L32">		this.modelMapper=modelMapper;</span>
+<span class="fc" id="L33">		this.studentRepository=studentRepository;</span>
+<span class="fc" id="L34">	}</span>
 
 	@Override
-	public Student createStudent(Student student) {
-<span class="fc" id="L31">		return studentRepository.save(student);</span>
+	public StudentDTO createStudent(StudentDTO student) {
+<span class="fc" id="L38">		return mapToDTO(studentRepository.save(mapToEntity(student)));</span>
 	}
 
 
 	@Override
-	public List&lt;Student&gt; getAllStudents() {
-<span class="fc" id="L37">		return studentRepository.findAll();</span>
+	public List&lt;StudentDTO&gt; getAllStudents() {
+<span class="fc" id="L44">		return mapToDTOs(studentRepository.findAll());</span>
 	}
 
 	@Override
-	public Student getStudentById(String studentId) {
-<span class="fc" id="L42">      Optional&lt;Student&gt; studentDb = this.studentRepository.findById(studentId);</span>
+	public StudentDTO getStudentById(String studentId) {
+<span class="fc" id="L49">      Optional&lt;Student&gt; studentDb = this.studentRepository.findById(studentId);</span>
 		
-<span class="fc bfc" id="L44" title="All 2 branches covered.">		if(studentDb.isPresent()) {</span>
-<span class="fc" id="L45">			return studentDb.get();</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">		if(studentDb.isPresent()) {</span>
+<span class="fc" id="L52">			return mapToDTO(studentDb.get());</span>
 		}else {
-<span class="fc" id="L47">			logger.error(&quot;Student not found id:{}&quot;,studentId);</span>
-<span class="fc" id="L48">			return null;</span>
+<span class="fc" id="L54">			logger.error(&quot;Student not found id:{}&quot;,studentId);</span>
+<span class="fc" id="L55">			return null;</span>
 		}
 	}
 
 
 
 	@Override
-	public List&lt;Student&gt; getAllStudents(String firstname, String lastname, String departmentName) {
-<span class="fc" id="L56">		 List&lt;Student&gt; students = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L57">		 List&lt;Student&gt; dbStudents=null;</span>
-<span class="fc bfc" id="L58" title="All 6 branches covered.">	      if (StringUtils.isEmpty(firstname)  &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName))</span>
-<span class="fc" id="L59">	    	  dbStudents= studentRepository.findAll();</span>
+	public List&lt;StudentDTO&gt; getAllStudents(String firstname, String lastname, String departmentName) {
+<span class="fc" id="L63">		 List&lt;StudentDTO&gt; students = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L64">		 List&lt;Student&gt; dbStudents=null;</span>
+<span class="fc bfc" id="L65" title="All 6 branches covered.">	      if (StringUtils.isEmpty(firstname)  &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName))</span>
+<span class="fc" id="L66">	    	  dbStudents= studentRepository.findAll();</span>
 	     
-<span class="pc bpc" id="L61" title="2 of 6 branches missed.">	      else if(!StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName)) {</span>
-<span class="fc" id="L62">	    	  dbStudents=studentRepository.findByFirstname(firstname);</span>
+<span class="pc bpc" id="L68" title="2 of 6 branches missed.">	      else if(!StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName)) {</span>
+<span class="fc" id="L69">	    	  dbStudents=studentRepository.findByFirstname(firstname);</span>
 	    	  
-<span class="fc" id="L64">	      }</span>
-<span class="pc bpc" id="L65" title="2 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; !StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName))</span>
-<span class="fc" id="L66">	    	  dbStudents=studentRepository.findByLastname(lastname);</span>
-<span class="pc bpc" id="L67" title="3 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; !StringUtils.isEmpty(departmentName))</span>
-<span class="fc" id="L68">	    	  dbStudents=studentRepository.findByDepartmentName(departmentName);</span>
-<span class="pc bpc" id="L69" title="1 of 2 branches missed.">	      if(dbStudents!=null) {</span>
-<span class="fc" id="L70">	    	  dbStudents.forEach(students::add);</span>
+<span class="fc" id="L71">	      }</span>
+<span class="pc bpc" id="L72" title="2 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; !StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName))</span>
+<span class="fc" id="L73">	    	  dbStudents=studentRepository.findByLastname(lastname);</span>
+<span class="pc bpc" id="L74" title="3 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; !StringUtils.isEmpty(departmentName))</span>
+<span class="fc" id="L75">	    	  dbStudents=studentRepository.findByDepartmentName(departmentName);</span>
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">	      if(dbStudents!=null) {</span>
+<span class="fc" id="L77">	    	  return mapToDTOs(dbStudents);</span>
 	    	  }
-<span class="fc" id="L72">		return students;</span>
+<span class="nc" id="L79">		return students;</span>
 	}
 	@Override
-	public List&lt;Student&gt; getAllStudents(String firstname, String lastname, String departmentName,int page,int size) {
-<span class="fc" id="L76">		 List&lt;Student&gt; students=new ArrayList&lt;Student&gt;();</span>
-<span class="fc" id="L77">		 Page&lt;Student&gt; dbStudents=null;</span>
-<span class="fc bfc" id="L78" title="All 2 branches covered.">		 if(size==0) {</span>
-<span class="fc" id="L79">			 size=10;</span>
+	public List&lt;StudentDTO&gt; getAllStudents(String firstname, String lastname, String departmentName,int page,int size) {
+<span class="fc" id="L83">		 List&lt;StudentDTO&gt; students=new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L84">		 Page&lt;Student&gt; dbStudents=null;</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">		 if(size==0) {</span>
+<span class="fc" id="L86">			 size=10;</span>
 		 }
-<span class="fc" id="L81">		 Pageable paging = PageRequest.of(page, size);</span>
-<span class="fc bfc" id="L82" title="All 6 branches covered.">	      if (StringUtils.isEmpty(firstname)  &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName))</span>
-<span class="fc" id="L83">	    	  dbStudents= studentRepository.findAll(paging);</span>
+<span class="fc" id="L88">		 Pageable paging = PageRequest.of(page, size);</span>
+<span class="fc bfc" id="L89" title="All 6 branches covered.">	      if (StringUtils.isEmpty(firstname)  &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName))</span>
+<span class="fc" id="L90">	    	  dbStudents= studentRepository.findAll(paging);</span>
 	     
-<span class="pc bpc" id="L85" title="2 of 6 branches missed.">	      else if(!StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName)) {</span>
-<span class="fc" id="L86">	    	  dbStudents=studentRepository.findByFirstname(firstname,paging);</span>
+<span class="pc bpc" id="L92" title="2 of 6 branches missed.">	      else if(!StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName)) {</span>
+<span class="fc" id="L93">	    	  dbStudents=studentRepository.findByFirstname(firstname,paging);</span>
 	    	  
-<span class="fc" id="L88">	      }</span>
-<span class="pc bpc" id="L89" title="2 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; !StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName))</span>
-<span class="fc" id="L90">	    	  dbStudents=studentRepository.findByLastname(lastname,paging);</span>
-<span class="pc bpc" id="L91" title="3 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; !StringUtils.isEmpty(departmentName))</span>
-<span class="fc" id="L92">	    	  dbStudents=studentRepository.findByDepartmentName(departmentName,paging);</span>
-<span class="pc bpc" id="L93" title="1 of 2 branches missed.">	     if(dbStudents!=null) {</span>
-<span class="fc" id="L94">	    	 students=dbStudents.getContent();</span>
+<span class="fc" id="L95">	      }</span>
+<span class="pc bpc" id="L96" title="2 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; !StringUtils.isEmpty(lastname) &amp;&amp; StringUtils.isEmpty(departmentName))</span>
+<span class="fc" id="L97">	    	  dbStudents=studentRepository.findByLastname(lastname,paging);</span>
+<span class="pc bpc" id="L98" title="3 of 6 branches missed.">	      else if(StringUtils.isEmpty(firstname) &amp;&amp; StringUtils.isEmpty(lastname) &amp;&amp; !StringUtils.isEmpty(departmentName))</span>
+<span class="fc" id="L99">	    	  dbStudents=studentRepository.findByDepartmentName(departmentName,paging);</span>
+<span class="pc bpc" id="L100" title="1 of 2 branches missed.">	     if(dbStudents!=null) {</span>
+<span class="fc" id="L101">	    	 students=mapToDTOs(dbStudents.getContent());</span>
 
 	     }
-<span class="fc" id="L97">		return students;</span>
+<span class="fc" id="L104">		return students;</span>
+	}
+	private StudentDTO mapToDTO(Student student) {
+<span class="fc" id="L107">		return modelMapper.map(student,StudentDTO.class);</span>
+	}
+	private Student mapToEntity(StudentDTO student) {
+<span class="fc" id="L110">		return modelMapper.map(student,Student.class);</span>
+	}
+	private List&lt;StudentDTO&gt; mapToDTOs(List&lt;Student&gt; students) {
+<span class="fc bfc" id="L113" title="All 2 branches covered.">		if(!students.isEmpty()) {</span>
+<span class="fc" id="L114">		return students.stream().map(student-&gt; modelMapper.map(student, StudentDTO.class))</span>
+<span class="fc" id="L115">				.collect(Collectors.toList());</span>
+		}else {
+<span class="fc" id="L117">			return new ArrayList&lt;StudentDTO&gt;();</span>
+		}
 	}
 
 }
